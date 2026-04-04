@@ -28,9 +28,11 @@ const AgentNode = ({ name, icon, active = false, delay = 0, size = "md" }: Agent
       >
         <span>{icon}</span>
       </div>
-      <span className="text-[10px] font-medium text-hirex-text3 text-center max-w-[80px] leading-tight">
-        {name}
-      </span>
+      {name && (
+        <span className="text-[9px] font-medium text-hirex-text3 text-center max-w-[70px] leading-tight truncate">
+          {name}
+        </span>
+      )}
     </div>
   );
 };

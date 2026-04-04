@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Syne", "sans-serif"],
-        sans: ["Inter", "sans-serif"],
+        display: ["Inter", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -64,6 +64,8 @@ export default {
           success: "hsl(var(--hirex-success))",
           navy: "hsl(var(--hirex-navy))",
           "deep-navy": "hsl(var(--hirex-deep-navy))",
+          "navy-dark": "hsl(var(--hirex-navy-dark))",
+          "navy-light": "hsl(var(--hirex-navy-light))",
           cyan: "hsl(var(--hirex-cyan))",
           "cyan-glow": "hsl(var(--hirex-cyan-glow))",
           teal: "hsl(var(--hirex-warm-teal))",
@@ -103,8 +105,8 @@ export default {
           to: { transform: "translateX(-50%)" },
         },
         "pulse-cyan": {
-          "0%, 100%": { boxShadow: "0 0 15px hsla(185, 100%, 50%, 0.3)" },
-          "50%": { boxShadow: "0 0 35px hsla(185, 100%, 50%, 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 15px hsla(202, 72%, 59%, 0.3)" },
+          "50%": { boxShadow: "0 0 35px hsla(202, 72%, 59%, 0.6)" },
         },
         "float-node": {
           "0%, 100%": { transform: "translateY(0px)" },

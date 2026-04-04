@@ -31,12 +31,10 @@ const GlobalNav = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8">
       <div className="container flex items-center justify-between h-[72px]">
-        {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5 no-underline shrink-0">
           <img src={hirexLogo} alt="HireX" className="h-8 w-auto" />
         </Link>
 
-        {/* Platform Switcher - center */}
         {universe && (
           <div className="hidden md:flex items-center gap-1 glass-card rounded-full px-1.5 py-1.5">
             <Link
@@ -62,7 +60,6 @@ const GlobalNav = () => {
           </div>
         )}
 
-        {/* Nav links */}
         <div className="hidden md:flex items-center gap-1">
           {links.map((l) => (
             <Link
@@ -89,7 +86,8 @@ const GlobalNav = () => {
           )}
           <Link
             to="/contact"
-            className="weave-hover ml-2 inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-sm font-semibold no-underline bg-hirex-cyan/10 text-hirex-cyan border border-hirex-cyan/30 hover:bg-hirex-cyan/20 hover:shadow-[0_0_20px_hsla(185,100%,50%,0.2)] transition-all"
+            className="weave-hover ml-2 inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-sm font-bold no-underline text-foreground border border-hirex-cyan/30 hover:shadow-[0_0_20px_hsla(202,72%,59%,0.2)] transition-all"
+            style={{ background: "#4AB8E6" }}
           >
             Get Started →
           </Link>

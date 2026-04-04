@@ -2,11 +2,9 @@ import { Link } from "react-router-dom";
 import hirexLogo from "@/assets/hirex-logo.png";
 
 const Footer = () => (
-  <footer className="pt-20 pb-8 border-t border-border bg-hirex-bg2">
+  <footer className="pt-20 pb-8 border-t border-border" style={{ background: "#0F1425" }}>
     <div className="container">
-      {/* Top grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
-        {/* Brand column */}
         <div>
           <Link to="/" className="flex items-center gap-2.5 mb-4 no-underline">
             <img src={hirexLogo} alt="HireX" className="h-8 w-auto" />
@@ -21,7 +19,6 @@ const Footer = () => (
           </div>
         </div>
 
-        {/* Product */}
         <div>
           <div className="text-xs font-semibold uppercase tracking-wider text-hirex-text3 mb-5">Product</div>
           <ul className="flex flex-col gap-3">
@@ -33,7 +30,6 @@ const Footer = () => (
           </ul>
         </div>
 
-        {/* Company */}
         <div>
           <div className="text-xs font-semibold uppercase tracking-wider text-hirex-text3 mb-5">Company</div>
           <ul className="flex flex-col gap-3">
@@ -45,7 +41,6 @@ const Footer = () => (
           </ul>
         </div>
 
-        {/* Support */}
         <div>
           <div className="text-xs font-semibold uppercase tracking-wider text-hirex-text3 mb-5">Support</div>
           <ul className="flex flex-col gap-3">
@@ -58,7 +53,6 @@ const Footer = () => (
         </div>
       </div>
 
-      {/* Legal row */}
       <div className="flex flex-wrap gap-5 mb-12 pb-8 border-b border-border">
         <span className="text-xs font-semibold uppercase tracking-wider text-hirex-text3 mr-4">Legal</span>
         <a className="text-sm text-hirex-text2 no-underline hover:text-foreground cursor-pointer transition-colors">Privacy Policy</a>
@@ -68,7 +62,6 @@ const Footer = () => (
         <a className="text-sm text-hirex-text2 no-underline hover:text-foreground cursor-pointer transition-colors">Cookie Policy</a>
       </div>
 
-      {/* Office addresses */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         <div>
           <div className="text-xs font-semibold uppercase tracking-wider text-hirex-cyan mb-2">Headquarters</div>
@@ -94,7 +87,6 @@ const Footer = () => (
         </div>
       </div>
 
-      {/* Contact strip */}
       <div className="flex flex-wrap items-center gap-4 text-[13px] text-hirex-text2 mb-8 pb-6 border-b border-border">
         <a href="tel:+918827647684" className="no-underline text-hirex-text2 hover:text-foreground transition-colors">📞 +91 8827647684</a>
         <span className="text-border">|</span>
@@ -103,7 +95,6 @@ const Footer = () => (
         <a href="mailto:support@gethirex.space" className="no-underline text-hirex-text2 hover:text-foreground transition-colors">✉️ support@gethirex.space</a>
       </div>
 
-      {/* Bottom bar */}
       <div className="flex flex-wrap justify-between items-center text-[12px] text-hirex-text3 gap-4">
         <span>© 2026 HireX by GetHired Global. All rights reserved.</span>
         <div className="flex items-center gap-4 text-hirex-text3">

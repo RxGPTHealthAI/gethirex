@@ -49,14 +49,13 @@ const BusinessPricingPage = () => {
 
   return (
     <div className="animate-fade-in">
-      {/* Hero */}
-      <section className="pt-[140px] pb-20 relative overflow-hidden" style={{ background: "linear-gradient(180deg, #0d1033 0%, #1A1F4C 100%)" }}>
+      <section className="pt-[140px] pb-20 relative overflow-hidden" style={{ background: "linear-gradient(180deg, #0F1425 0%, #1C2351 100%)" }}>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[150px] bg-hirex-cyan/[0.06] pointer-events-none" />
         <div className="container text-center relative">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold tracking-[0.12em] uppercase glass-card text-hirex-cyan mb-6">
             Employer Plans
           </div>
-          <h1 className="font-display text-[clamp(42px,6vw,76px)] font-extrabold mb-5">
+          <h1 className="text-[clamp(42px,6vw,64px)] font-bold mb-5">
             Pricing That
             <br />
             <span className="grad-text-cyan">Pays for Itself.</span>
@@ -67,8 +66,7 @@ const BusinessPricingPage = () => {
         </div>
       </section>
 
-      {/* Plans */}
-      <section className="py-20" style={{ background: "#0d1033" }}>
+      <section className="py-20" style={{ background: "#0F1425" }}>
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 max-lg:max-w-[480px] max-lg:mx-auto">
             {plans.map((plan) => (
@@ -79,13 +77,13 @@ const BusinessPricingPage = () => {
                 }`}
               >
                 {plan.featured && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-hirex-cyan text-hirex-deep-navy rounded-full text-[10px] font-bold tracking-wider uppercase">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase text-foreground" style={{ background: "#4AB8E6" }}>
                     Most Popular
                   </div>
                 )}
                 <div className="text-xs font-bold tracking-wider uppercase text-hirex-text3 mb-2">{plan.label}</div>
-                <div className="font-display text-2xl font-bold mb-2">{plan.name}</div>
-                <div className="font-display text-[42px] font-bold mb-2 text-hirex-cyan">
+                <div className="text-2xl font-bold mb-2">{plan.name}</div>
+                <div className="text-[42px] font-bold mb-2 text-hirex-cyan">
                   {plan.price}<span className="text-base font-normal text-hirex-text3">{plan.period}</span>
                 </div>
                 <p className="text-sm text-hirex-text2 mb-6">{plan.desc}</p>
@@ -98,11 +96,12 @@ const BusinessPricingPage = () => {
                 </ul>
                 <Link
                   to="/contact"
-                  className={`weave-hover block w-full text-center py-3.5 rounded-xl font-semibold text-sm no-underline transition-all ${
+                  className={`weave-hover block w-full text-center py-3.5 rounded-xl font-bold text-[18px] no-underline transition-all ${
                     plan.featured
-                      ? "bg-hirex-cyan text-hirex-deep-navy hover:shadow-[0_0_20px_hsla(185,100%,50%,0.3)]"
+                      ? "text-foreground hover:shadow-[0_0_20px_hsla(202,72%,59%,0.3)]"
                       : "glass-card text-foreground hover:bg-foreground/10"
                   }`}
+                  style={plan.featured ? { background: "#4AB8E6" } : {}}
                 >
                   {plan.featured ? "Get Started" : plan.name === "Enterprise" ? "Contact Sales" : "Start Free Trial"}
                 </Link>
@@ -112,10 +111,9 @@ const BusinessPricingPage = () => {
         </div>
       </section>
 
-      {/* Feature Comparison */}
-      <section className="py-20" style={{ background: "linear-gradient(180deg, #0d1033 0%, #1A1F4C 100%)" }}>
+      <section className="py-20" style={{ background: "linear-gradient(180deg, #0F1425 0%, #1C2351 100%)" }}>
         <div className="container">
-          <h2 className="font-display text-3xl font-extrabold text-center mb-10">Feature Comparison</h2>
+          <h2 className="text-3xl font-bold text-center mb-10">Feature Comparison</h2>
           <div className="glass-card rounded-xl overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
@@ -143,17 +141,16 @@ const BusinessPricingPage = () => {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-20" style={{ background: "#0d1033" }}>
+      <section className="py-20" style={{ background: "#0F1425" }}>
         <div className="container max-w-[700px]">
-          <h2 className="font-display text-3xl font-extrabold text-center mb-10">FAQ</h2>
+          <h2 className="text-3xl font-bold text-center mb-10">FAQ</h2>
           {faqs.map((faq, i) => (
             <div key={i} className="border-b border-foreground/10">
               <button
                 className="w-full flex items-center justify-between py-5 text-left gap-4 bg-transparent border-none text-foreground cursor-pointer"
                 onClick={() => setOpenFaq(openFaq === i ? null : i)}
               >
-                <span className="font-display text-[16px] font-semibold">{faq.q}</span>
+                <span className="text-[16px] font-semibold">{faq.q}</span>
                 <span className={`text-xl text-hirex-text3 transition-transform ${openFaq === i ? "rotate-45 text-hirex-cyan" : ""}`}>+</span>
               </button>
               {openFaq === i && <div className="pb-5 text-sm text-hirex-text2 leading-relaxed animate-fade-in">{faq.a}</div>}

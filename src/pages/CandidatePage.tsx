@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import LiveFeed from "@/components/LiveFeed";
 
 const aiPeople = [
-  { name: "ResumeReviver", role: "The Sleek Designer", icon: "🎨", desc: "Transforms messy resumes into ATS-optimized masterpieces in seconds.", color: "teal" },
-  { name: "JobScout", role: "The Keen-Eyed Scout", icon: "🔭", desc: "Scans 500+ job boards to find roles that match your exact skill profile.", color: "teal" },
-  { name: "CodeCoach", role: "The Technical Wizard", icon: "🧙", desc: "Drills you on DSA, system design, and coding challenges with instant feedback.", color: "teal" },
-  { name: "InterviewPro", role: "The Confidence Builder", icon: "🎤", desc: "Conducts mock interviews with real-time confidence scoring and keyword analysis.", color: "teal" },
-  { name: "CareerPilot", role: "The Strategy Lead", icon: "✈️", desc: "Coordinates all agents and builds your personalized career roadmap.", color: "teal" },
-  { name: "OfferNinja", role: "The Negotiation Expert", icon: "🥷", desc: "Analyzes market compensation data and coaches you through offer negotiations.", color: "teal" },
+  { name: "ResumeReviver", role: "The Sleek Designer", icon: "🎨", desc: "Transforms messy resumes into ATS-optimized masterpieces in seconds." },
+  { name: "JobScout", role: "The Keen-Eyed Scout", icon: "🔭", desc: "Scans 500+ job boards to find roles that match your exact skill profile." },
+  { name: "CodeCoach", role: "The Technical Wizard", icon: "🧙", desc: "Drills you on DSA, system design, and coding challenges with instant feedback." },
+  { name: "InterviewPro", role: "The Confidence Builder", icon: "🎤", desc: "Conducts mock interviews with real-time confidence scoring and keyword analysis." },
+  { name: "CareerPilot", role: "The Strategy Lead", icon: "✈️", desc: "Coordinates all agents and builds your personalized career roadmap." },
+  { name: "OfferNinja", role: "The Negotiation Expert", icon: "🥷", desc: "Analyzes market compensation data and coaches you through offer negotiations." },
 ];
 
 const simulations = [
@@ -61,7 +61,7 @@ const CandidatePage = () => {
   return (
     <div className="animate-fade-in">
       {/* HERO - The Squad */}
-      <section className="min-h-screen flex items-center relative overflow-hidden pt-20" style={{ background: "linear-gradient(180deg, #0d1033 0%, #162040 40%, #0d1033 100%)" }}>
+      <section className="min-h-screen flex items-center relative overflow-hidden pt-20" style={{ background: "linear-gradient(180deg, #0F1425 0%, #1C2351 40%, #0F1425 100%)" }}>
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full blur-[120px] bg-hirex-teal/[0.08]" />
           <div className="absolute bottom-1/3 left-1/4 w-[300px] h-[300px] rounded-full blur-[100px] bg-hirex-orange/[0.05]" />
@@ -74,7 +74,7 @@ const CandidatePage = () => {
               6 AI People • Your Personal Career Squad
             </div>
 
-            <h1 className="font-display text-[clamp(40px,7vw,82px)] font-extrabold leading-[1.05] mb-6">
+            <h1 className="text-[clamp(40px,7vw,64px)] font-bold leading-[1.1] mb-6">
               Your 6-Agent
               <br />
               <span className="bg-gradient-to-r from-hirex-teal to-hirex-orange bg-clip-text text-transparent">Career Pilot Squad.</span>
@@ -97,36 +97,44 @@ const CandidatePage = () => {
               />
             </div>
 
-            {/* AI People Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-[700px] mx-auto mb-12">
-              {aiPeople.map((person, i) => (
-                <div
-                  key={person.name}
-                  className="glass-card-warm rounded-xl p-4 text-left hover:-translate-y-1 transition-all cursor-default group"
-                  style={{ animationDelay: `${i * 100}ms` }}
-                >
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <span className="text-2xl">{person.icon}</span>
-                    <div>
-                      <div className="text-sm font-bold group-hover:text-hirex-teal transition-colors">{person.name}</div>
-                      <div className="text-[10px] text-hirex-text3">{person.role}</div>
+            {/* 6 AI People Grid — THE KEY VISUAL */}
+            <div className="mb-14">
+              <p className="text-[11px] font-bold tracking-[0.15em] uppercase text-hirex-teal/60 mb-6">
+                YOUR 6 AI PEOPLE — CAREER PILOT SQUAD
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-[700px] mx-auto">
+                {aiPeople.map((person, i) => (
+                  <div
+                    key={person.name}
+                    className="glass-card-warm glow-border-teal rounded-xl p-5 text-left hover:-translate-y-1 transition-all cursor-default group"
+                    style={{ animationDelay: `${i * 100}ms` }}
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-12 h-12 rounded-xl bg-hirex-teal/15 flex items-center justify-center text-2xl" style={{ animation: `floatNode 3s ease-in-out ${i * 200}ms infinite` }}>
+                        {person.icon}
+                      </div>
+                      <div>
+                        <div className="text-sm font-bold group-hover:text-hirex-teal transition-colors">{person.name}</div>
+                        <div className="text-[10px] text-hirex-teal/70 font-medium">{person.role}</div>
+                      </div>
                     </div>
+                    <p className="text-[12px] text-hirex-text3 leading-relaxed">{person.desc}</p>
                   </div>
-                  <p className="text-[11px] text-hirex-text3 leading-relaxed">{person.desc}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="weave-hover inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-[15px] no-underline bg-hirex-teal text-hirex-deep-navy hover:shadow-[0_0_30px_hsla(175,60%,45%,0.4)] hover:-translate-y-0.5 transition-all"
+                className="weave-hover inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-[18px] no-underline text-foreground hover:-translate-y-0.5 transition-all"
+                style={{ background: "#68D5C1" }}
               >
                 Activate Your Squad →
               </Link>
               <Link
                 to="/candidate/pricing"
-                className="weave-hover inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-[15px] no-underline glass-card-warm text-foreground hover:bg-foreground/10 transition-all"
+                className="weave-hover inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-[18px] no-underline glass-card-warm text-foreground hover:bg-foreground/10 transition-all"
               >
                 View Plans
               </Link>
@@ -136,11 +144,11 @@ const CandidatePage = () => {
       </section>
 
       {/* AI People Workflow - Live Simulations */}
-      <section id="squad" className="relative" style={{ background: "#0d1033" }}>
+      <section id="squad" className="relative" style={{ background: "#0F1425" }}>
         <div className="container">
           <div className="text-center pt-24 pb-16">
             <p className="text-xs font-bold tracking-[0.15em] uppercase text-hirex-teal mb-4">Live AI Simulations</p>
-            <h2 className="font-display text-[clamp(32px,5vw,56px)] font-extrabold">
+            <h2 className="text-[clamp(32px,5vw,36px)] font-semibold">
               Your Squad <span className="bg-gradient-to-r from-hirex-teal to-hirex-orange bg-clip-text text-transparent">In Action.</span>
             </h2>
           </div>
@@ -157,7 +165,7 @@ const CandidatePage = () => {
                 <div className="flex flex-col lg:flex-row gap-8">
                   <div className="flex-1">
                     <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-hirex-teal">Simulation {i + 1}</span>
-                    <h3 className="font-display text-2xl md:text-3xl font-bold mt-2 mb-3">{sim.title}</h3>
+                    <h3 className="text-2xl md:text-[28px] font-medium mt-2 mb-3">{sim.title}</h3>
                     <p className="text-hirex-text2 text-sm leading-relaxed">{sim.desc}</p>
                   </div>
                   <div className="flex-1 space-y-3">
@@ -174,10 +182,10 @@ const CandidatePage = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-24" style={{ background: "linear-gradient(180deg, #0d1033 0%, #162040 100%)" }}>
+      <section className="py-24" style={{ background: "linear-gradient(180deg, #0F1425 0%, #1C2351 100%)" }}>
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="font-display text-[clamp(32px,5vw,56px)] font-extrabold">
+            <h2 className="text-[clamp(32px,5vw,36px)] font-semibold">
               3 Steps. <span className="opacity-40">Dream Job.</span>
             </h2>
           </div>
@@ -188,8 +196,8 @@ const CandidatePage = () => {
               { step: "03", title: "Land Your Dream Job", desc: "Walk into interviews over-prepared. Negotiate with data. Get hired at top companies." },
             ].map((s) => (
               <div key={s.step} className="glass-card-warm rounded-xl p-8 text-center">
-                <div className="font-display text-4xl font-bold text-hirex-teal/30 mb-4">{s.step}</div>
-                <h3 className="font-display text-xl font-bold mb-3">{s.title}</h3>
+                <div className="text-4xl font-bold text-hirex-teal/30 mb-4">{s.step}</div>
+                <h3 className="text-xl font-semibold mb-3">{s.title}</h3>
                 <p className="text-hirex-text3 text-sm leading-relaxed">{s.desc}</p>
               </div>
             ))}
@@ -198,12 +206,12 @@ const CandidatePage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 text-center" style={{ background: "linear-gradient(180deg, #162040 0%, #0d1033 100%)" }}>
+      <section className="py-24 text-center" style={{ background: "linear-gradient(180deg, #1C2351 0%, #0F1425 100%)" }}>
         <div className="container relative z-10">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[150px] bg-hirex-teal/[0.08]" />
           </div>
-          <h2 className="font-display text-[clamp(32px,5vw,56px)] font-extrabold mb-5 relative z-10">
+          <h2 className="text-[clamp(32px,5vw,36px)] font-semibold mb-5 relative z-10">
             Your Squad is <span className="bg-gradient-to-r from-hirex-teal to-hirex-orange bg-clip-text text-transparent">Ready.</span>
           </h2>
           <p className="text-hirex-text2 text-lg max-w-[500px] mx-auto mb-10 relative z-10">
@@ -212,13 +220,14 @@ const CandidatePage = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
             <Link
               to="/contact"
-              className="weave-hover inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-[15px] no-underline bg-hirex-teal text-hirex-deep-navy hover:shadow-[0_0_30px_hsla(175,60%,45%,0.4)] transition-all"
+              className="weave-hover inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-[18px] no-underline text-foreground transition-all"
+              style={{ background: "#68D5C1" }}
             >
               Activate Your Squad →
             </Link>
             <Link
               to="/candidate/pricing"
-              className="weave-hover inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-[15px] no-underline glass-card-warm text-foreground hover:bg-foreground/10 transition-all"
+              className="weave-hover inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-[18px] no-underline glass-card-warm text-foreground hover:bg-foreground/10 transition-all"
             >
               View Plans
             </Link>

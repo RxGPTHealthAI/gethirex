@@ -40,6 +40,9 @@ const techTeam = [
   { name: "Hrishiraj", role: "Full Stack Developer", img: hrishirajImg,
     bio: "Software engineer with experience building web-based platforms. Ensures clean interfaces and smooth user access to AI-driven solutions.",
     education: "B.Tech CSE from LPU Punjab | M.Tech CSE from IIIT Guwahati" },
+  { name: "Christin", role: "Agentic AI", img: christinImg,
+    bio: "With a passion for intuitive design and seamless user experiences, Christin brings fresh energy to our mission of building smarter hospitals and delivering better care.",
+    education: "IIT Bengaluru" },
 ];
 
 const hrTeam = [

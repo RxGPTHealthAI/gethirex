@@ -55,7 +55,7 @@ const marketing = [
     bio: "5+ years crafting persuasive content across websites, blogs, social media, and academic publications." },
 ];
 
-const TeamSection = ({ title, members }: { title: string; members: typeof leadership }) => (
+const TeamSection = ({ title, members }: { title: string; members: Array<{ name: string; role: string; img: string; bio: string; awards?: string[]; education?: string; passion?: string }> }) => (
   <div className="mb-20">
     <h2 className="text-2xl md:text-3xl font-bold mb-8 grad-text-cyan">{title}</h2>
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

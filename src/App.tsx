@@ -2,11 +2,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Navbar from "@/components/Navbar";
+import GlobalNav from "@/components/GlobalNav";
 import Footer from "@/components/Footer";
-import HomePage from "@/pages/HomePage";
+import PlatformSwitcher from "@/pages/PlatformSwitcher";
+import BusinessPage from "@/pages/BusinessPage";
+import CandidatePage from "@/pages/CandidatePage";
+import BusinessPricingPage from "@/pages/BusinessPricingPage";
+import CandidatePricingPage from "@/pages/CandidatePricingPage";
 import AgentsPage from "@/pages/AgentsPage";
-import PricingPage from "@/pages/PricingPage";
 import ContactPage from "@/pages/ContactPage";
 import BlogPage from "@/pages/BlogPage";
 import BlogPostPage from "@/pages/BlogPostPage";
@@ -20,14 +23,18 @@ const queryClient = new QueryClient();
 const Layout = () => {
   const location = useLocation();
   const isAdmin = location.pathname.startsWith("/admin");
+  const isHome = location.pathname === "/";
 
   return (
     <>
-      {!isAdmin && <Navbar />}
+      {!isAdmin && !isHome && <GlobalNav />}
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<PlatformSwitcher />} />
+        <Route path="/business" element={<BusinessPage />} />
+        <Route path="/business/pricing" element={<BusinessPricingPage />} />
+        <Route path="/candidate" element={<CandidatePage />} />
+        <Route path="/candidate/pricing" element={<CandidatePricingPage />} />
         <Route path="/agents" element={<AgentsPage />} />
-        <Route path="/pricing" element={<PricingPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
@@ -36,7 +43,7 @@ const Layout = () => {
         <Route path="/admin/posts/:id" element={<AdminPostEditorPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      {!isAdmin && <Footer />}
+      {!isAdmin && !isHome && <Footer />}
     </>
   );
 };

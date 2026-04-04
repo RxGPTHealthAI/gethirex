@@ -22,22 +22,21 @@ const Footer = () => (
         <div>
           <div className="text-xs font-semibold uppercase tracking-wider text-hirex-text3 mb-5">Product</div>
           <ul className="flex flex-col gap-3">
-            <li><Link to="/business" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">How It Works</Link></li>
+            <li><Link to="/how-it-works" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">How It Works</Link></li>
             <li><Link to="/pricing" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Pricing</Link></li>
-            <li><Link to="/contact" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Demo</Link></li>
-            <li><Link to="/business" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Process</Link></li>
-            <li><Link to="/business" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Integrations</Link></li>
+            <li><Link to="/demo" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Demo</Link></li>
+            <li><Link to="/process" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Process</Link></li>
+            <li><Link to="/integrations" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Integrations</Link></li>
           </ul>
         </div>
 
         <div>
           <div className="text-xs font-semibold uppercase tracking-wider text-hirex-text3 mb-5">Company</div>
           <ul className="flex flex-col gap-3">
-            <li><Link to="/" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">About Us</Link></li>
-            <li><Link to="/" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Team</Link></li>
-            <li><Link to="/" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Careers</Link></li>
+            <li><Link to="/customer-stories" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Customer Stories</Link></li>
+            <li><Link to="/team" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Team</Link></li>
             <li><Link to="/blog" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Blog</Link></li>
-            <li><Link to="/" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Press</Link></li>
+            <li><Link to="/contact" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Contact</Link></li>
           </ul>
         </div>
 
@@ -47,17 +46,20 @@ const Footer = () => (
             <li><a href="mailto:support@gethirex.space" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">📧 support@gethirex.space</a></li>
             <li><a href="tel:+918827647684" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">📞 +91 8827647684</a></li>
             <li><a href="tel:+93225944565" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">🚨 Emergency: +93-225944565</a></li>
-            <li><a className="text-sm text-hirex-text2 cursor-pointer hover:text-foreground transition-colors">HR FAQ (100+ Questions)</a></li>
-            <li><a className="text-sm text-hirex-text2 cursor-pointer hover:text-foreground transition-colors">Candidates FAQ (100+ Q)</a></li>
+            <li><Link to="/hr-faq" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">HR FAQ (100+ Questions)</Link></li>
+            <li><Link to="/candidates-faq" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Candidates FAQ (100+ Q)</Link></li>
           </ul>
         </div>
       </div>
 
       <div className="flex flex-wrap gap-5 mb-12 pb-8 border-b border-border">
         <span className="text-xs font-semibold uppercase tracking-wider text-hirex-text3 mr-4">Legal</span>
-        <a className="text-sm text-hirex-text2 no-underline hover:text-foreground cursor-pointer transition-colors">Privacy Policy</a>
-        <a className="text-sm text-hirex-text2 no-underline hover:text-foreground cursor-pointer transition-colors">Terms of Service</a>
-        <a className="text-sm text-hirex-text2 no-underline hover:text-foreground cursor-pointer transition-colors">Refund Policy</a>
+        <Link to="/privacy" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Privacy Policy</Link>
+        <Link to="/terms" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Terms of Service</Link>
+        <Link to="/refund" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Refund Policy</Link>
+        <Link to="/security" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Security (SOC2)</Link>
+        <Link to="/cookies" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Cookie Policy</Link>
+        <Link to="/gdpr" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">GDPR</Link>
         <a className="text-sm text-hirex-text2 no-underline hover:text-foreground cursor-pointer transition-colors">Security (SOC2)</a>
         <a className="text-sm text-hirex-text2 no-underline hover:text-foreground cursor-pointer transition-colors">Cookie Policy</a>
       </div>

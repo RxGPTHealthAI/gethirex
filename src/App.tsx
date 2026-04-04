@@ -17,6 +17,21 @@ import AdminLoginPage from "@/pages/AdminLoginPage";
 import AdminDashboardPage from "@/pages/AdminDashboardPage";
 import AdminPostEditorPage from "@/pages/AdminPostEditorPage";
 import NotFound from "@/pages/NotFound";
+import HowItWorksPage from "@/pages/HowItWorksPage";
+import ProcessPage from "@/pages/ProcessPage";
+import CustomerStoriesPage from "@/pages/CustomerStoriesPage";
+import TeamPage from "@/pages/TeamPage";
+import DemoPage from "@/pages/DemoPage";
+import UnifiedPricingPage from "@/pages/UnifiedPricingPage";
+import IntegrationsPage from "@/pages/IntegrationsPage";
+import HRFAQPage from "@/pages/HRFAQPage";
+import CandidatesFAQPage from "@/pages/CandidatesFAQPage";
+import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
+import RefundPolicyPage from "@/pages/RefundPolicyPage";
+import TermsPage from "@/pages/TermsPage";
+import SecurityPage from "@/pages/SecurityPage";
+import GDPRPage from "@/pages/GDPRPage";
+import CookiePolicyPage from "@/pages/CookiePolicyPage";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +53,21 @@ const Layout = () => {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/how-it-works" element={<HowItWorksPage />} />
+        <Route path="/process" element={<ProcessPage />} />
+        <Route path="/customer-stories" element={<CustomerStoriesPage />} />
+        <Route path="/team" element={<TeamPage />} />
+        <Route path="/demo" element={<DemoPage />} />
+        <Route path="/pricing" element={<UnifiedPricingPage />} />
+        <Route path="/integrations" element={<IntegrationsPage />} />
+        <Route path="/hr-faq" element={<HRFAQPage />} />
+        <Route path="/candidates-faq" element={<CandidatesFAQPage />} />
+        <Route path="/privacy" element={<PrivacyPolicyPage />} />
+        <Route path="/refund" element={<RefundPolicyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
+        <Route path="/security" element={<SecurityPage />} />
+        <Route path="/gdpr" element={<GDPRPage />} />
+        <Route path="/cookies" element={<CookiePolicyPage />} />
         <Route path="/admin/login" element={<AdminLoginPage />} />
         <Route path="/admin" element={<AdminDashboardPage />} />
         <Route path="/admin/posts/:id" element={<AdminPostEditorPage />} />

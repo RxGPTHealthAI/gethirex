@@ -33,11 +33,10 @@ const Footer = () => (
         <div>
           <div className="text-xs font-semibold uppercase tracking-wider text-hirex-text3 mb-5">Company</div>
           <ul className="flex flex-col gap-3">
-            <li><Link to="/" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">About Us</Link></li>
-            <li><Link to="/" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Team</Link></li>
-            <li><Link to="/" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Careers</Link></li>
+            <li><Link to="/customer-stories" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Customer Stories</Link></li>
+            <li><Link to="/team" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Team</Link></li>
             <li><Link to="/blog" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Blog</Link></li>
-            <li><Link to="/" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Press</Link></li>
+            <li><Link to="/contact" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Contact</Link></li>
           </ul>
         </div>
 

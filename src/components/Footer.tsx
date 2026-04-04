@@ -22,11 +22,11 @@ const Footer = () => (
         <div>
           <div className="text-xs font-semibold uppercase tracking-wider text-hirex-text3 mb-5">Product</div>
           <ul className="flex flex-col gap-3">
-            <li><Link to="/business" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">How It Works</Link></li>
+            <li><Link to="/how-it-works" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">How It Works</Link></li>
             <li><Link to="/pricing" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Pricing</Link></li>
-            <li><Link to="/contact" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Demo</Link></li>
-            <li><Link to="/business" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Process</Link></li>
-            <li><Link to="/business" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Integrations</Link></li>
+            <li><Link to="/demo" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Demo</Link></li>
+            <li><Link to="/process" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Process</Link></li>
+            <li><Link to="/integrations" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Integrations</Link></li>
           </ul>
         </div>
 

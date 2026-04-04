@@ -54,9 +54,12 @@ const Footer = () => (
 
       <div className="flex flex-wrap gap-5 mb-12 pb-8 border-b border-border">
         <span className="text-xs font-semibold uppercase tracking-wider text-hirex-text3 mr-4">Legal</span>
-        <a className="text-sm text-hirex-text2 no-underline hover:text-foreground cursor-pointer transition-colors">Privacy Policy</a>
-        <a className="text-sm text-hirex-text2 no-underline hover:text-foreground cursor-pointer transition-colors">Terms of Service</a>
-        <a className="text-sm text-hirex-text2 no-underline hover:text-foreground cursor-pointer transition-colors">Refund Policy</a>
+        <Link to="/privacy" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Privacy Policy</Link>
+        <Link to="/terms" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Terms of Service</Link>
+        <Link to="/refund" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Refund Policy</Link>
+        <Link to="/security" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Security (SOC2)</Link>
+        <Link to="/cookies" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Cookie Policy</Link>
+        <Link to="/gdpr" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">GDPR</Link>
         <a className="text-sm text-hirex-text2 no-underline hover:text-foreground cursor-pointer transition-colors">Security (SOC2)</a>
         <a className="text-sm text-hirex-text2 no-underline hover:text-foreground cursor-pointer transition-colors">Cookie Policy</a>
       </div>

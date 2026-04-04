@@ -44,6 +44,7 @@ const Layout = () => {
   return (
     <>
       {!isAdmin && !isHome && <GlobalNav />}
+      {!isAdmin && !isHome && <HamburgerDrawer />}
       <Routes>
         <Route path="/" element={<PlatformSwitcher />} />
         <Route path="/business" element={<BusinessPage />} />

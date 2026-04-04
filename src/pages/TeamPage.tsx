@@ -11,7 +11,6 @@ import abinayaImg from "@/assets/team/abinaya.jpg";
 import davidImg from "@/assets/team/david.jpg";
 import rakshithaImg from "@/assets/team/rakshitha.jpg";
 import jamesImg from "@/assets/team/james.jpg";
-import jamesImg from "@/assets/team/james.jpg";
 
 const leadership = [
   { name: "Sailesh Pattnaik", role: "Founder & CEO", img: saileshImg,

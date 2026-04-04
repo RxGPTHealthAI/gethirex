@@ -46,8 +46,8 @@ const Footer = () => (
             <li><a href="mailto:support@gethirex.space" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">📧 support@gethirex.space</a></li>
             <li><a href="tel:+918827647684" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">📞 +91 8827647684</a></li>
             <li><a href="tel:+93225944565" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">🚨 Emergency: +93-225944565</a></li>
-            <li><a className="text-sm text-hirex-text2 cursor-pointer hover:text-foreground transition-colors">HR FAQ (100+ Questions)</a></li>
-            <li><a className="text-sm text-hirex-text2 cursor-pointer hover:text-foreground transition-colors">Candidates FAQ (100+ Q)</a></li>
+            <li><Link to="/hr-faq" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">HR FAQ (100+ Questions)</Link></li>
+            <li><Link to="/candidates-faq" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Candidates FAQ (100+ Q)</Link></li>
           </ul>
         </div>
       </div>

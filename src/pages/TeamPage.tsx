@@ -6,9 +6,11 @@ import jayanthImg from "@/assets/team/jayanth.jpg";
 import tanayImg from "@/assets/team/tanay.jpg";
 import lucasImg from "@/assets/team/lucas.jpg";
 import hrishirajImg from "@/assets/team/hrishiraj.jpg";
+import christinImg from "@/assets/team/christin.jpg";
 import abinayaImg from "@/assets/team/abinaya.jpg";
 import davidImg from "@/assets/team/david.jpg";
 import rakshithaImg from "@/assets/team/rakshitha.jpg";
+import jamesImg from "@/assets/team/james.jpg";
 import jamesImg from "@/assets/team/james.jpg";
 
 const leadership = [

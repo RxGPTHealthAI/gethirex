@@ -26,7 +26,7 @@ const leadership = [
 ];
 
 const techTeam = [
-  { name: "Samarth Manojkumar Naik", role: "Chief Technology Lead", img: samarthImg,
+  { name: "Samarth Manojkumar Naik", role: "Chief Technology Officer", img: samarthImg,
     bio: "Technology enthusiast and architect of HireX's 27-agent orchestration engine. Strong knowledge of backend development and AI-driven systems.",
     education: "B.Tech from VIT Vellore | BS in Data Science from IIT Madras" },
   { name: "Jayanth Sai Srinivas", role: "GCP Lead & Cloud DevOps", img: jayanthImg,

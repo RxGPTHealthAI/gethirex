@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import GlobalNav from "@/components/GlobalNav";
 import Footer from "@/components/Footer";
+import HamburgerDrawer from "@/components/HamburgerDrawer";
 import PlatformSwitcher from "@/pages/PlatformSwitcher";
 import BusinessPage from "@/pages/BusinessPage";
 import CandidatePage from "@/pages/CandidatePage";

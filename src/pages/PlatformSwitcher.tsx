@@ -127,6 +127,22 @@ const PlatformSwitcher = () => {
             </div>
           </Link>
         </div>
+
+        {/* Demo Video */}
+        <div className="w-full max-w-3xl mt-16">
+          <p className="text-center text-xs font-bold tracking-[0.15em] uppercase text-hirex-text3 mb-4">See HireX in Action</p>
+          <div className="rounded-xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(91,110,245,0.15)]">
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/oTvA-86ZiM0"
+                title="HireX Product Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

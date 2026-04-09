@@ -95,6 +95,33 @@ const HomePage = () => (
       </div>
     </section>
 
+    {/* Demo Video */}
+    <section className="py-20 bg-hirex-bg2">
+      <div className="container">
+        <div className="text-center mb-10">
+          <p className="text-xs font-semibold tracking-[0.08em] uppercase text-hirex-text3 mb-4">See HireX in Action</p>
+          <h2 className="font-display text-[clamp(32px,4vw,56px)] font-extrabold">Watch the <em className="font-normal opacity-60">Product Demo.</em></h2>
+          <p className="text-hirex-text2 max-w-[520px] mx-auto mt-4 text-base">See how 27 AI agents transform your entire HR operation in under 5 minutes.</p>
+        </div>
+        <div className="max-w-4xl mx-auto rounded-xl overflow-hidden border border-border shadow-[0_20px_60px_rgba(91,110,245,0.15)]">
+          <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/oTvA-86ZiM0"
+              title="HireX Product Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+        <div className="text-center mt-8">
+          <Link to="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md font-semibold text-[15px] bg-primary text-primary-foreground no-underline hover:bg-primary-light hover:-translate-y-0.5 transition-all hover:shadow-[0_12px_32px_rgba(91,110,245,0.4)]">
+            Book Your Live Demo →
+          </Link>
+        </div>
+      </div>
+    </section>
+
     {/* Marquee */}
     <div className="overflow-hidden py-6 border-y border-border">
       <div className="flex gap-12 animate-marquee w-max hover:[animation-play-state:paused]">

@@ -1,67 +1,94 @@
-import { Routes, Route } from 'react-router-dom';
-import { Toaster } from 'sonner';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import HamburgerDrawer from './components/HamburgerDrawer';
-import DemoOverlay from './components/campaign/DemoOverlay';
-import Index from './pages/Index';
-import BusinessPage from './pages/BusinessPage';
-import CandidatePage from './pages/CandidatePage';
-import HowItWorksPage from './pages/HowItWorksPage';
-import ProcessPage from './pages/ProcessPage';
-import PricingPage from './pages/PricingPage';
-import CustomerStoriesPage from './pages/CustomerStoriesPage';
-import TeamPage from './pages/TeamPage';
-import DemoPage from './pages/DemoPage';
-import ContactPage from './pages/ContactPage';
-import BlogPage from './pages/BlogPage';
-import HrFaqPage from './pages/HrFaqPage';
-import CandidatesFaqPage from './pages/CandidatesFaqPage';
-import FaqPage from './pages/FaqPage';
-import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
-import TermsOfServicePage from './pages/TermsOfServicePage';
-import RefundPolicyPage from './pages/RefundPolicyPage';
-import SecurityPage from './pages/SecurityPage';
-import GdprPage from './pages/GdprPage';
-import CookiePolicyPage from './pages/CookiePolicyPage';
-import NotFound from './pages/NotFound';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import GlobalNav from "@/components/GlobalNav";
+import Footer from "@/components/Footer";
+import HamburgerDrawer from "@/components/HamburgerDrawer";
+import PlatformSwitcher from "@/pages/PlatformSwitcher";
+import BusinessPage from "@/pages/BusinessPage";
+import CandidatePage from "@/pages/CandidatePage";
+import BusinessPricingPage from "@/pages/BusinessPricingPage";
+import CandidatePricingPage from "@/pages/CandidatePricingPage";
+import AgentsPage from "@/pages/AgentsPage";
+import ContactPage from "@/pages/ContactPage";
+import BlogPage from "@/pages/BlogPage";
+import BlogPostPage from "@/pages/BlogPostPage";
+import AdminLoginPage from "@/pages/AdminLoginPage";
+import AdminDashboardPage from "@/pages/AdminDashboardPage";
+import AdminPostEditorPage from "@/pages/AdminPostEditorPage";
+import NotFound from "@/pages/NotFound";
+import HowItWorksPage from "@/pages/HowItWorksPage";
+import ProcessPage from "@/pages/ProcessPage";
+import CustomerStoriesPage from "@/pages/CustomerStoriesPage";
+import TeamPage from "@/pages/TeamPage";
+import DemoPage from "@/pages/DemoPage";
+import UnifiedPricingPage from "@/pages/UnifiedPricingPage";
+import IntegrationsPage from "@/pages/IntegrationsPage";
+import HRFAQPage from "@/pages/HRFAQPage";
+import CandidatesFAQPage from "@/pages/CandidatesFAQPage";
+import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage";
+import RefundPolicyPage from "@/pages/RefundPolicyPage";
+import TermsPage from "@/pages/TermsPage";
+import SecurityPage from "@/pages/SecurityPage";
+import GDPRPage from "@/pages/GDPRPage";
+import CookiePolicyPage from "@/pages/CookiePolicyPage";
 
-function App() {
+const queryClient = new QueryClient();
+
+const Layout = () => {
+  const location = useLocation();
+  const isAdmin = location.pathname.startsWith("/admin");
+  const isHome = location.pathname === "/";
+
   return (
-    <div className="min-h-screen bg-navy-dark text-white">
-      <Navbar />
-      <HamburgerDrawer />
-      <DemoOverlay />
-      <Toaster position="top-right" />
+    <>
+      {!isAdmin && !isHome && <GlobalNav />}
+      {!isAdmin && !isHome && <HamburgerDrawer />}
       <Routes>
-        <Route path="/" element={<Index />} />
+        <Route path="/" element={<PlatformSwitcher />} />
         <Route path="/business" element={<BusinessPage />} />
-        <Route path="/employers" element={<BusinessPage />} />
+        <Route path="/business/pricing" element={<BusinessPricingPage />} />
         <Route path="/candidate" element={<CandidatePage />} />
-        <Route path="/candidates" element={<CandidatePage />} />
-        <Route path="/career-pilot" element={<CandidatePage />} />
+        <Route path="/candidate/pricing" element={<CandidatePricingPage />} />
+        <Route path="/agents" element={<AgentsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogPostPage />} />
         <Route path="/how-it-works" element={<HowItWorksPage />} />
         <Route path="/process" element={<ProcessPage />} />
-        <Route path="/pricing" element={<PricingPage />} />
         <Route path="/customer-stories" element={<CustomerStoriesPage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/demo" element={<DemoPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/hr-faq" element={<HrFaqPage />} />
-        <Route path="/candidates-faq" element={<CandidatesFaqPage />} />
-        <Route path="/faq" element={<FaqPage />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-        <Route path="/terms-of-service" element={<TermsOfServicePage />} />
-        <Route path="/refund-policy" element={<RefundPolicyPage />} />
+        <Route path="/pricing" element={<UnifiedPricingPage />} />
+        <Route path="/integrations" element={<IntegrationsPage />} />
+        <Route path="/hr-faq" element={<HRFAQPage />} />
+        <Route path="/candidates-faq" element={<CandidatesFAQPage />} />
+        <Route path="/privacy" element={<PrivacyPolicyPage />} />
+        <Route path="/refund" element={<RefundPolicyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
         <Route path="/security" element={<SecurityPage />} />
-        <Route path="/gdpr" element={<GdprPage />} />
-        <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+        <Route path="/gdpr" element={<GDPRPage />} />
+        <Route path="/cookies" element={<CookiePolicyPage />} />
+        <Route path="/admin/login" element={<AdminLoginPage />} />
+        <Route path="/admin" element={<AdminDashboardPage />} />
+        <Route path="/admin/posts/:id" element={<AdminPostEditorPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
-    </div>
+      {!isAdmin && !isHome && <Footer />}
+    </>
   );
-}
+};
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Sonner />
+      <BrowserRouter>
+        <Layout />
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
 
 export default App;

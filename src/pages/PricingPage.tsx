@@ -610,6 +610,133 @@ const PricingPage = () => {
         </div>
       </section>
 
+      {/* HIREX VS ALTERNATIVES — competitor switching table */}
+      <section className="py-[72px] max-md:py-[56px]">
+        <div className="container max-w-[1180px]">
+          <div className="text-center max-w-[720px] mx-auto mb-10">
+            <div className="text-xs font-mono tracking-[0.15em] uppercase text-hirex-primary-light mb-3">
+              09 — HireX vs the alternatives
+            </div>
+            <h2 className="font-display text-[clamp(26px,4vw,40px)] font-extrabold leading-[1.1] tracking-tight mb-3">
+              The same hire. <span className="grad-text-cyan italic">One-fifth the spend.</span>
+            </h2>
+            <p className="text-hirex-text2 text-base leading-relaxed">
+              We pulled the public pricing of the tools recruiters tell us they're paying for today. Here's what you actually get for what you actually pay.
+            </p>
+          </div>
+
+          <div className="bg-hirex-surface border border-border rounded-2xl overflow-hidden overflow-x-auto">
+            <table className="w-full text-sm min-w-[820px]">
+              <thead>
+                <tr className="bg-hirex-bg2 border-b border-border text-xs font-mono uppercase tracking-wider text-hirex-text3">
+                  <th className="text-left px-4 py-3 font-semibold">Platform</th>
+                  <th className="text-left px-4 py-3 font-semibold">Monthly cost</th>
+                  <th className="text-left px-4 py-3 font-semibold">What's included</th>
+                  <th className="text-center px-3 py-3 font-semibold">AI agents</th>
+                  <th className="text-center px-3 py-3 font-semibold">Pay-per-use</th>
+                  <th className="text-center px-3 py-3 font-semibold">All-in-one</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { name: "HireX", tag: "★ Recommended", cost: "₹1,874/mo · Pro annual", desc: "27 AI agents · sourcing, screening, interviews, offers, onboarding, L&D, compliance, payroll — in one platform.", a: "✓", b: "✓", c: "✓", featured: true },
+                  { name: "LinkedIn Recruiter", tag: "Microsoft", cost: "₹9,999/seat · annual only", desc: "InMail credits + search filters. Sourcing only. No screening, scheduling, interview, or onboarding.", a: "✗", b: "✗", c: "✗" },
+                  { name: "Indeed Sponsored", tag: "CPC auction", cost: "₹18,000+/mo · typical CPC spend", desc: "Pay per click on listings. No screening, scheduling, or pipeline tools. Quality varies by auction price.", a: "✗", b: "~", c: "✗" },
+                  { name: "HireVue", tag: "US enterprise", cost: "$35,000+/yr · ~₹2.4L/mo", desc: "Async video interviews + AI scoring. No sourcing, payroll, or L&D. Annual contract, custom-quote.", a: "~", b: "✗", c: "✗" },
+                  { name: "Eightfold AI", tag: "Talent intel", cost: "$60,000+/yr · ~₹4.1L/mo", desc: "Talent-graph search + matching. Strong for sourcing, weak on hands-on hiring workflow. Sales-led only.", a: "~", b: "✗", c: "✗" },
+                  { name: "SeekOut", tag: "US enterprise", cost: "$8,000+/yr · ~₹55K/mo", desc: "Boolean sourcing + diversity insights. No interview, screening, or onboarding modules.", a: "~", b: "✗", c: "✗" },
+                  { name: "Beamery", tag: "Talent CRM", cost: "$50,000+/yr · ~₹3.4L/mo", desc: "Sourcing + nurture campaigns. Bring-your-own ATS. Long onboarding, enterprise sales cycle.", a: "✗", b: "✗", c: "✗" },
+                  { name: "Cutshort", tag: "India SaaS", cost: "₹12,500/mo · Premium", desc: "Curated tech sourcing + chat. Limited automation. No interviews, payroll, or L&D modules.", a: "✗", b: "✗", c: "✗" },
+                  { name: "Zoho Recruit", tag: "ATS", cost: "₹2,800/user/mo · Enterprise", desc: "Per-user ATS workflow. Add-ons cost extra. No native AI screening or interview module.", a: "✗", b: "✗", c: "~" },
+                  { name: "Greenhouse", tag: "US enterprise", cost: "$6,500+/yr · ~₹45K/mo", desc: "Full-featured ATS. Sourcing, AI screening, payroll require integrations + extra spend.", a: "✗", b: "✗", c: "~" },
+                  { name: 'Recruiter "stack"', tag: "DIY 5-tool combo", cost: "₹45,000+/mo · typical SMB stack", desc: "LinkedIn + ATS + screener + scheduler + payroll bolted together. 5 logins, 5 invoices, 5 silos.", a: "✗", b: "✗", c: "✗" },
+                ].map((row) => (
+                  <tr
+                    key={row.name}
+                    className={`border-b border-border last:border-0 ${row.featured ? "bg-hirex-cyan/[0.06]" : ""}`}
+                  >
+                    <td className="px-4 py-4 align-top">
+                      <div className={`font-display font-bold ${row.featured ? "text-hirex-primary-light" : ""}`}>{row.name}</div>
+                      <div className="text-[10px] font-mono uppercase tracking-wider text-hirex-text3 mt-0.5">{row.tag}</div>
+                    </td>
+                    <td className="px-4 py-4 align-top text-hirex-text2 whitespace-nowrap">{row.cost}</td>
+                    <td className="px-4 py-4 align-top text-hirex-text2 leading-relaxed max-w-[420px]">{row.desc}</td>
+                    {[row.a, row.b, row.c].map((v, i) => (
+                      <td
+                        key={i}
+                        className={`px-3 py-4 text-center font-bold ${
+                          v === "✓" ? "text-hirex-success" : v === "~" ? "text-accent" : "text-hirex-text3"
+                        }`}
+                      >
+                        {v}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-8 bg-gradient-to-br from-accent/10 via-hirex-surface to-hirex-surface border border-accent/30 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-5">
+            <div className="text-4xl">⚡</div>
+            <div className="flex-1 text-center md:text-left">
+              <div className="font-display text-lg md:text-xl font-bold mb-1">
+                Cancel 4 tools. Keep one. <span className="grad-text-cyan italic">Save ₹42K/month on average.</span>
+              </div>
+              <p className="text-sm text-hirex-text2 leading-relaxed">
+                Customers who switched to HireX cut their hiring tool spend by an average of <span className="text-foreground font-semibold">68% in the first 90 days</span> — while making <span className="text-foreground font-semibold">3.4× more interviews</span>. Free migration from any of the platforms above.
+              </p>
+            </div>
+            <button
+              onClick={openCalendly}
+              data-cta="talk-to-sales"
+              className="shrink-0 bg-foreground text-hirex-bg2 font-bold text-sm px-6 py-3 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
+            >
+              Talk to Sales →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* SECURE PAYMENTS + COMPLIANCE STRIP */}
+      <section className="py-[56px] bg-hirex-bg3 border-y border-border">
+        <div className="container max-w-[1080px]">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-hirex-surface border border-border rounded-2xl p-6 md:p-7">
+              <div className="text-xs font-mono tracking-[0.15em] uppercase text-hirex-primary-light mb-3">
+                Secure payments
+              </div>
+              <div className="flex flex-wrap items-center gap-3 mb-4">
+                <span className="px-3 py-1.5 rounded-full bg-hirex-bg2 border border-border text-sm font-display font-bold">
+                  Razorpay
+                </span>
+                <span className="px-3 py-1.5 rounded-full bg-hirex-bg2 border border-border text-sm font-display font-bold">
+                  Stripe
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-2 text-xs text-hirex-text2">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-hirex-bg2 border border-border">💳 Visa</span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-hirex-bg2 border border-border">💳 Mastercard</span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-hirex-bg2 border border-border">💳 Amex</span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-hirex-bg2 border border-border">📱 UPI</span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-hirex-bg2 border border-border">🏦 NetBanking</span>
+              </div>
+            </div>
+            <div className="bg-hirex-surface border border-border rounded-2xl p-6 md:p-7">
+              <div className="text-xs font-mono tracking-[0.15em] uppercase text-hirex-primary-light mb-3">
+                Compliance · Privacy
+              </div>
+              <div className="flex flex-wrap gap-2 text-xs text-hirex-text2">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-hirex-bg2 border border-border">🔒 DPDP Act 2023</span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-hirex-bg2 border border-border">🛡️ SOC2 Type II</span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-hirex-bg2 border border-border">🌐 GDPR</span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-hirex-bg2 border border-border">🔐 256-bit SSL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* COLLAPSED CREDITS EXPLAINER */}
       <section className="py-[72px] max-md:py-[56px]">
         <div className="container max-w-[1080px]">

@@ -44,7 +44,7 @@ const RefundPolicyPage = () => (
 
       <div className="glass-card rounded-2xl p-8">
         <h2 className="text-xl font-bold mb-4">How to Request a Refund</h2>
-        <p className="text-sm text-muted-foreground mb-4">Email support@gethirex.space with:</p>
+        <p className="text-sm text-muted-foreground mb-4">Email care@gethirex.space with:</p>
         <ol className="list-decimal list-inside space-y-2 text-sm text-muted-foreground">
           <li>Account email address</li>
           <li>Reason for refund (optional but appreciated)</li>
@@ -52,7 +52,7 @@ const RefundPolicyPage = () => (
         </ol>
         <p className="text-sm text-muted-foreground mt-4">Refunds processed within 5–7 business days to original payment method.</p>
         <div className="mt-4 flex items-center gap-2 text-sm text-primary">
-          <Mail className="w-4 h-4" /> support@gethirex.space — Response within 24 hours
+          <Mail className="w-4 h-4" /> care@gethirex.space — Response within 24 hours
         </div>
       </div>
     </section>

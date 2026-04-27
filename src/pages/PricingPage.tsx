@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Check, Lock, X, ChevronDown, Zap, Shield, Sparkles } from "lucide-react";
 import CTAStrip from "@/components/CTAStrip";
 import { initiateRazorpayPayment, startRazorpayCheckout } from "@/lib/razorpay";
+import razorpayUpiQr from "@/assets/razorpay-upi-qr.jpeg";
 
 // ---------- Pricing data ----------
 type Billing = "monthly" | "annual";
@@ -683,6 +684,45 @@ const PricingPage = () => {
                 </button>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PAY VIA UPI QR */}
+      <section id="upi-pay" className="py-[100px] max-md:py-[72px]">
+        <div className="container max-w-[1280px]">
+          <div className="grid lg:grid-cols-2 gap-12 items-center bg-hirex-surface border border-border rounded-3xl p-10 max-md:p-7">
+            <div>
+              <div className="text-xs font-mono tracking-[0.15em] uppercase text-hirex-primary-light mb-4">
+                Prefer UPI? · Powered by Razorpay
+              </div>
+              <h2 className="font-display text-[clamp(28px,4.4vw,44px)] font-extrabold leading-[1.1] tracking-tight mb-5">
+                Scan & pay with any <span className="grad-text-cyan italic">UPI app.</span>
+              </h2>
+              <p className="text-hirex-text2 leading-relaxed mb-6">
+                Pay your subscription or refuel pack instantly using GPay, PhonePe, Paytm, BHIM, or any UPI-enabled bank app. After payment, email your transaction ID to{" "}
+                <a href="mailto:customersupport@gethirex.space" className="text-accent underline underline-offset-4">customersupport@gethirex.space</a>{" "}
+                and we'll activate your plan within minutes.
+              </p>
+              <ul className="space-y-3 text-sm text-hirex-text2">
+                <li className="flex items-start gap-3"><Check className="w-4 h-4 text-accent mt-0.5 shrink-0" /> Instant, no card required</li>
+                <li className="flex items-start gap-3"><Check className="w-4 h-4 text-accent mt-0.5 shrink-0" /> Secure 256-bit encrypted via Razorpay</li>
+                <li className="flex items-start gap-3"><Check className="w-4 h-4 text-accent mt-0.5 shrink-0" /> Works with every Indian UPI app</li>
+              </ul>
+              <div className="text-[11px] font-mono uppercase tracking-[0.15em] text-hirex-text3 mt-7">
+                Merchant · Infinitum-Core-AI Private Limited
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <div className="bg-white rounded-2xl p-2 shadow-2xl max-w-[340px] w-full">
+                <img
+                  src={razorpayUpiQr}
+                  alt="Razorpay UPI QR code to pay HireX subscription via GPay, PhonePe, Paytm or BHIM"
+                  className="w-full h-auto rounded-xl"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

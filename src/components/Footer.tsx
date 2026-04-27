@@ -45,7 +45,6 @@ const Footer = () => (
           <ul className="flex flex-col gap-3">
             <li><a href="mailto:care@gethirex.space" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">📧 care@gethirex.space</a></li>
             <li><a href="tel:+917735405034" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">📞 +91 7735405034</a></li>
-            <li><a href="tel:+917735405034" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">🚨 Emergency: +91 7735405034</a></li>
             <li><Link to="/hr-faq" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">HR FAQ (100+ Questions)</Link></li>
             <li><Link to="/candidates-faq" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Candidates FAQ (100+ Q)</Link></li>
           </ul>
@@ -91,8 +90,6 @@ const Footer = () => (
 
       <div className="flex flex-wrap items-center gap-4 text-[13px] text-hirex-text2 mb-8 pb-6 border-b border-border">
         <a href="tel:+917735405034" className="no-underline text-hirex-text2 hover:text-foreground transition-colors">📞 +91 7735405034</a>
-        <span className="text-border">|</span>
-        <a href="tel:+917735405034" className="no-underline text-hirex-text2 hover:text-foreground transition-colors">🚨 +91 7735405034</a>
         <span className="text-border">|</span>
         <a href="mailto:care@gethirex.space" className="no-underline text-hirex-text2 hover:text-foreground transition-colors">✉️ care@gethirex.space</a>
       </div>

@@ -607,6 +607,17 @@ const PricingPage = () => {
             <h2 className="font-display text-[clamp(32px,5vw,52px)] font-extrabold leading-[1.1] tracking-tight mb-5">
               The <span className="grad-text-cyan italic">Career Pilot Squad.</span> Six agents. One mission.
             </h2>
+            <p className="text-hirex-text2 max-w-[620px] mx-auto text-[17px] leading-relaxed mb-8">
+              Save 25% with annual billing. Subscribe monthly or annually. Top up with refuel packs anytime.
+              Cancel anytime · No annual lock-in · Refuel credits never expire while your subscription is active.
+            </p>
+            <div className="inline-flex items-center gap-4 bg-hirex-surface border border-hirex-border2 rounded-full p-1.5">
+              <button onClick={() => setBilling("monthly")} className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${billing === "monthly" ? "bg-foreground text-hirex-bg2" : "text-hirex-text2 hover:text-foreground"}`}>Monthly</button>
+              <button onClick={() => setBilling("annual")} className={`px-5 py-2 rounded-full text-sm font-semibold transition-all flex items-center gap-2 ${billing === "annual" ? "bg-foreground text-hirex-bg2" : "text-hirex-text2 hover:text-foreground"}`}>
+                Annual
+                <span className="bg-accent text-accent-foreground text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full">Save 25%</span>
+              </button>
+            </div>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch max-lg:max-w-[480px] max-lg:mx-auto">
             {TIERS.map((tier) => {

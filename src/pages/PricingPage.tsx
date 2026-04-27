@@ -304,7 +304,7 @@ const ActivityTicker = () => {
 };
 
 // ---------- Sticky Checkout Bar ----------
-const StickyCheckoutBar = ({ price, planLabel }: { price: number; planLabel: string }) => {
+const StickyCheckoutBar = ({ price, planLabel, billing }: { price: number; planLabel: string; billing: "monthly" | "annual" }) => {
   const [show, setShow] = useState(false);
   useEffect(() => {
     const onScroll = () => setShow(window.scrollY > 600);
@@ -322,13 +322,14 @@ const StickyCheckoutBar = ({ price, planLabel }: { price: number; planLabel: str
               Start your 7-day trial · <span className="grad-text-cyan">{planLabel}</span>
             </p>
             <p className="text-xs text-hirex-text2 hidden sm:block">
-              ₹{price.toLocaleString("en-IN")}/mo · No card required · Cancel anytime
+              ₹{price.toLocaleString("en-IN")}/{billing === "annual" ? "mo (billed yearly)" : "mo"} · No card required · Cancel anytime
             </p>
           </div>
           <button
             data-plan={planLabel.toLowerCase()}
             data-price={price}
-            onClick={() => initiateRazorpayPayment(planLabel.toLowerCase())}
+            data-billing={billing}
+            onClick={() => startRazorpayCheckout({ planId: planLabel.toLowerCase(), billing })}
             className="shrink-0 bg-gradient-to-r from-hirex-cyan to-hirex-primary-light text-primary-foreground font-bold text-sm md:text-base px-5 md:px-7 py-3 rounded-full hover:scale-[1.03] transition-transform shadow-[0_8px_24px_hsla(202,72%,59%,0.35)]"
           >
             Start 7-Day Trial →
@@ -636,7 +637,7 @@ const PricingPage = () => {
                     data-plan={tier.id}
                     data-price={price}
                     data-billing={billing}
-                    onClick={() => initiateRazorpayPayment(tier.id)}
+                    onClick={() => startRazorpayCheckout({ planId: tier.id, billing })}
                     className={`w-full text-center py-3.5 rounded-full font-bold text-sm transition-all hover:scale-[1.02] ${tier.featured ? "bg-gradient-to-r from-hirex-cyan to-hirex-primary-light text-primary-foreground shadow-[0_8px_24px_hsla(202,72%,59%,0.35)]" : "bg-foreground text-hirex-bg2 hover:bg-hirex-cyan hover:text-primary-foreground"}`}
                   >
                     Start 7-Day Trial →
@@ -775,7 +776,7 @@ const PricingPage = () => {
                     </li>
                   ))}
                 </ul>
-                <button onClick={() => initiateRazorpayPayment(`employer-${t.name.toLowerCase()}`)} className={`w-full py-3.5 rounded-full font-bold text-sm transition-all hover:scale-[1.02] ${t.featured ? "bg-gradient-to-r from-accent to-hirex-primary-light text-accent-foreground" : "bg-foreground text-hirex-bg2"}`}>
+                <button onClick={() => startRazorpayCheckout({ planId: `employer-${t.name.toLowerCase()}`, billing })} className={`w-full py-3.5 rounded-full font-bold text-sm transition-all hover:scale-[1.02] ${t.featured ? "bg-gradient-to-r from-accent to-hirex-primary-light text-accent-foreground" : "bg-foreground text-hirex-bg2"}`}>
                   {t.cta} →
                 </button>
               </div>

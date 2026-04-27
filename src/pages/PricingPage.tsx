@@ -614,9 +614,6 @@ const PricingPage = () => {
       <section className="py-[72px] max-md:py-[56px]">
         <div className="container max-w-[1180px]">
           <div className="text-center max-w-[720px] mx-auto mb-10">
-            <div className="text-xs font-mono tracking-[0.15em] uppercase text-hirex-primary-light mb-3">
-              09 — HireX vs the alternatives
-            </div>
             <h2 className="font-display text-[clamp(26px,4vw,40px)] font-extrabold leading-[1.1] tracking-tight mb-3">
               The same hire. <span className="grad-text-cyan italic">One-fifth the spend.</span>
             </h2>

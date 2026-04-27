@@ -1029,7 +1029,7 @@ const PricingPage = () => {
 
       <CTAStrip />
 
-      <StickyCheckoutBar price={stickyPrice} planLabel={featuredTier.name} />
+      <StickyCheckoutBar price={stickyPrice} planLabel={featuredTier.name} billing={billing} />
       <ActivityTicker />
     </div>
   );

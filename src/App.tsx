@@ -23,7 +23,7 @@ import ProcessPage from "@/pages/ProcessPage";
 import CustomerStoriesPage from "@/pages/CustomerStoriesPage";
 import TeamPage from "@/pages/TeamPage";
 import DemoPage from "@/pages/DemoPage";
-import UnifiedPricingPage from "@/pages/UnifiedPricingPage";
+import PricingPage from "@/pages/PricingPage";
 import IntegrationsPage from "@/pages/IntegrationsPage";
 import HRFAQPage from "@/pages/HRFAQPage";
 import CandidatesFAQPage from "@/pages/CandidatesFAQPage";
@@ -60,7 +60,7 @@ const Layout = () => {
         <Route path="/customer-stories" element={<CustomerStoriesPage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/demo" element={<DemoPage />} />
-        <Route path="/pricing" element={<UnifiedPricingPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
         <Route path="/integrations" element={<IntegrationsPage />} />
         <Route path="/hr-faq" element={<HRFAQPage />} />
         <Route path="/candidates-faq" element={<CandidatesFAQPage />} />

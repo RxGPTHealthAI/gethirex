@@ -4,7 +4,7 @@ const corsHeaders = {
 }
 import { z } from 'https://esm.sh/zod@3.23.8'
 
-const CONTACT_TO = Deno.env.get('CONTACT_EMAIL') || 'customersupport@gethirex.space'
+const CONTACT_TO = Deno.env.get('CONTACT_EMAIL') || 'care@gethirex.space'
 
 const BodySchema = z.object({
   name: z.string().min(1).max(255),

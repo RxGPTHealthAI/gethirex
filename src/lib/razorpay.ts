@@ -136,7 +136,7 @@ export async function startRazorpayCheckout(opts: CheckoutOptions): Promise<void
         console.error("verify failed", verifyErr, verifyData);
         toast({
           title: "Payment verification failed",
-          description: "If money was debited, contact support@gethirex.space.",
+          description: "If money was debited, contact care@gethirex.space.",
           variant: "destructive",
         });
         return;

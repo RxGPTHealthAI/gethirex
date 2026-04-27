@@ -39,7 +39,7 @@ const ContactPage = () => {
       toast.success("Message sent! We'll get back to you within one business day.");
       setFormData({ name: "", email: "", company: "", type: "", message: "" });
     } catch {
-      toast.error("Could not send message. Please email us at customersupport@gethirex.space");
+      toast.error("Could not send message. Please email us at care@gethirex.space");
     } finally {
       setLoading(false);
     }
@@ -74,7 +74,7 @@ const ContactPage = () => {
               </p>
               <div className="flex flex-col gap-5 mb-9">
                 {[
-                  { icon: "✉", title: "Email Us", desc: <a href="mailto:customersupport@gethirex.space" className="text-primary-light text-sm no-underline">customersupport@gethirex.space</a> },
+                  { icon: "✉", title: "Email Us", desc: <a href="mailto:care@gethirex.space" className="text-primary-light text-sm no-underline">care@gethirex.space</a> },
                   { icon: "🚀", title: "Start a Free Trial", desc: <span className="text-hirex-text2 text-sm">14 days, no credit card required</span> },
                   { icon: "🏢", title: "Enterprise & MNC Demo", desc: <span className="text-hirex-text2 text-sm">Dedicated 45-min walkthrough with our team</span> },
                 ].map((item) => (

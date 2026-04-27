@@ -701,7 +701,7 @@ const PricingPage = () => {
               </h2>
               <p className="text-hirex-text2 leading-relaxed mb-6">
                 Pay your subscription or refuel pack instantly using GPay, PhonePe, Paytm, BHIM, or any UPI-enabled bank app. After payment, email your transaction ID to{" "}
-                <a href="mailto:customersupport@gethirex.space" className="text-accent underline underline-offset-4">customersupport@gethirex.space</a>{" "}
+                <a href="mailto:care@gethirex.space" className="text-accent underline underline-offset-4">care@gethirex.space</a>{" "}
                 and we'll activate your plan within minutes.
               </p>
               <ul className="space-y-3 text-sm text-hirex-text2">
@@ -959,7 +959,7 @@ const PricingPage = () => {
                 Answers to the questions most people ask before signing up.
               </p>
               <p className="text-sm text-hirex-text3">
-                Still have questions? Email <strong className="text-foreground">customersupport@gethirex.space</strong> or book a 15-min call. We respond within 4 hours during business days.
+                Still have questions? Email <strong className="text-foreground">care@gethirex.space</strong> or book a 15-min call. We respond within 4 hours during business days.
               </p>
             </div>
             <div>

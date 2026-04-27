@@ -43,9 +43,9 @@ const Footer = () => (
         <div>
           <div className="text-xs font-semibold uppercase tracking-wider text-hirex-text3 mb-5">Support</div>
           <ul className="flex flex-col gap-3">
-            <li><a href="mailto:support@gethirex.space" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">📧 support@gethirex.space</a></li>
-            <li><a href="tel:+918827647684" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">📞 +91 8827647684</a></li>
-            <li><a href="tel:+93225944565" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">🚨 Emergency: +93-225944565</a></li>
+            <li><a href="mailto:care@gethirex.space" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">📧 care@gethirex.space</a></li>
+            <li><a href="tel:+917735405034" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">📞 +91 7735405034</a></li>
+            <li><a href="tel:+917735405034" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">🚨 Emergency: +91 7735405034</a></li>
             <li><Link to="/hr-faq" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">HR FAQ (100+ Questions)</Link></li>
             <li><Link to="/candidates-faq" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Candidates FAQ (100+ Q)</Link></li>
           </ul>
@@ -90,11 +90,11 @@ const Footer = () => (
       </div>
 
       <div className="flex flex-wrap items-center gap-4 text-[13px] text-hirex-text2 mb-8 pb-6 border-b border-border">
-        <a href="tel:+918827647684" className="no-underline text-hirex-text2 hover:text-foreground transition-colors">📞 +91 8827647684</a>
+        <a href="tel:+917735405034" className="no-underline text-hirex-text2 hover:text-foreground transition-colors">📞 +91 7735405034</a>
         <span className="text-border">|</span>
-        <a href="tel:+93225944565" className="no-underline text-hirex-text2 hover:text-foreground transition-colors">🚨 +93-225944565</a>
+        <a href="tel:+917735405034" className="no-underline text-hirex-text2 hover:text-foreground transition-colors">🚨 +91 7735405034</a>
         <span className="text-border">|</span>
-        <a href="mailto:support@gethirex.space" className="no-underline text-hirex-text2 hover:text-foreground transition-colors">✉️ support@gethirex.space</a>
+        <a href="mailto:care@gethirex.space" className="no-underline text-hirex-text2 hover:text-foreground transition-colors">✉️ care@gethirex.space</a>
       </div>
 
       <div className="flex flex-wrap justify-between items-center text-[12px] text-hirex-text3 gap-4">
@@ -109,7 +109,7 @@ const Footer = () => (
         <div className="flex gap-3">
           <a href="https://www.linkedin.com/showcase/hirexbygethiredglobal/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-[10px] bg-hirex-surface border border-border flex items-center justify-center text-sm hover:bg-primary hover:border-primary transition-all no-underline text-foreground">in</a>
           <a href="https://youtu.be/oTvA-86ZiM0" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-[10px] bg-hirex-surface border border-border flex items-center justify-center text-sm hover:bg-primary hover:border-primary transition-all no-underline text-foreground">▶</a>
-          <a href="mailto:support@gethirex.space" className="w-9 h-9 rounded-[10px] bg-hirex-surface border border-border flex items-center justify-center text-sm hover:bg-primary hover:border-primary transition-all no-underline text-foreground">✉</a>
+          <a href="mailto:care@gethirex.space" className="w-9 h-9 rounded-[10px] bg-hirex-surface border border-border flex items-center justify-center text-sm hover:bg-primary hover:border-primary transition-all no-underline text-foreground">✉</a>
         </div>
       </div>
     </div>

@@ -1,22 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Check, Lock, X, ChevronDown, Zap, Shield, Sparkles } from "lucide-react";
 import CTAStrip from "@/components/CTAStrip";
-
-// ---------- Razorpay placeholder ----------
-declare global {
-  interface Window {
-    initiateRazorpayPayment?: (planId: string) => void;
-  }
-}
-
-function initiateRazorpayPayment(planId: string) {
-  console.log("[Razorpay] initiate payment for plan:", planId);
-  alert(`Starting 7-day trial for ${planId}. Razorpay checkout will be wired here.`);
-}
-
-if (typeof window !== "undefined") {
-  window.initiateRazorpayPayment = initiateRazorpayPayment;
-}
+import { initiateRazorpayPayment, startRazorpayCheckout } from "@/lib/razorpay";
 
 // ---------- Pricing data ----------
 type Billing = "monthly" | "annual";

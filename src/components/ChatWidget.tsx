@@ -170,7 +170,7 @@ export default function ChatWidget() {
         className={cn(
           "fixed z-[60] bottom-5 right-5 md:bottom-6 md:right-6 group",
           "w-16 h-16 rounded-full flex items-center justify-center",
-          "bg-gradient-to-br from-primary via-primary to-hirex-violet",
+          "bg-gradient-to-br from-primary via-primary to-hirex-cyan",
           "shadow-[0_12px_32px_rgba(91,110,245,0.55)]",
           "hover:scale-110 active:scale-95 transition-transform duration-300",
         )}
@@ -207,7 +207,7 @@ export default function ChatWidget() {
         aria-label="Chat with Rex"
       >
         {/* Header — live Rex */}
-        <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-gradient-to-r from-primary/20 via-hirex-violet/15 to-hirex-cyan/10 relative overflow-hidden">
+        <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-gradient-to-r from-primary/20 via-hirex-cyan/15 to-hirex-cyan/10 relative overflow-hidden">
           <div className="shrink-0 relative">
             <RexAvatar size={48} mood={headerMood} />
           </div>

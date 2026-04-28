@@ -13,7 +13,7 @@ const GlobalNav = () => {
   const businessLinks = [
     { label: "Overview", to: "/business" },
     { label: "Super-Agents", to: "/agents" },
-    { label: "Pricing", to: "/business/pricing" },
+    { label: "Pricing", to: "/pricing" },
     { label: "Blog", to: "/blog" },
     { label: "Contact", to: "/contact" },
   ];
@@ -21,7 +21,7 @@ const GlobalNav = () => {
   const candidateLinks = [
     { label: "Overview", to: "/candidate" },
     { label: "AI Squad", to: "/candidate#squad" },
-    { label: "Pricing", to: "/candidate/pricing" },
+    { label: "Pricing", to: "/pricing" },
     { label: "Blog", to: "/blog" },
     { label: "Contact", to: "/contact" },
   ];

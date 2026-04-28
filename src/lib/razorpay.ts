@@ -90,8 +90,15 @@ export async function startRazorpayCheckout(opts: CheckoutOptions): Promise<void
     return;
   }
 
+  // For annual billing on subscription plans, charge the full year upfront (12x the displayed monthly price).
+  // Refuel packs are one-time purchases, so never multiply.
+  const isRefuel = opts.planId.startsWith("refuel-");
+  const chargeRupees = billing === "annual" && !isRefuel
+    ? resolved.amountRupees * 12
+    : resolved.amountRupees;
+
   // 1) Create order on backend
-  const amountPaise = Math.round(resolved.amountRupees * 100);
+  const amountPaise = Math.round(chargeRupees * 100);
   const { data: orderData, error: orderErr } = await supabase.functions.invoke("razorpay-create-order", {
     body: {
       amount: amountPaise,

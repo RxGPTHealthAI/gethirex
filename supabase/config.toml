@@ -1,1 +1,4 @@
 project_id = "onslavmuwjwbqnxdjlro"
+
+[functions.hirex-chat]
+verify_jwt = false

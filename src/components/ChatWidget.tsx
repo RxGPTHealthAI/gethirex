@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { MessageCircle, X, Send, Loader2 } from "lucide-react";
+import { X, Send, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+import RexAvatar from "./RexAvatar";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -11,14 +12,14 @@ const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/hirex-chat`;
 const WELCOME: Msg = {
   role: "assistant",
   content:
-    "👋 Hi, I'm **HireX Care** — your AI assistant for everything HireX.\n\nI can help with:\n- Product features & how our AI agents work\n- Onboarding & setup\n- Pricing & plans\n- Connecting you with our support team\n\nWhat can I help you with today?",
+    "👋 Hey, I'm **Rex** — your HireX hiring sidekick.\n\nThink of me as the colleague who never sleeps and actually *enjoys* recruiting paperwork. I can help you:\n\n- 🎯 Understand how our AI agents screen, schedule & engage candidates\n- ⚡ Get set up in minutes\n- 💸 Pick the right plan\n- 📅 Loop in our human team when you need them\n\nSo — what are we hiring for today?",
 };
 
 const SUGGESTIONS = [
-  "How does HireX screen candidates?",
-  "How do I get started?",
-  "What are your pricing plans?",
-  "I need help with billing",
+  "How do you screen candidates?",
+  "Get me started 🚀",
+  "Show me pricing",
+  "I need a human",
 ];
 
 export default function ChatWidget() {
@@ -151,25 +152,44 @@ export default function ChatWidget() {
     }
   };
 
+  const lastMsg = messages[messages.length - 1];
+  const headerMood: "talking" | "thinking" | "wave" | "idle" = loading
+    ? lastMsg?.role === "user"
+      ? "thinking"
+      : "talking"
+    : messages.length <= 1
+      ? "wave"
+      : "idle";
+
   return (
     <>
-      {/* Launcher */}
+      {/* Launcher — Rex peeks out */}
       <button
         onClick={() => setOpen((v) => !v)}
-        aria-label={open ? "Close HireX Care chat" : "Open HireX Care chat"}
+        aria-label={open ? "Close Rex chat" : "Chat with Rex"}
         className={cn(
-          "fixed z-[60] bottom-5 right-5 md:bottom-6 md:right-6",
-          "w-14 h-14 rounded-full flex items-center justify-center",
-          "bg-primary text-primary-foreground shadow-[0_12px_32px_rgba(91,110,245,0.45)]",
-          "hover:scale-105 active:scale-95 transition-transform",
+          "fixed z-[60] bottom-5 right-5 md:bottom-6 md:right-6 group",
+          "w-16 h-16 rounded-full flex items-center justify-center",
+          "bg-gradient-to-br from-primary via-primary to-hirex-violet",
+          "shadow-[0_12px_32px_rgba(91,110,245,0.55)]",
+          "hover:scale-110 active:scale-95 transition-transform duration-300",
         )}
       >
-        {open ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
+        {open ? (
+          <X className="w-6 h-6 text-primary-foreground" />
+        ) : (
+          <RexAvatar size={52} mood="wave" />
+        )}
         {!open && (
-          <span className="absolute -top-1 -right-1 flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-hirex-cyan opacity-75" />
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-hirex-cyan" />
-          </span>
+          <>
+            <span className="absolute -top-1 -right-1 flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-hirex-cyan opacity-75" />
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-hirex-cyan" />
+            </span>
+            <span className="absolute -top-10 right-0 whitespace-nowrap bg-hirex-bg2 border border-border text-foreground text-xs px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg">
+              Hi, I'm Rex 👋
+            </span>
+          </>
         )}
       </button>
 
@@ -179,25 +199,26 @@ export default function ChatWidget() {
           "fixed z-[59] bg-hirex-surface border border-border shadow-2xl",
           "transition-all duration-200 origin-bottom-right",
           "flex flex-col overflow-hidden",
-          // mobile: full sheet
           "inset-x-0 bottom-0 top-16 rounded-t-2xl",
-          // desktop: floating panel
-          "md:inset-auto md:bottom-24 md:right-6 md:top-auto md:w-[400px] md:h-[600px] md:rounded-2xl",
+          "md:inset-auto md:bottom-24 md:right-6 md:top-auto md:w-[400px] md:h-[620px] md:rounded-2xl",
           open ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none",
         )}
         role="dialog"
-        aria-label="HireX Care chat"
+        aria-label="Chat with Rex"
       >
-        {/* Header */}
-        <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-gradient-to-r from-primary/15 to-hirex-cyan/10">
-          <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm">
-            H
+        {/* Header — live Rex */}
+        <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-gradient-to-r from-primary/20 via-hirex-violet/15 to-hirex-cyan/10 relative overflow-hidden">
+          <div className="shrink-0 relative">
+            <RexAvatar size={48} mood={headerMood} />
           </div>
           <div className="flex-1 min-w-0">
-            <div className="font-semibold text-sm text-foreground">HireX Care</div>
+            <div className="font-semibold text-sm text-foreground flex items-center gap-1.5">
+              Rex
+              <span className="text-[10px] font-normal text-hirex-text3">· HireX hiring sidekick</span>
+            </div>
             <div className="text-xs text-hirex-text3 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-              Online · Replies instantly
+              {loading ? (lastMsg?.role === "user" ? "Thinking…" : "Typing…") : "Online · Replies in seconds"}
             </div>
           </div>
           <button
@@ -214,14 +235,16 @@ export default function ChatWidget() {
           {messages.map((m, i) => (
             <div
               key={i}
-              className={cn(
-                "flex",
-                m.role === "user" ? "justify-end" : "justify-start",
-              )}
+              className={cn("flex items-end gap-2", m.role === "user" ? "justify-end" : "justify-start")}
             >
+              {m.role === "assistant" && (
+                <div className="shrink-0 mb-0.5">
+                  <RexAvatar size={28} mood={loading && i === messages.length - 1 ? "talking" : "idle"} />
+                </div>
+              )}
               <div
                 className={cn(
-                  "max-w-[85%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed",
+                  "max-w-[80%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed",
                   m.role === "user"
                     ? "bg-primary text-primary-foreground rounded-br-sm"
                     : "bg-hirex-bg2 text-foreground rounded-bl-sm border border-border",
@@ -239,7 +262,10 @@ export default function ChatWidget() {
           ))}
 
           {loading && messages[messages.length - 1]?.role === "user" && (
-            <div className="flex justify-start">
+            <div className="flex items-end gap-2 justify-start">
+              <div className="shrink-0 mb-0.5">
+                <RexAvatar size={28} mood="thinking" />
+              </div>
               <div className="bg-hirex-bg2 border border-border rounded-2xl rounded-bl-sm px-4 py-3 flex gap-1">
                 <span className="w-2 h-2 rounded-full bg-hirex-text3 animate-bounce" style={{ animationDelay: "0ms" }} />
                 <span className="w-2 h-2 rounded-full bg-hirex-text3 animate-bounce" style={{ animationDelay: "150ms" }} />
@@ -248,7 +274,6 @@ export default function ChatWidget() {
             </div>
           )}
 
-          {/* Suggestions on first open */}
           {messages.length === 1 && !loading && (
             <div className="pt-2 flex flex-wrap gap-2">
               {SUGGESTIONS.map((s) => (
@@ -272,7 +297,7 @@ export default function ChatWidget() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={onKeyDown}
-              placeholder="Ask about HireX…"
+              placeholder="Ask Rex anything about HireX…"
               rows={1}
               className="flex-1 bg-transparent resize-none outline-none text-sm text-foreground placeholder:text-hirex-text3 max-h-32 py-1"
               disabled={loading}
@@ -287,7 +312,7 @@ export default function ChatWidget() {
             </button>
           </div>
           <p className="text-[10px] text-hirex-text3 text-center mt-2">
-            Powered by HireX AI · For urgent issues email care@gethirex.space
+            Rex is HireX's AI · For urgent issues email care@gethirex.space
           </p>
         </div>
       </div>

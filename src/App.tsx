@@ -8,8 +8,6 @@ import HamburgerDrawer from "@/components/HamburgerDrawer";
 import PlatformSwitcher from "@/pages/PlatformSwitcher";
 import BusinessPage from "@/pages/BusinessPage";
 import CandidatePage from "@/pages/CandidatePage";
-import BusinessPricingPage from "@/pages/BusinessPricingPage";
-import CandidatePricingPage from "@/pages/CandidatePricingPage";
 import AgentsPage from "@/pages/AgentsPage";
 import ContactPage from "@/pages/ContactPage";
 import BlogPage from "@/pages/BlogPage";

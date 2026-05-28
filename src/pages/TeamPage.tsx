@@ -14,16 +14,16 @@ import davidImg from "@/assets/team/david.jpg";
 import rakshithaImg from "@/assets/team/rakshitha.jpg";
 import jamesImg from "@/assets/team/james.jpg";
 import bibhutiImg from "@/assets/team/bibhuti.jpeg";
-import harshImg from "@/assets/team/harsh.jpeg";
-import abhinayaRImg from "@/assets/team/abhinaya-r.jpeg";
-import rohitImg from "@/assets/team/rohit.jpeg";
-import samarthGImg from "@/assets/team/samarth-g.jpeg";
-import frankImg from "@/assets/team/frank.jpeg";
-import wernerImg from "@/assets/team/werner.jpeg";
-import aayushImg from "@/assets/team/aayush.jpeg";
-import palakImg from "@/assets/team/palak.jpeg";
-import ambroseImg from "@/assets/team/ambrose.jpeg";
-import preranaImg from "@/assets/team/prerana.jpeg";
+import harshImg from "@/assets/team/harsh.png";
+import abhinayaRImg from "@/assets/team/abhinaya-r.png";
+import rohitImg from "@/assets/team/rohit.png";
+import samarthGImg from "@/assets/team/samarth-g.png";
+import frankImg from "@/assets/team/frank.png";
+import wernerImg from "@/assets/team/werner.png";
+import aayushImg from "@/assets/team/aayush.png";
+import palakImg from "@/assets/team/palak.png";
+import ambroseImg from "@/assets/team/ambrose.png";
+import preranaImg from "@/assets/team/prerana.png";
 
 type Member = {
   name: string;

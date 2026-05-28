@@ -13,6 +13,17 @@ import abinayaImg from "@/assets/team/abinaya.jpg";
 import davidImg from "@/assets/team/david.jpg";
 import rakshithaImg from "@/assets/team/rakshitha.jpg";
 import jamesImg from "@/assets/team/james.jpg";
+import bibhutiImg from "@/assets/team/bibhuti.jpeg";
+import harshImg from "@/assets/team/harsh.jpeg";
+import abhinayaRImg from "@/assets/team/abhinaya-r.jpeg";
+import rohitImg from "@/assets/team/rohit.jpeg";
+import samarthGImg from "@/assets/team/samarth-g.jpeg";
+import frankImg from "@/assets/team/frank.jpeg";
+import wernerImg from "@/assets/team/werner.jpeg";
+import aayushImg from "@/assets/team/aayush.jpeg";
+import palakImg from "@/assets/team/palak.jpeg";
+import ambroseImg from "@/assets/team/ambrose.jpeg";
+import preranaImg from "@/assets/team/prerana.jpeg";
 
 type Member = {
   name: string;
@@ -87,39 +98,28 @@ const initialsOf = (name: string) =>
 
 // Extended team — new members from latest roster
 const extendedTeam: Member[] = [
-  { name: "Bibhuti Bhusan Biswal", role: "Data Science Intern",
-    bio: "Drives advanced analytics and AI-powered insights at HireX. Strong foundation in machine learning, statistical analysis, and data modeling to optimize recruitment intelligence and workforce analytics frameworks.",
-    gradient: grad.engineering, initials: initialsOf("Bibhuti Biswal") },
-  { name: "Harsh Garg", role: "UI/UX Designer",
-    bio: "Creates intuitive and visually engaging digital product experiences. Skilled in wireframing, rapid prototyping, and user-centered design methodologies that balance functionality with clean aesthetics.",
-    gradient: grad.design, initials: initialsOf("Harsh Garg") },
-  { name: "Abhinaya R", role: "HR Associate",
-    bio: "Manages daily recruitment, onboarding pathways, and strategic employee engagement programs. People-first management philosophy that streamlines HR workflows and maintains collaborative culture.",
-    gradient: grad.hr, initials: initialsOf("Abhinaya R") },
-  { name: "Rohit Maurya", role: "Data Analyst & Developer",
-    bio: "Bridges data analytics and agile software engineering to deliver scalable backend systems. Focuses on system automation, data-driven optimization, and engineering problem-solving across core projects.",
-    gradient: grad.engineering, initials: initialsOf("Rohit Maurya") },
-  { name: "Samarth Guddadar", role: "HR Associate",
-    bio: "Focuses on talent recruitment, new-hire onboarding, and team engagement initiatives. Combines sharp interpersonal skills with a structured approach to maintain seamless internal operations.",
-    gradient: grad.hr, initials: initialsOf("Samarth Guddadar") },
-  { name: "Frank Jiang", role: "AI LLM Scientist",
-    bio: "Specialises in fine-tuning, training, and scaling large language models and NLP systems that power HireX's automated screening, recruitment insights, and predictive workforce analytics.",
-    gradient: grad.engineering, initials: initialsOf("Frank Jiang") },
-  { name: "Werner Docx", role: "International Sales Manager",
-    bio: "Heads up global sales initiatives and cross-border client acquisition. Deep experience in international B2B sales and complex contract negotiations to expand HireX's enterprise footprint.",
-    gradient: grad.sales, initials: initialsOf("Werner Docx") },
-  { name: "Aayush Kumar", role: "AI Backend Developer",
-    bio: "Specialises in high-throughput backend systems and algorithm optimization. Strong algorithmic foundations, data structure design, and AI framework integration powering the platform.",
-    gradient: grad.engineering, initials: initialsOf("Aayush Kumar") },
-  { name: "Palak Ahuja", role: "Content Writer",
-    bio: "B.Sc. and M.Sc. in Biotechnology (Jamia Hamdard) with industry experience at Dabur Research Foundation and Fresenius Kabi. Combines technical medical writing precision with creative brand communication.",
-    gradient: grad.content, initials: initialsOf("Palak Ahuja") },
-  { name: "Ambrose Othniel", role: "WordPress & AI-Assisted Full Stack Developer",
-    bio: "3+ years of application deployment experience. Built platforms like Uniride.ng with Mapbox, Dojah, Termii integrations. Workflow spans React, Next.js, and AI-assisted engineering with Copilot and GPT-4.",
-    gradient: grad.engineering, initials: initialsOf("Ambrose Othniel") },
-  { name: "Prerana Veerabhadrappa Kadi", role: "UI/UX Design Intern",
-    bio: "Applies skills in Figma, wireframing, and dashboard design. Pursuing B.Tech in CSE at VIT Vellore. Previously designed layouts for FinSight AI and SEED.",
-    gradient: grad.design, initials: initialsOf("Prerana Kadi") },
+  { name: "Bibhuti Bhusan Biswal", role: "Data Science Intern", img: bibhutiImg,
+    bio: "Drives advanced analytics and AI-powered insights at HireX. Strong foundation in machine learning, statistical analysis, and data modeling to optimize recruitment intelligence and workforce analytics frameworks." },
+  { name: "Harsh Garg", role: "UI/UX Designer", img: harshImg,
+    bio: "Creates intuitive and visually engaging digital product experiences. Skilled in wireframing, rapid prototyping, and user-centered design methodologies that balance functionality with clean aesthetics." },
+  { name: "Abhinaya R", role: "HR Associate", img: abhinayaRImg,
+    bio: "Manages daily recruitment, onboarding pathways, and strategic employee engagement programs. People-first management philosophy that streamlines HR workflows and maintains collaborative culture." },
+  { name: "Rohit Maurya", role: "Data Analyst & Developer", img: rohitImg,
+    bio: "Bridges data analytics and agile software engineering to deliver scalable backend systems. Focuses on system automation, data-driven optimization, and engineering problem-solving across core projects." },
+  { name: "Samarth Guddadar", role: "HR Associate", img: samarthGImg,
+    bio: "Focuses on talent recruitment, new-hire onboarding, and team engagement initiatives. Combines sharp interpersonal skills with a structured approach to maintain seamless internal operations." },
+  { name: "Frank Jiang", role: "AI LLM Scientist", img: frankImg,
+    bio: "Specialises in fine-tuning, training, and scaling large language models and NLP systems that power HireX's automated screening, recruitment insights, and predictive workforce analytics." },
+  { name: "Werner Docx", role: "International Sales Manager", img: wernerImg,
+    bio: "Heads up global sales initiatives and cross-border client acquisition. Deep experience in international B2B sales and complex contract negotiations to expand HireX's enterprise footprint." },
+  { name: "Aayush Kumar", role: "AI Backend Developer", img: aayushImg,
+    bio: "Specialises in high-throughput backend systems and algorithm optimization. Strong algorithmic foundations, data structure design, and AI framework integration powering the platform." },
+  { name: "Palak Ahuja", role: "Content Writer", img: palakImg,
+    bio: "B.Sc. and M.Sc. in Biotechnology (Jamia Hamdard) with industry experience at Dabur Research Foundation and Fresenius Kabi. Combines technical medical writing precision with creative brand communication." },
+  { name: "Ambrose Othniel", role: "WordPress & AI-Assisted Full Stack Developer", img: ambroseImg,
+    bio: "3+ years of application deployment experience. Built platforms like Uniride.ng with Mapbox, Dojah, Termii integrations. Workflow spans React, Next.js, and AI-assisted engineering with Copilot and GPT-4." },
+  { name: "Prerana Veerabhadrappa Kadi", role: "UI/UX Design Intern", img: preranaImg,
+    bio: "Applies skills in Figma, wireframing, and dashboard design. Pursuing B.Tech in CSE at VIT Vellore. Previously designed layouts for FinSight AI and SEED." },
 ];
 
 const MemberCard = ({ m }: { m: Member }) => (

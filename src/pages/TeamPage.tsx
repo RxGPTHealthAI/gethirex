@@ -13,7 +13,7 @@ import abinayaImg from "@/assets/team/abinaya.jpg";
 import davidImg from "@/assets/team/david.jpg";
 import rakshithaImg from "@/assets/team/rakshitha.jpg";
 import jamesImg from "@/assets/team/james.jpg";
-import bibhutiImg from "@/assets/team/bibhuti.jpeg";
+import bibhutiImg from "@/assets/team/bibhuti.png";
 import harshImg from "@/assets/team/harsh.png";
 import abhinayaRImg from "@/assets/team/abhinaya-r.png";
 import rohitImg from "@/assets/team/rohit.png";
@@ -160,7 +160,7 @@ const TeamSection = ({ title, members }: { title: string; members: Member[] }) =
     <div className="mb-20">
       <h2 className="text-2xl md:text-3xl font-bold mb-8 grad-text-cyan">{title}</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {members.map((m, i) => <MemberCard key={i} m={m} />)}
+        {members.map((m) => <MemberCard key={`${title}-${m.name}`} m={m} />)}
       </div>
     </div>
   );

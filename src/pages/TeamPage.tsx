@@ -1,3 +1,5 @@
+import { useMemo, useState } from "react";
+import { Search } from "lucide-react";
 import saileshImg from "@/assets/team/sailesh.jpg";
 import pragyaImg from "@/assets/team/pragya.jpg";
 import richardImg from "@/assets/team/richard.jpg";
@@ -12,7 +14,19 @@ import davidImg from "@/assets/team/david.jpg";
 import rakshithaImg from "@/assets/team/rakshitha.jpg";
 import jamesImg from "@/assets/team/james.jpg";
 
-const leadership = [
+type Member = {
+  name: string;
+  role: string;
+  img?: string;
+  bio: string;
+  awards?: string[];
+  education?: string;
+  passion?: string;
+  initials?: string;
+  gradient?: string;
+};
+
+const leadership: Member[] = [
   { name: "Sailesh Pattnaik", role: "Founder & CEO", img: saileshImg,
     bio: "CEO and CXO leader with 20+ years driving agentic AI, generative AI, LLM platforms, digital marketing, global operations, and technology strategy across APAC, US, MENA, EU, and ANZ.",
     awards: ["Cargill Town Hall Awards (FY25 Q1, FY24 Q2)", "International Star Award (NITI Aayog/G20)", "International Icon Award", "MMA Global Asia Speaker"],
@@ -26,7 +40,7 @@ const leadership = [
     passion: "Tinkering with technology—experimenting across hardware, software, and cloud platforms." },
 ];
 
-const techTeam = [
+const techTeam: Member[] = [
   { name: "Samarth Manojkumar Naik", role: "Chief Technology Officer", img: samarthImg,
     bio: "Technology enthusiast and architect of HireX's 27-agent orchestration engine. Strong knowledge of backend development and AI-driven systems.",
     education: "B.Tech from VIT Vellore | BS in Data Science from IIT Madras" },
@@ -45,73 +59,179 @@ const techTeam = [
     education: "IIT Bengaluru" },
 ];
 
-const hrTeam = [
+const hrTeam: Member[] = [
   { name: "Abinaya", role: "HR Lead", img: abinayaImg,
     bio: "Supports recruitment, employee engagement, and workplace culture across India, UAE, UK, and USA." },
   { name: "Ayomiposi David Dairo", role: "HR & Talent Acquisition", img: davidImg,
     bio: "Detail-oriented Auditor and Accountant bringing analytical mindset with B.Sc. in Mathematics into talent acquisition." },
 ];
 
-const marketing = [
+const marketing: Member[] = [
   { name: "Rakshitha", role: "Content Writer", img: rakshithaImg,
     bio: "Pursuing B.Tech in Computer Science (AIML) at Dayananda Sagar University. Unique blend of technical writing and creativity." },
   { name: "James Mwathi", role: "Content Writer", img: jamesImg,
     bio: "5+ years crafting persuasive content across websites, blogs, social media, and academic publications." },
 ];
 
-const TeamSection = ({ title, members }: { title: string; members: Array<{ name: string; role: string; img: string; bio: string; awards?: string[]; education?: string; passion?: string }> }) => (
-  <div className="mb-20">
-    <h2 className="text-2xl md:text-3xl font-bold mb-8 grad-text-cyan">{title}</h2>
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {members.map((m, i) => (
-        <div key={i} className="glass-card rounded-2xl overflow-hidden hover:glow-border-cyan transition-shadow duration-300 group">
-          <div className="h-64 overflow-hidden">
-            <img src={m.img} alt={m.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-          </div>
-          <div className="p-6">
-            <h3 className="text-lg font-bold">{m.name}</h3>
-            <p className="text-sm text-primary font-medium mb-3">{m.role}</p>
-            <p className="text-sm text-muted-foreground mb-3">{m.bio}</p>
-            {"awards" in m && m.awards && (
-              <div className="space-y-1 mb-3">
-                {m.awards.map((a: string, j: number) => (
-                  <span key={j} className="inline-block text-xs bg-primary/10 text-primary px-2 py-1 rounded-full mr-1 mb-1">{a}</span>
-                ))}
-              </div>
-            )}
-            {"education" in m && m.education && (
-              <p className="text-xs text-muted-foreground italic">🎓 {m.education}</p>
-            )}
-            {"passion" in m && m.passion && (
-              <p className="text-xs text-accent mt-2">💡 {m.passion}</p>
-            )}
-          </div>
+// Department gradients (HSL via tailwind-friendly inline styles)
+const grad = {
+  engineering: "linear-gradient(135deg, hsl(217 91% 60%), hsl(199 89% 48%))",
+  design: "linear-gradient(135deg, hsl(280 75% 60%), hsl(316 73% 60%))",
+  hr: "linear-gradient(135deg, hsl(152 60% 45%), hsl(173 70% 45%))",
+  content: "linear-gradient(135deg, hsl(28 90% 55%), hsl(45 95% 55%))",
+  sales: "linear-gradient(135deg, hsl(0 75% 60%), hsl(15 85% 55%))",
+};
+
+const initialsOf = (name: string) =>
+  name.split(" ").filter(Boolean).slice(0, 2).map((n) => n[0]).join("").toUpperCase();
+
+// Extended team — new members from latest roster
+const extendedTeam: Member[] = [
+  { name: "Bibhuti Bhusan Biswal", role: "Data Science Intern",
+    bio: "Drives advanced analytics and AI-powered insights at HireX. Strong foundation in machine learning, statistical analysis, and data modeling to optimize recruitment intelligence and workforce analytics frameworks.",
+    gradient: grad.engineering, initials: initialsOf("Bibhuti Biswal") },
+  { name: "Harsh Garg", role: "UI/UX Designer",
+    bio: "Creates intuitive and visually engaging digital product experiences. Skilled in wireframing, rapid prototyping, and user-centered design methodologies that balance functionality with clean aesthetics.",
+    gradient: grad.design, initials: initialsOf("Harsh Garg") },
+  { name: "Abhinaya R", role: "HR Associate",
+    bio: "Manages daily recruitment, onboarding pathways, and strategic employee engagement programs. People-first management philosophy that streamlines HR workflows and maintains collaborative culture.",
+    gradient: grad.hr, initials: initialsOf("Abhinaya R") },
+  { name: "Rohit Maurya", role: "Data Analyst & Developer",
+    bio: "Bridges data analytics and agile software engineering to deliver scalable backend systems. Focuses on system automation, data-driven optimization, and engineering problem-solving across core projects.",
+    gradient: grad.engineering, initials: initialsOf("Rohit Maurya") },
+  { name: "Samarth Guddadar", role: "HR Associate",
+    bio: "Focuses on talent recruitment, new-hire onboarding, and team engagement initiatives. Combines sharp interpersonal skills with a structured approach to maintain seamless internal operations.",
+    gradient: grad.hr, initials: initialsOf("Samarth Guddadar") },
+  { name: "Frank Jiang", role: "AI LLM Scientist",
+    bio: "Specialises in fine-tuning, training, and scaling large language models and NLP systems that power HireX's automated screening, recruitment insights, and predictive workforce analytics.",
+    gradient: grad.engineering, initials: initialsOf("Frank Jiang") },
+  { name: "Werner Docx", role: "International Sales Manager",
+    bio: "Heads up global sales initiatives and cross-border client acquisition. Deep experience in international B2B sales and complex contract negotiations to expand HireX's enterprise footprint.",
+    gradient: grad.sales, initials: initialsOf("Werner Docx") },
+  { name: "Aayush Kumar", role: "AI Backend Developer",
+    bio: "Specialises in high-throughput backend systems and algorithm optimization. Strong algorithmic foundations, data structure design, and AI framework integration powering the platform.",
+    gradient: grad.engineering, initials: initialsOf("Aayush Kumar") },
+  { name: "Palak Ahuja", role: "Content Writer",
+    bio: "B.Sc. and M.Sc. in Biotechnology (Jamia Hamdard) with industry experience at Dabur Research Foundation and Fresenius Kabi. Combines technical medical writing precision with creative brand communication.",
+    gradient: grad.content, initials: initialsOf("Palak Ahuja") },
+  { name: "Ambrose Othniel", role: "WordPress & AI-Assisted Full Stack Developer",
+    bio: "3+ years of application deployment experience. Built platforms like Uniride.ng with Mapbox, Dojah, Termii integrations. Workflow spans React, Next.js, and AI-assisted engineering with Copilot and GPT-4.",
+    gradient: grad.engineering, initials: initialsOf("Ambrose Othniel") },
+  { name: "Prerana Veerabhadrappa Kadi", role: "UI/UX Design Intern",
+    bio: "Applies skills in Figma, wireframing, and dashboard design. Pursuing B.Tech in CSE at VIT Vellore. Previously designed layouts for FinSight AI and SEED.",
+    gradient: grad.design, initials: initialsOf("Prerana Kadi") },
+];
+
+const MemberCard = ({ m }: { m: Member }) => (
+  <div className="glass-card rounded-2xl overflow-hidden hover:glow-border-cyan transition-all duration-300 group hover:-translate-y-1">
+    <div className="h-64 overflow-hidden">
+      {m.img ? (
+        <img src={m.img} alt={m.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+      ) : (
+        <div
+          className="w-full h-full flex items-center justify-center text-5xl font-bold text-white"
+          style={{ background: m.gradient }}
+          aria-label={`${m.name} avatar`}
+        >
+          {m.initials}
         </div>
-      ))}
+      )}
+    </div>
+    <div className="p-6">
+      <h3 className="text-lg font-bold">{m.name}</h3>
+      <p className="text-sm text-primary font-medium mb-3">{m.role}</p>
+      <p className="text-sm text-muted-foreground mb-3">{m.bio}</p>
+      {m.awards && (
+        <div className="space-y-1 mb-3">
+          {m.awards.map((a, j) => (
+            <span key={j} className="inline-block text-xs bg-primary/10 text-primary px-2 py-1 rounded-full mr-1 mb-1">{a}</span>
+          ))}
+        </div>
+      )}
+      {m.education && <p className="text-xs text-muted-foreground italic">🎓 {m.education}</p>}
+      {m.passion && <p className="text-xs text-accent mt-2">💡 {m.passion}</p>}
     </div>
   </div>
 );
 
-const TeamPage = () => (
-  <div className="min-h-screen bg-background">
-    <section className="py-24 lg:py-32 text-center">
-      <div className="max-w-5xl mx-auto px-6">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          Meet the Team Building <span className="grad-text-cyan">AI's Biggest HR Revolution</span>
-        </h1>
-        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          20+ years of combined AI, recruitment, cloud, and enterprise operations experience across APAC, US, MENA, EU, and ANZ.
-        </p>
+const TeamSection = ({ title, members }: { title: string; members: Member[] }) => {
+  if (!members.length) return null;
+  return (
+    <div className="mb-20">
+      <h2 className="text-2xl md:text-3xl font-bold mb-8 grad-text-cyan">{title}</h2>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {members.map((m, i) => <MemberCard key={i} m={m} />)}
       </div>
-    </section>
+    </div>
+  );
+};
 
-    <section className="max-w-6xl mx-auto px-6 pb-20">
-      <TeamSection title="Founders & Leadership" members={leadership} />
-      <TeamSection title="Technology Team" members={techTeam} />
-      <TeamSection title="HR & Operations" members={hrTeam} />
-      <TeamSection title="Marketing & Content" members={marketing} />
-    </section>
-  </div>
-);
+const TeamPage = () => {
+  const [query, setQuery] = useState("");
+
+  const filter = (arr: Member[]) => {
+    if (!query.trim()) return arr;
+    const q = query.toLowerCase();
+    return arr.filter((m) =>
+      m.name.toLowerCase().includes(q) ||
+      m.role.toLowerCase().includes(q) ||
+      m.bio.toLowerCase().includes(q)
+    );
+  };
+
+  const sections = useMemo(() => ({
+    leadership: filter(leadership),
+    tech: filter(techTeam),
+    hr: filter(hrTeam),
+    marketing: filter(marketing),
+    extended: filter(extendedTeam),
+  }), [query]);
+
+  const totalCount = leadership.length + techTeam.length + hrTeam.length + marketing.length + extendedTeam.length;
+  const visibleCount = Object.values(sections).reduce((s, a) => s + a.length, 0);
+
+  return (
+    <div className="min-h-screen bg-background">
+      <section className="py-24 lg:py-32 text-center">
+        <div className="max-w-5xl mx-auto px-6">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            Meet the Team Building <span className="grad-text-cyan">AI's Biggest HR Revolution</span>
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-10">
+            {totalCount}+ team members across AI, recruitment, cloud, design, and enterprise operations — spanning APAC, US, MENA, EU, and ANZ.
+          </p>
+
+          <div className="max-w-xl mx-auto relative">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search by name, role, or skill…"
+              className="w-full pl-11 pr-4 py-3 rounded-full glass-card border border-border/40 bg-background/40 text-sm focus:outline-none focus:border-primary/60 transition-colors"
+            />
+          </div>
+          {query && (
+            <p className="text-xs text-muted-foreground mt-3">{visibleCount} match{visibleCount === 1 ? "" : "es"}</p>
+          )}
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-6 pb-20">
+        <TeamSection title="Founders & Leadership" members={sections.leadership} />
+        <TeamSection title="Technology Team" members={sections.tech} />
+        <TeamSection title="HR & Operations" members={sections.hr} />
+        <TeamSection title="Marketing & Content" members={sections.marketing} />
+        <TeamSection title="Extended Team" members={sections.extended} />
+
+        {visibleCount === 0 && (
+          <div className="text-center py-20 text-muted-foreground">
+            No team members match "{query}".
+          </div>
+        )}
+      </section>
+    </div>
+  );
+};
 
 export default TeamPage;

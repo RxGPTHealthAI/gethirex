@@ -28,8 +28,8 @@ const AnimatedCounter = ({ end, suffix = "", duration = 2000 }: { end: number; s
 };
 
 const steps = [
-  { icon: Upload, title: "Drop Your Job Description", time: "Minute 1", desc: "Upload your JD in any format. HireX AI instantly parses requirements and builds a custom 17-point scoring algorithm specific to your role.", bullets: ["Supports JD in English, Hindi, and 12 regional Indian languages", "Auto-builds Boolean search strings for all connected job boards", "Notifies team via Slack/email: 'Sourcing started — results in 60 minutes'"] },
-  { icon: Brain, title: "Get Perfect Shortlist in 60 Seconds", time: "60 Seconds", desc: "HireX's multi-agent AI screens every incoming application. Top 10% delivered to your inbox—pre-ranked with AI confidence scores.", bullets: ["Skills match (40%), Experience (30%), Culture (20%), Logistics (10%)", "Zero demographic bias: Name, gender, age stripped from scoring", "AI confidence scores and highlight summaries per candidate"] },
+  { icon: Upload, title: "Drop Your Job Description", time: "Minute 1", desc: "Upload your JD in any format. HIREXAI AI instantly parses requirements and builds a custom 17-point scoring algorithm specific to your role.", bullets: ["Supports JD in English, Hindi, and 12 regional Indian languages", "Auto-builds Boolean search strings for all connected job boards", "Notifies team via Slack/email: 'Sourcing started — results in 60 minutes'"] },
+  { icon: Brain, title: "Get Perfect Shortlist in 60 Seconds", time: "60 Seconds", desc: "HIREXAI's multi-agent AI screens every incoming application. Top 10% delivered to your inbox—pre-ranked with AI confidence scores.", bullets: ["Skills match (40%), Experience (30%), Culture (20%), Logistics (10%)", "Zero demographic bias: Name, gender, age stripped from scoring", "AI confidence scores and highlight summaries per candidate"] },
   { icon: Calendar, title: "Candidates Self-Schedule Interviews", time: "Hours 2–24", desc: "AI sends personalized outreach to each candidate with a self-scheduling link. No-show rate drops 80%.", bullets: ["Integrates with Google Calendar, Outlook, Calendly", "Video interview links auto-created for each session", "Automated follow-up if candidate hasn't scheduled in 24h"] },
   { icon: UserCheck, title: "Hire & Onboard — HRIS Auto-Syncs", time: "Day 3–7", desc: "Offer letter generated, e-signed, background check initiated, onboarding checklist auto-assigned.", bullets: ["DigiLocker integration for document verification in India", "HRIS sync: Workday, BambooHR, Darwinbox, SAP, Zoho People", "Analytics: Time-to-hire, cost-per-hire, source ROI, diversity metrics"] },
 ];
@@ -56,7 +56,7 @@ const HowItWorksPage = () => (
           <span className="text-sm text-muted-foreground">4-Step AI Hiring Workflow</span>
         </div>
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          How HireX AI Recruitment <span className="grad-text-cyan">Works</span>
+          How HIREXAI AI Recruitment <span className="grad-text-cyan">Works</span>
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
           From job post to hired candidate in as little as 3 days. No black-box AI. No manual work. Every step is visible, explainable, and auditable.

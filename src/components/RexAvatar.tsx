@@ -9,7 +9,7 @@ interface RexAvatarProps {
 }
 
 /**
- * Rex — the HireX hiring mascot.
+ * Rex — the HIREXAI hiring mascot.
  * A friendly AI recruiter character built in pure SVG + CSS animation.
  * Hire + Rex = Rex. He finds the right people, and the right answers.
  */

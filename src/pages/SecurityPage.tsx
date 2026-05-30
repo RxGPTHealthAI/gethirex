@@ -8,7 +8,7 @@ const SecurityPage = () => (
           <Shield className="w-4 h-4 text-primary" />
           <span className="text-sm text-muted-foreground">SOC2 Type 2 In Process | AES-256 | Zero Trust</span>
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">Security at <span className="grad-text-cyan">HireX</span></h1>
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">Security at <span className="grad-text-cyan">HIREXAI</span></h1>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
           Enterprise-grade security protecting the data of 500+ companies and 50,000+ candidates.
         </p>

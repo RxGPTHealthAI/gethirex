@@ -12,16 +12,16 @@ const proofCards = [
   { icon: "⚡", val: "3× Faster", title: "Hiring Cycles", desc: "From job post to offer letter in days, not weeks. Agents work 24/7." },
   { icon: "🎯", val: "95%", title: "Parsing Accuracy", desc: "Industry-leading resume parsing with multi-format support." },
   { icon: "💰", val: "$409K", title: "Annual Savings", desc: "Average cost reduction by replacing manual HR operations." },
-  { icon: "🚀", val: "50+", title: "Active Pilots", desc: "Startups and enterprises trust HireX to run hiring autonomously." },
+  { icon: "🚀", val: "50+", title: "Active Pilots", desc: "Startups and enterprises trust HIREXAI to run hiring autonomously." },
 ];
 
 const agents = [
-  { img: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80", tag: "Recruitment", name: "HIREX TalentRadar", desc: "Surfaces high-fit candidates hidden in large CV pools using advanced semantic search and skill matching." },
-  { img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80", tag: "Recruitment", name: "HIREX ScoreMaster", desc: "Objectively ranks candidates using multi-factor scoring that eliminates bias and surfaces true potential." },
-  { img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80", tag: "Recruitment", name: "HIREX InterviewPro", desc: "Generates role-specific, bias-aware interview frameworks that ensure consistent evaluation standards." },
-  { img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80", tag: "Onboarding", name: "HIREX OfferCraft", desc: "Creates optimized, close-ready offer letters with competitive compensation benchmarks." },
-  { img: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=600&q=80", tag: "Compliance", name: "HIREX LawShield", desc: "Flags legal, labor, and regulatory risks across jurisdictions before they become problems." },
-  { img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80", tag: "Analytics", name: "HIREX SuccessPredict", desc: "Forecasts 30–90 day hire success rates using historical performance data and behavioral patterns." },
+  { img: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80", tag: "Recruitment", name: "HIREXAI TalentRadar", desc: "Surfaces high-fit candidates hidden in large CV pools using advanced semantic search and skill matching." },
+  { img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80", tag: "Recruitment", name: "HIREXAI ScoreMaster", desc: "Objectively ranks candidates using multi-factor scoring that eliminates bias and surfaces true potential." },
+  { img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80", tag: "Recruitment", name: "HIREXAI InterviewPro", desc: "Generates role-specific, bias-aware interview frameworks that ensure consistent evaluation standards." },
+  { img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80", tag: "Onboarding", name: "HIREXAI OfferCraft", desc: "Creates optimized, close-ready offer letters with competitive compensation benchmarks." },
+  { img: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=600&q=80", tag: "Compliance", name: "HIREXAI LawShield", desc: "Flags legal, labor, and regulatory risks across jurisdictions before they become problems." },
+  { img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80", tag: "Analytics", name: "HIREXAI SuccessPredict", desc: "Forecasts 30–90 day hire success rates using historical performance data and behavioral patterns." },
 ];
 
 const icps = [
@@ -65,13 +65,13 @@ const HomePage = () => (
           Trusted by 50+ Active Pilots
         </div>
         <h1 className="font-display text-[clamp(44px,6vw,80px)] font-extrabold leading-[1.08] tracking-tight mb-7">
-          HireX:<br />
+          HIREXAI:<br />
           <span className="grad-text">Agentic AI</span><br />
           That Runs Your HR<br />
           <span className="italic opacity-60 font-normal">Like a Fortune 500 Machine</span>
         </h1>
         <p className="text-[clamp(17px,2vw,21px)] text-hirex-text2 max-w-[600px] mb-10 leading-relaxed">
-          Tired of resume black holes, compliance nightmares, and hires that ghost? HireX deploys <strong className="text-foreground">27 autonomous AI agents</strong> to automate hiring, onboarding, compliance, retention, and workforce planning.
+          Tired of resume black holes, compliance nightmares, and hires that ghost? HIREXAI deploys <strong className="text-foreground">27 autonomous AI agents</strong> to automate hiring, onboarding, compliance, retention, and workforce planning.
         </p>
         <div className="flex gap-3 flex-wrap mb-16">
           <Link to="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-md font-semibold text-[15px] bg-primary text-primary-foreground no-underline hover:bg-primary-light hover:-translate-y-0.5 transition-all hover:shadow-[0_12px_32px_rgba(91,110,245,0.4)]">
@@ -99,7 +99,7 @@ const HomePage = () => (
     <section className="py-20 bg-hirex-bg2">
       <div className="container">
         <div className="text-center mb-10">
-          <p className="text-xs font-semibold tracking-[0.08em] uppercase text-hirex-text3 mb-4">See HireX in Action</p>
+          <p className="text-xs font-semibold tracking-[0.08em] uppercase text-hirex-text3 mb-4">See HIREXAI in Action</p>
           <h2 className="font-display text-[clamp(32px,4vw,56px)] font-extrabold">Watch the <em className="font-normal opacity-60">Product Demo.</em></h2>
           <p className="text-hirex-text2 max-w-[520px] mx-auto mt-4 text-base">See how 27 AI agents transform your entire HR operation in under 5 minutes.</p>
         </div>
@@ -108,7 +108,7 @@ const HomePage = () => (
             <iframe
               className="absolute inset-0 w-full h-full"
               src="https://www.youtube.com/embed/oTvA-86ZiM0"
-              title="HireX Product Demo"
+              title="HIREXAI Product Demo"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
@@ -161,7 +161,7 @@ const HomePage = () => (
         <div className="text-center mb-[60px]">
           <p className="text-xs font-semibold tracking-[0.08em] uppercase text-hirex-text3 mb-4">Agent Showcase</p>
           <h2 className="font-display text-[clamp(36px,5vw,64px)] font-extrabold">Meet Your <em className="font-normal opacity-60">AI Workforce.</em></h2>
-          <p className="text-hirex-text2 max-w-[580px] mx-auto mt-4 text-base">Each HIREX Super-Agent replaces a full-time HR role. Together they run your entire people operation.</p>
+          <p className="text-hirex-text2 max-w-[580px] mx-auto mt-4 text-base">Each HIREXAI Super-Agent replaces a full-time HR role. Together they run your entire people operation.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {agents.map((a) => (
@@ -195,7 +195,7 @@ const HomePage = () => (
         <div className="text-center mb-[60px]">
           <p className="text-xs font-semibold tracking-[0.08em] uppercase text-hirex-text3 mb-4">Built For Every ICP</p>
           <h2 className="font-display text-[clamp(36px,5vw,64px)] font-extrabold">Your HR, <em className="font-normal opacity-60">Automated.</em></h2>
-          <p className="text-hirex-text2 max-w-[480px] mx-auto mt-4 text-base">From 5-person startups to 10,000-employee enterprises—HireX adapts to your scale.</p>
+          <p className="text-hirex-text2 max-w-[480px] mx-auto mt-4 text-base">From 5-person startups to 10,000-employee enterprises—HIREXAI adapts to your scale.</p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 max-lg:max-w-[560px] max-lg:mx-auto">
           {icps.map((icp) => (

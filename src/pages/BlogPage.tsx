@@ -41,7 +41,7 @@ const BlogPage = () => {
             Insights & Updates
           </div>
           <h1 className="font-display text-[clamp(48px,7vw,88px)] font-extrabold mb-5">
-            The HireX <span className="grad-text">Blog</span>
+            The HIREXAI <span className="grad-text">Blog</span>
           </h1>
           <p className="text-hirex-text2 max-w-[520px] mx-auto text-[17px] leading-relaxed">
             Expert insights on AI-powered HR automation, recruitment strategies, and the future of work.

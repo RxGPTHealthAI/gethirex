@@ -27,7 +27,7 @@ const UnifiedPricingPage = () => (
     <section className="py-24 lg:py-32 text-center">
       <div className="max-w-5xl mx-auto px-6">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          HireX Pricing 2026 — <span className="grad-text-cyan">Pay for Results.</span>
+          HIREXAI Pricing 2026 — <span className="grad-text-cyan">Pay for Results.</span>
         </h1>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
           14-day free trial for employers. 7-day free trial for candidates. No credit card required.
@@ -94,13 +94,13 @@ const UnifiedPricingPage = () => (
 
     <section className="py-16 bg-card/50">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">HireX vs Competitors</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">HIREXAI vs Competitors</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-border">
                 <th className="text-left py-3 px-4 text-muted-foreground">Feature</th>
-                <th className="text-left py-3 px-4 text-primary font-bold">HireX</th>
+                <th className="text-left py-3 px-4 text-primary font-bold">HIREXAI</th>
                 <th className="text-left py-3 px-4 text-muted-foreground">Workday</th>
                 <th className="text-left py-3 px-4 text-muted-foreground">Zoho</th>
                 <th className="text-left py-3 px-4 text-muted-foreground">Greenhouse</th>

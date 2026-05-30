@@ -4,7 +4,7 @@ import { startRazorpayCheckout } from "@/lib/razorpay";
 import razorpayUpiQr from "@/assets/razorpay-upi-qr.jpeg";
 
 // ============================================================
-// HireX Pricing — restructured for conversion (CRO pass)
+// HIREXAI Pricing — restructured for conversion (CRO pass)
 // Brand tokens, colors, typography intentionally unchanged.
 // ============================================================
 
@@ -164,7 +164,7 @@ const RESULTS = [
 
 const TESTIMONIALS = [
   {
-    quote: "After 4 weeks we cancelled LinkedIn Recruiter and Greenhouse. HireX did 90% of what they promised on day one. Spend dropped 40% as we 2x'd hiring.",
+    quote: "After 4 weeks we cancelled LinkedIn Recruiter and Greenhouse. HIREXAI did 90% of what they promised on day one. Spend dropped 40% as we 2x'd hiring.",
     name: "Allison Brooks",
     role: "Head of Talent · Series-B SaaS, San Francisco",
     tag: "Business · Employer",
@@ -225,12 +225,12 @@ const CREDIT_CATEGORIES = [
 ];
 
 const FAQS = [
-  ["What is HireX and how does it work?", "HireX is an AI hiring platform with 27 specialized agents that handle sourcing, screening, scheduling, interviewing, offers, onboarding, L&D, and compliance — in one dashboard. Buy credits and spend them only when an agent actually completes work."],
+  ["What is HIREXAI and how does it work?", "HIREXAI is an AI hiring platform with 27 specialized agents that handle sourcing, screening, scheduling, interviewing, offers, onboarding, L&D, and compliance — in one dashboard. Buy credits and spend them only when an agent actually completes work."],
   ["What's the difference between Buy Now, Book Demo, and Talk to Sales?", "Candidate plans and the Scale Fast employer plan are self-serve — Buy Now starts Razorpay checkout instantly. Business needs a short demo to map your hiring workflow. Enterprise is custom-scoped, so you Talk to Sales."],
   ["How does the credit system work?", "Every action has a published credit cost shown before you click. Light actions are 1–3 credits, medium 5–10, heavy 20–30. Subscription credits reset monthly; refuel credits never expire while your subscription is active."],
   ["Can I cancel anytime?", "Yes. Monthly plans cancel from your dashboard at the next billing cycle in two clicks. Annual plans get a prorated refund within the first 30 days."],
   ["What's included in annual billing?", "Annual plans cost 25% less per month — equivalent to 3 months free — and lock in your rate for the full term. Same features as monthly."],
-  ["Is my data secure?", "HireX is SOC 2 Type II certified, GDPR compliant for EU/UK, and DPDP Act 2023 compliant for India. All data encrypted in transit (TLS 1.3) and at rest (AES-256). We do not train on your data."],
+  ["Is my data secure?", "HIREXAI is SOC 2 Type II certified, GDPR compliant for EU/UK, and DPDP Act 2023 compliant for India. All data encrypted in transit (TLS 1.3) and at rest (AES-256). We do not train on your data."],
   ["Which payment methods do you accept?", "All major credit/debit cards, UPI, net banking, and wallets via Razorpay. You can also pay via the UPI QR on this page and email care@gethirex.space with your transaction ID."],
 ];
 
@@ -578,7 +578,7 @@ const PricingPage = () => {
         <div className="container max-w-[1080px]">
           <div className="text-center max-w-[680px] mx-auto mb-10">
             <h2 className="font-display text-[clamp(26px,4vw,38px)] font-extrabold leading-[1.1] tracking-tight mb-3">
-              HireX vs the <span className="grad-text-cyan italic">old hiring stack.</span>
+              HIREXAI vs the <span className="grad-text-cyan italic">old hiring stack.</span>
             </h2>
             <p className="text-hirex-text2 text-base leading-relaxed">
               Why teams cancel LinkedIn Recruiter, Cutshort, and legacy ATSs after 30 days.
@@ -588,7 +588,7 @@ const PricingPage = () => {
             <div className="grid grid-cols-3 gap-2 px-5 py-3 bg-hirex-bg2 border-b border-border text-xs font-mono uppercase tracking-wider text-hirex-text3">
               <div></div>
               <div>Old stack</div>
-              <div className="text-hirex-primary-light">HireX</div>
+              <div className="text-hirex-primary-light">HIREXAI</div>
             </div>
             {COMPARISON_ROWS.map(([label, old, hx]) => (
               <div
@@ -610,7 +610,7 @@ const PricingPage = () => {
         </div>
       </section>
 
-      {/* HIREX VS ALTERNATIVES — competitor switching table */}
+      {/* HIREXAI VS ALTERNATIVES — competitor switching table */}
       <section className="py-[72px] max-md:py-[56px]">
         <div className="container max-w-[1180px]">
           <div className="text-center max-w-[720px] mx-auto mb-10">
@@ -636,7 +636,7 @@ const PricingPage = () => {
               </thead>
               <tbody>
                 {[
-                  { name: "HireX", tag: "★ Recommended", cost: "₹1,874/mo · Pro annual", desc: "27 AI agents · sourcing, screening, interviews, offers, onboarding, L&D, compliance, payroll — in one platform.", a: "✓", b: "✓", c: "✓", featured: true },
+                  { name: "HIREXAI", tag: "★ Recommended", cost: "₹1,874/mo · Pro annual", desc: "27 AI agents · sourcing, screening, interviews, offers, onboarding, L&D, compliance, payroll — in one platform.", a: "✓", b: "✓", c: "✓", featured: true },
                   { name: "LinkedIn Recruiter", tag: "Microsoft", cost: "₹9,999/seat · annual only", desc: "InMail credits + search filters. Sourcing only. No screening, scheduling, interview, or onboarding.", a: "✗", b: "✗", c: "✗" },
                   { name: "Indeed Sponsored", tag: "CPC auction", cost: "₹18,000+/mo · typical CPC spend", desc: "Pay per click on listings. No screening, scheduling, or pipeline tools. Quality varies by auction price.", a: "✗", b: "~", c: "✗" },
                   { name: "HireVue", tag: "US enterprise", cost: "$35,000+/yr · ~₹2.4L/mo", desc: "Async video interviews + AI scoring. No sourcing, payroll, or L&D. Annual contract, custom-quote.", a: "~", b: "✗", c: "✗" },
@@ -681,7 +681,7 @@ const PricingPage = () => {
                 Cancel 4 tools. Keep one. <span className="grad-text-cyan italic">Save ₹42K/month on average.</span>
               </div>
               <p className="text-sm text-hirex-text2 leading-relaxed">
-                Customers who switched to HireX cut their hiring tool spend by an average of <span className="text-foreground font-semibold">68% in the first 90 days</span> — while making <span className="text-foreground font-semibold">3.4× more interviews</span>. Free migration from any of the platforms above.
+                Customers who switched to HIREXAI cut their hiring tool spend by an average of <span className="text-foreground font-semibold">68% in the first 90 days</span> — while making <span className="text-foreground font-semibold">3.4× more interviews</span>. Free migration from any of the platforms above.
               </p>
             </div>
             <button
@@ -751,7 +751,7 @@ const PricingPage = () => {
             </summary>
             <div className="mt-6 pt-6 border-t border-border">
               <p className="text-hirex-text2 text-base leading-relaxed mb-6">
-                Every action in HireX has a published credit cost — visible before you click. Light actions are nearly free. Heavy actions cost more because they cost us more.
+                Every action in HIREXAI has a published credit cost — visible before you click. Light actions are nearly free. Heavy actions cost more because they cost us more.
               </p>
               <div className="grid md:grid-cols-3 gap-4">
                 {CREDIT_CATEGORIES.map((cat) => (
@@ -850,7 +850,7 @@ const PricingPage = () => {
             <div className="flex justify-center">
               <img
                 src={razorpayUpiQr}
-                alt="HireX Razorpay UPI QR code"
+                alt="HIREXAI Razorpay UPI QR code"
                 className="w-full max-w-[280px] rounded-xl border border-border bg-white p-3"
               />
             </div>
@@ -884,7 +884,7 @@ const PricingPage = () => {
               Ready to <span className="grad-text-cyan italic">make a decision?</span>
             </h2>
             <p className="text-hirex-text2 text-base md:text-lg leading-relaxed max-w-[560px] mx-auto mb-8">
-              Buy a candidate or Scale Fast plan instantly, or book a 20-minute demo to see HireX run on your roles.
+              Buy a candidate or Scale Fast plan instantly, or book a 20-minute demo to see HIREXAI run on your roles.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a

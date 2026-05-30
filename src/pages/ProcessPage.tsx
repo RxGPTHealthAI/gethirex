@@ -47,7 +47,7 @@ const ProcessPage = () => (
     <section className="py-24 lg:py-32 text-center">
       <div className="max-w-5xl mx-auto px-6">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          The Exact HireX AI Process — <span className="grad-text-cyan">Trial to First Hire in 72 Hours</span>
+          The Exact HIREXAI AI Process — <span className="grad-text-cyan">Trial to First Hire in 72 Hours</span>
         </h1>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
           Walk through the minute-by-minute workflow that 500+ companies experience. Every step is real. Every metric is verified.
@@ -92,7 +92,7 @@ const ProcessPage = () => (
                 <th className="text-left py-4 px-4 text-muted-foreground font-medium">Company</th>
                 <th className="text-left py-4 px-4 text-muted-foreground font-medium">Volume</th>
                 <th className="text-left py-4 px-4 text-muted-foreground font-medium">Before</th>
-                <th className="text-left py-4 px-4 text-muted-foreground font-medium">After HireX</th>
+                <th className="text-left py-4 px-4 text-muted-foreground font-medium">After HIREXAI</th>
                 <th className="text-left py-4 px-4 text-muted-foreground font-medium">Saved</th>
               </tr>
             </thead>

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
-import hirexLogo from "@/assets/hirex-logo.png";
+import hirexLogo from "@/assets/hirexai-horizontal-white.png";
 
 const PlatformSwitcher = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -75,7 +75,7 @@ const PlatformSwitcher = () => {
       <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none" />
 
       <div className="relative z-10 flex flex-col items-center text-center px-6">
-        <img src={hirexLogo} alt="HireX" className="h-16 w-auto mb-10 drop-shadow-[0_0_30px_hsla(202,72%,59%,0.3)]" />
+        <img src={hirexLogo} alt="HIREXAI" className="h-16 w-auto mb-10 drop-shadow-[0_0_30px_hsla(202,72%,59%,0.3)]" />
 
         <h1 className="text-[clamp(36px,6vw,64px)] font-bold mb-4 leading-[1.1]">
           The Future of HR is
@@ -130,13 +130,13 @@ const PlatformSwitcher = () => {
 
         {/* Demo Video */}
         <div className="w-full max-w-3xl mt-16">
-          <p className="text-center text-xs font-bold tracking-[0.15em] uppercase text-hirex-text3 mb-4">See HireX in Action</p>
+          <p className="text-center text-xs font-bold tracking-[0.15em] uppercase text-hirex-text3 mb-4">See HIREXAI in Action</p>
           <div className="rounded-xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(91,110,245,0.15)]">
             <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
               <iframe
                 className="absolute inset-0 w-full h-full"
                 src="https://www.youtube.com/embed/oTvA-86ZiM0"
-                title="HireX Product Demo"
+                title="HIREXAI Product Demo"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />

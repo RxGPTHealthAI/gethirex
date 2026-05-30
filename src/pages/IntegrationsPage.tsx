@@ -50,7 +50,7 @@ const IntegrationsPage = () => (
           Connect Your Entire <span className="grad-text-cyan">HR Tech Stack</span>
         </h1>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          HireX plugs into your existing ATS, HRIS, job boards, and communication tools via 1-click OAuth. No IT tickets. No 6-month implementation.
+          HIREXAI plugs into your existing ATS, HRIS, job boards, and communication tools via 1-click OAuth. No IT tickets. No 6-month implementation.
         </p>
       </div>
     </section>

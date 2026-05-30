@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
-import hirexLogo from "@/assets/hirex-logo.png";
+import hirexLogo from "@/assets/hirexai-horizontal-white.png";
 
 const PlatformSwitcher = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);

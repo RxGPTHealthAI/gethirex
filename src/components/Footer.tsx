@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import hirexLogo from "@/assets/hirex-logo.png";
+import hirexLogo from "@/assets/hirexai-stacked-white.png";
 
 const Footer = () => (
   <footer className="pt-20 pb-8 border-t border-border" style={{ background: "#0F1425" }}>

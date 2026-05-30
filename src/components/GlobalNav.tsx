@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import hirexLogo from "@/assets/hirex-logo.png";
+import hirexLogo from "@/assets/hirexai-horizontal-white.png";
 
 const GlobalNav = () => {
   const [open, setOpen] = useState(false);

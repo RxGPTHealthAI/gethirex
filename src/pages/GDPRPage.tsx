@@ -64,7 +64,7 @@ const GDPRPage = () => (
 
       <div className="glass-card rounded-2xl p-8">
         <h2 className="text-xl font-bold mb-4">Data Processing Agreements</h2>
-        <p className="text-sm text-muted-foreground">HireX maintains signed DPAs with Google Cloud Platform, Stripe/Razorpay, AuthBridge/Checkr, and all ATS integration partners.</p>
+        <p className="text-sm text-muted-foreground">HIREXAI maintains signed DPAs with Google Cloud Platform, Stripe/Razorpay, AuthBridge/Checkr, and all ATS integration partners.</p>
         <p className="text-sm text-primary mt-3">📧 GDPR/DPDP requests: dpo@gethirex.space</p>
       </div>
     </section>

@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="container flex items-center justify-between h-[68px]">
         <Link to="/" className="flex items-center gap-2.5 no-underline">
           <div className="w-9 h-9 rounded-[10px] bg-gradient-to-br from-primary to-accent flex items-center justify-center text-lg">✦</div>
-          <span className="font-display font-extrabold text-[22px] text-foreground">HireX</span>
+          <span className="font-display font-extrabold text-[22px] text-foreground">HIREXAI</span>
         </Link>
         <div className="hidden md:flex items-center gap-2">
           {navLinks.map((l) => (

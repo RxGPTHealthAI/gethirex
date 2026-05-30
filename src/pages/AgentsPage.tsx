@@ -6,57 +6,57 @@ const tiers = [
   {
     num: "TIER 1", name: "Recruitment Supers", desc: "Find, evaluate, and convert the right talent—fast.",
     agents: [
-      { name: "HIREX TalentRadar", desc: "Surfaces high-fit candidates hidden in large CV pools using semantic search." },
-      { name: "HIREX ScoreMaster", desc: "Objectively ranks candidates using multi-factor, bias-free scoring." },
-      { name: "HIREX EmailBlitz", desc: "Automates high-response candidate communication at scale." },
-      { name: "HIREX InterviewPro", desc: "Generates role-specific, bias-aware interview frameworks." },
-      { name: "HIREX VideoGenix", desc: "Analyzes recorded interviews for signal, not noise." },
-      { name: "HIREX RefCheckr", desc: "Automates reference validation and trust scoring." },
+      { name: "HIREXAI TalentRadar", desc: "Surfaces high-fit candidates hidden in large CV pools using semantic search." },
+      { name: "HIREXAI ScoreMaster", desc: "Objectively ranks candidates using multi-factor, bias-free scoring." },
+      { name: "HIREXAI EmailBlitz", desc: "Automates high-response candidate communication at scale." },
+      { name: "HIREXAI InterviewPro", desc: "Generates role-specific, bias-aware interview frameworks." },
+      { name: "HIREXAI VideoGenix", desc: "Analyzes recorded interviews for signal, not noise." },
+      { name: "HIREXAI RefCheckr", desc: "Automates reference validation and trust scoring." },
     ],
   },
   {
     num: "TIER 2", name: "Onboarding & Compliance Supers", desc: "Turn offers into Day-1-ready employees—without legal risk.",
     agents: [
-      { name: "HIREX OfferCraft", desc: "Creates optimized, close-ready offer letters with compensation benchmarks." },
-      { name: "HIREX PayGuard", desc: "Benchmarks compensation using real market data." },
-      { name: "HIREX ContractPro", desc: "Generates compliant employment contracts automatically." },
-      { name: "HIREX LawShield", desc: "Flags legal, labor, and regulatory risks across jurisdictions." },
-      { name: "HIREX BackCheck", desc: "Automates background and identity verification." },
-      { name: "HIREX NDAWizard", desc: "Instantly issues role-specific NDAs." },
-      { name: "HIREX WelcomeBot", desc: "Automates the first-day onboarding experience." },
+      { name: "HIREXAI OfferCraft", desc: "Creates optimized, close-ready offer letters with compensation benchmarks." },
+      { name: "HIREXAI PayGuard", desc: "Benchmarks compensation using real market data." },
+      { name: "HIREXAI ContractPro", desc: "Generates compliant employment contracts automatically." },
+      { name: "HIREXAI LawShield", desc: "Flags legal, labor, and regulatory risks across jurisdictions." },
+      { name: "HIREXAI BackCheck", desc: "Automates background and identity verification." },
+      { name: "HIREXAI NDAWizard", desc: "Instantly issues role-specific NDAs." },
+      { name: "HIREXAI WelcomeBot", desc: "Automates the first-day onboarding experience." },
     ],
   },
   {
     num: "TIER 3", name: "Employee Lifecycle Supers", desc: "Optimize performance, retention, and growth—continuously.",
     agents: [
-      { name: "HIREX SuccessPredict", desc: "Forecasts 30–90 day hire success rates." },
-      { name: "HIREX StayAlert", desc: "Detects early attrition and flight risk signals." },
-      { name: "HIREX SkillScope", desc: "Maps skill gaps across teams and roles." },
-      { name: "HIREX RiseRanker", desc: "Recommends promotions using objective data." },
-      { name: "HIREX LearnMatch", desc: "Personalizes training and upskilling paths." },
-      { name: "HIREX HappyTrack", desc: "Tracks engagement and sentiment trends." },
-      { name: "HIREX TeamFit", desc: "Analyzes team chemistry and balance." },
-      { name: "HIREX GrowthPath", desc: "Builds long-term career trajectories for employees." },
+      { name: "HIREXAI SuccessPredict", desc: "Forecasts 30–90 day hire success rates." },
+      { name: "HIREXAI StayAlert", desc: "Detects early attrition and flight risk signals." },
+      { name: "HIREXAI SkillScope", desc: "Maps skill gaps across teams and roles." },
+      { name: "HIREXAI RiseRanker", desc: "Recommends promotions using objective data." },
+      { name: "HIREXAI LearnMatch", desc: "Personalizes training and upskilling paths." },
+      { name: "HIREXAI HappyTrack", desc: "Tracks engagement and sentiment trends." },
+      { name: "HIREXAI TeamFit", desc: "Analyzes team chemistry and balance." },
+      { name: "HIREXAI GrowthPath", desc: "Builds long-term career trajectories for employees." },
     ],
   },
   {
     num: "TIER 4", name: "Analytics & Intelligence Supers", desc: "Turn HR into a measurable, optimizable system.",
     agents: [
-      { name: "HIREX InsightX", desc: "Unified HR analytics dashboard for all key metrics." },
-      { name: "HIREX HireCast", desc: "Predicts future hiring demand by role and region." },
-      { name: "HIREX CostSentry", desc: "Identifies HR cost leaks and savings opportunities." },
-      { name: "HIREX ROIPro", desc: "Calculates ROI per hire, role, and team." },
-      { name: "HIREX BenchMarkr", desc: "Compares performance vs industry peers." },
-      { name: "HIREX Diverseye", desc: "Tracks DEI metrics with full accountability." },
+      { name: "HIREXAI InsightX", desc: "Unified HR analytics dashboard for all key metrics." },
+      { name: "HIREXAI HireCast", desc: "Predicts future hiring demand by role and region." },
+      { name: "HIREXAI CostSentry", desc: "Identifies HR cost leaks and savings opportunities." },
+      { name: "HIREXAI ROIPro", desc: "Calculates ROI per hire, role, and team." },
+      { name: "HIREXAI BenchMarkr", desc: "Compares performance vs industry peers." },
+      { name: "HIREXAI Diverseye", desc: "Tracks DEI metrics with full accountability." },
     ],
   },
   {
     num: "TIER 5", name: "India + Specialty Supers", desc: "Designed for scale, regulation, and regional complexity.",
     agents: [
-      { name: "HIREX BharatParse", desc: "Parses Hindi and regional-language resumes accurately." },
-      { name: "HIREX HospitalMatch", desc: "Specialized hiring for clinical roles (RxGPT-ready)." },
-      { name: "HIREX ScaleMaster", desc: "Manages 100+ parallel hiring pipelines simultaneously." },
-      { name: "HIREX GlobalSync", desc: "Coordinates multi-country hiring compliance seamlessly." },
+      { name: "HIREXAI BharatParse", desc: "Parses Hindi and regional-language resumes accurately." },
+      { name: "HIREXAI HospitalMatch", desc: "Specialized hiring for clinical roles (RxGPT-ready)." },
+      { name: "HIREXAI ScaleMaster", desc: "Manages 100+ parallel hiring pipelines simultaneously." },
+      { name: "HIREXAI GlobalSync", desc: "Coordinates multi-country hiring compliance seamlessly." },
     ],
   },
 ];
@@ -74,7 +74,7 @@ const AgentsPage = () => {
             27 Autonomous Agents. One Coordinated Workforce.
           </div>
           <h1 className="font-display text-[clamp(48px,7vw,88px)] font-extrabold mb-5">
-            Pick Your<br /><span className="grad-text">HIREX Super-Agents</span>
+            Pick Your<br /><span className="grad-text">HIREXAI Super-Agents</span>
           </h1>
           <p className="text-hirex-text2 max-w-[580px] mx-auto mb-9 text-[17px] leading-relaxed">
             Each Super-Agent replaces a full-time HR function. Together they form a coordinated AI workforce that runs your entire people operation—accurately, compliantly, and at scale.

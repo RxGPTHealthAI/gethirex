@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const faqs = [
-  { q: 'What is HireX?', a: 'HireX is an AI-powered recruitment platform with 27 specialized AI agents that automate the entire hiring pipeline — from sourcing to onboarding.' },
-  { q: 'Who can use HireX?', a: 'HireX serves both employers (HR teams, recruiters, founders) and candidates (job seekers, career changers).' },
-  { q: 'How is HireX different from other HR tools?', a: 'Unlike point solutions, HireX deploys 27 AI agents that work together as a team. Each agent specializes in a critical function, creating an end-to-end hiring experience.' },
+  { q: 'What is HIREXAI?', a: 'HIREXAI is an AI-powered recruitment platform with 27 specialized AI agents that automate the entire hiring pipeline — from sourcing to onboarding.' },
+  { q: 'Who can use HIREXAI?', a: 'HIREXAI serves both employers (HR teams, recruiters, founders) and candidates (job seekers, career changers).' },
+  { q: 'How is HIREXAI different from other HR tools?', a: 'Unlike point solutions, HIREXAI deploys 27 AI agents that work together as a team. Each agent specializes in a critical function, creating an end-to-end hiring experience.' },
   { q: 'Is there a free trial?', a: 'Yes! Book a demo to get started with a free trial. Limited to 100 early access licenses.' },
-  { q: 'What industries does HireX support?', a: 'HireX works across all industries — tech, healthcare, finance, BPO, manufacturing, and more.' },
+  { q: 'What industries does HIREXAI support?', a: 'HIREXAI works across all industries — tech, healthcare, finance, BPO, manufacturing, and more.' },
 ];
 
 const FaqPage = () => {

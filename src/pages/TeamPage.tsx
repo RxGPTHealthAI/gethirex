@@ -53,7 +53,7 @@ const leadership: Member[] = [
 
 const techTeam: Member[] = [
   { name: "Samarth Manojkumar Naik", role: "Chief Technology Officer", img: samarthImg,
-    bio: "Technology enthusiast and architect of HireX's 27-agent orchestration engine. Strong knowledge of backend development and AI-driven systems.",
+    bio: "Technology enthusiast and architect of HIREXAI's 27-agent orchestration engine. Strong knowledge of backend development and AI-driven systems.",
     education: "B.Tech from VIT Vellore | BS in Data Science from IIT Madras" },
   { name: "Jayanth Sai Srinivas", role: "GCP Lead", img: jayanthImg,
     bio: "Cloud DevOps Engineer with 3 years of deep experience in DevOps automation. Now at RxGPT, translates efficiency into leading the GCP ecosystem, deploying advanced Kubernetes strategies that allow the AI to scale globally without latency.",
@@ -99,7 +99,7 @@ const initialsOf = (name: string) =>
 // Extended team — new members from latest roster
 const extendedTeam: Member[] = [
   { name: "Bibhuti Bhusan Biswal", role: "Data Science Intern", img: bibhutiImg,
-    bio: "Drives advanced analytics and AI-powered insights at HireX. Strong foundation in machine learning, statistical analysis, and data modeling to optimize recruitment intelligence and workforce analytics frameworks." },
+    bio: "Drives advanced analytics and AI-powered insights at HIREXAI. Strong foundation in machine learning, statistical analysis, and data modeling to optimize recruitment intelligence and workforce analytics frameworks." },
   { name: "Harsh Garg", role: "UI/UX Designer", img: harshImg,
     bio: "Creates intuitive and visually engaging digital product experiences. Skilled in wireframing, rapid prototyping, and user-centered design methodologies that balance functionality with clean aesthetics." },
   { name: "Abhinaya R", role: "HR Associate", img: abhinayaRImg,
@@ -109,9 +109,9 @@ const extendedTeam: Member[] = [
   { name: "Samarth Guddadar", role: "HR Associate", img: samarthGImg,
     bio: "Focuses on talent recruitment, new-hire onboarding, and team engagement initiatives. Combines sharp interpersonal skills with a structured approach to maintain seamless internal operations." },
   { name: "Frank Jiang", role: "AI LLM Scientist", img: frankImg,
-    bio: "Specialises in fine-tuning, training, and scaling large language models and NLP systems that power HireX's automated screening, recruitment insights, and predictive workforce analytics." },
+    bio: "Specialises in fine-tuning, training, and scaling large language models and NLP systems that power HIREXAI's automated screening, recruitment insights, and predictive workforce analytics." },
   { name: "Werner Docx", role: "International Sales Manager", img: wernerImg,
-    bio: "Heads up global sales initiatives and cross-border client acquisition. Deep experience in international B2B sales and complex contract negotiations to expand HireX's enterprise footprint." },
+    bio: "Heads up global sales initiatives and cross-border client acquisition. Deep experience in international B2B sales and complex contract negotiations to expand HIREXAI's enterprise footprint." },
   { name: "Aayush Kumar", role: "AI Backend Developer", img: aayushImg,
     bio: "Specialises in high-throughput backend systems and algorithm optimization. Strong algorithmic foundations, data structure design, and AI framework integration powering the platform." },
   { name: "Palak Ahuja", role: "Content Writer", img: palakImg,

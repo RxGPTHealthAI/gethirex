@@ -4,7 +4,7 @@ import heroImg from "@/assets/hero-team-meeting.jpg";
 
 const caseStudies = [
   { title: "Bangalore SaaS Startup", subtitle: "25 Engineers in 45 Days", industry: "B2B Software", color: "from-primary/20 to-primary/5",
-    quote: "We were bleeding cash on recruiters. HireX paid for itself in week 1. Our engineers are still with us.", author: "CTO, Bangalore SaaS Startup",
+    quote: "We were bleeding cash on recruiters. HIREXAI paid for itself in week 1. Our engineers are still with us.", author: "CTO, Bangalore SaaS Startup",
     metrics: [{ label: "Time to Hire", before: "120 days", after: "45 days", improvement: "63% faster" }, { label: "Cost Per Hire", before: "₹1.5 Lakh", after: "₹8,299", improvement: "94% reduction" }, { label: "Offer Acceptance", before: "60%", after: "91%", improvement: "+31pp" }, { label: "Total Saved", before: "—", after: "₹12 Lakh", improvement: "" }]
   },
   { title: "Mumbai BPO Giant", subtitle: "1,000 Agents in 60 Days", industry: "BPO", color: "from-accent/20 to-accent/5",
@@ -40,10 +40,10 @@ const CustomerStoriesPage = () => (
       </div>
       <div className="relative max-w-5xl mx-auto px-6 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          HireX Customer Stories — <span className="grad-text-cyan">Real Numbers. Zero Fluff.</span>
+          HIREXAI Customer Stories — <span className="grad-text-cyan">Real Numbers. Zero Fluff.</span>
         </h1>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          500+ companies. From Bangalore startups to Singapore enterprises. Every metric is from real HireX platform data.
+          500+ companies. From Bangalore startups to Singapore enterprises. Every metric is from real HIREXAI platform data.
         </p>
       </div>
     </section>

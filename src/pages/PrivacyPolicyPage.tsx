@@ -2,7 +2,7 @@ import { Shield, Lock, Eye, Server, FileCheck, CheckCircle2 } from "lucide-react
 
 const sections = [
   { icon: Shield, title: "1. What Data We Collect", items: [
-    { subtitle: "Employer Data", points: ["Company name, address, GST/TIN number", "HR admin email, phone, designation", "Job descriptions, hiring preferences, ATS credentials", "Payment information (processed via Stripe/Razorpay — not stored by HireX)", "Usage analytics (features used, sessions, API calls)"] },
+    { subtitle: "Employer Data", points: ["Company name, address, GST/TIN number", "HR admin email, phone, designation", "Job descriptions, hiring preferences, ATS credentials", "Payment information (processed via Stripe/Razorpay — not stored by HIREXAI)", "Usage analytics (features used, sessions, API calls)"] },
     { subtitle: "Candidate Data", points: ["Resume content: name, contact details, work history, education, skills", "Self-assessments and test responses", "Interview recordings (with explicit consent only)", "Job preferences, salary expectations, location", "Application status and communication history"] },
   ]},
   { icon: Eye, title: "2. How We Use Your Data", items: [
@@ -27,7 +27,7 @@ const PrivacyPolicyPage = () => (
         <p className="text-sm text-muted-foreground mb-2">Effective: January 1, 2026 | Controller: GetHired Global Pvt Ltd</p>
         <p className="text-sm text-primary">DPO: dpo@gethirex.space</p>
         <p className="text-muted-foreground mt-6 max-w-3xl mx-auto text-sm">
-          This Privacy Policy explains how HireX collects, uses, stores, and protects personal data. We comply with India's DPDP 2023, EU GDPR, and applicable laws in UAE, UK, and USA.
+          This Privacy Policy explains how HIREXAI collects, uses, stores, and protects personal data. We comply with India's DPDP 2023, EU GDPR, and applicable laws in UAE, UK, and USA.
         </p>
       </div>
     </section>
@@ -62,7 +62,7 @@ const PrivacyPolicyPage = () => (
 
       <div className="glass-card rounded-2xl p-8">
         <h2 className="text-xl font-bold mb-4">7. Children's Privacy</h2>
-        <p className="text-sm text-muted-foreground">HireX is not intended for users under 18. We do not knowingly collect data from minors.</p>
+        <p className="text-sm text-muted-foreground">HIREXAI is not intended for users under 18. We do not knowingly collect data from minors.</p>
       </div>
 
       <div className="glass-card rounded-2xl p-8">

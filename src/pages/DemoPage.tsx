@@ -15,7 +15,7 @@ const whatYoullSee = [
   "Your exact ATS integration demonstrated (Workday/BambooHR/Greenhouse)",
   "Custom pricing built for your company size and hiring volume",
   "30-day ROI projection based on your current hiring costs",
-  "Q&A with a HireX AI recruitment specialist",
+  "Q&A with a HIREXAI AI recruitment specialist",
 ];
 
 const postDemo = [
@@ -23,7 +23,7 @@ const postDemo = [
   "Custom implementation plan sent within 24 hours",
   "ATS integration walkthrough scheduled if needed",
   "Pricing proposal tailored to your exact needs",
-  "Slack channel opened with your HireX specialist",
+  "Slack channel opened with your HIREXAI specialist",
 ];
 
 const DemoPage = () => (
@@ -32,13 +32,13 @@ const DemoPage = () => (
       <div className="max-w-5xl mx-auto px-6">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
           <Video className="w-4 h-4 text-primary" />
-          <span className="text-sm text-muted-foreground">93% of HR teams that see HireX live sign up same day</span>
+          <span className="text-sm text-muted-foreground">93% of HR teams that see HIREXAI live sign up same day</span>
         </div>
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          See HireX Screen 100 Resumes <span className="grad-text-cyan">Live</span>
+          See HIREXAI Screen 100 Resumes <span className="grad-text-cyan">Live</span>
         </h1>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-          15-minute demo, zero fluff. A real HireX specialist will screen actual candidates for YOUR specific role, live on screen, in real time.
+          15-minute demo, zero fluff. A real HIREXAI specialist will screen actual candidates for YOUR specific role, live on screen, in real time.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="https://calendly.com/hirex/15min-demo" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-xl bg-primary text-primary-foreground font-bold hover:opacity-90 transition inline-flex items-center gap-2">

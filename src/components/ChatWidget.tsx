@@ -12,7 +12,7 @@ const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/hirex-chat`;
 const WELCOME: Msg = {
   role: "assistant",
   content:
-    "👋 Hey, I'm **Rex** — your HireX hiring sidekick.\n\nThink of me as the colleague who never sleeps and actually *enjoys* recruiting paperwork. I can help you:\n\n- 🎯 Understand how our AI agents screen, schedule & engage candidates\n- ⚡ Get set up in minutes\n- 💸 Pick the right plan\n- 📅 Loop in our human team when you need them\n\nSo — what are we hiring for today?",
+    "👋 Hey, I'm **Rex** — your HIREXAI hiring sidekick.\n\nThink of me as the colleague who never sleeps and actually *enjoys* recruiting paperwork. I can help you:\n\n- 🎯 Understand how our AI agents screen, schedule & engage candidates\n- ⚡ Get set up in minutes\n- 💸 Pick the right plan\n- 📅 Loop in our human team when you need them\n\nSo — what are we hiring for today?",
 };
 
 const SUGGESTIONS = [
@@ -138,7 +138,7 @@ export default function ChatWidget() {
       }
     } catch (e) {
       console.error(e);
-      toast.error("Couldn't reach HireX Care. Please try again.");
+      toast.error("Couldn't reach HIREXAI Care. Please try again.");
       setMessages((prev) => prev.slice(0, -1));
     } finally {
       setLoading(false);
@@ -214,7 +214,7 @@ export default function ChatWidget() {
           <div className="flex-1 min-w-0">
             <div className="font-semibold text-sm text-foreground flex items-center gap-1.5">
               Rex
-              <span className="text-[10px] font-normal text-hirex-text3">· HireX hiring sidekick</span>
+              <span className="text-[10px] font-normal text-hirex-text3">· HIREXAI hiring sidekick</span>
             </div>
             <div className="text-xs text-hirex-text3 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
@@ -297,7 +297,7 @@ export default function ChatWidget() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={onKeyDown}
-              placeholder="Ask Rex anything about HireX…"
+              placeholder="Ask Rex anything about HIREXAI…"
               rows={1}
               className="flex-1 bg-transparent resize-none outline-none text-sm text-foreground placeholder:text-hirex-text3 max-h-32 py-1"
               disabled={loading}
@@ -312,7 +312,7 @@ export default function ChatWidget() {
             </button>
           </div>
           <p className="text-[10px] text-hirex-text3 text-center mt-2">
-            Rex is HireX's AI · For urgent issues email care@gethirex.space
+            Rex is HIREXAI's AI · For urgent issues email care@gethirex.space
           </p>
         </div>
       </div>

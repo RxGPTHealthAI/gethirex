@@ -37,7 +37,7 @@ const CampaignBanner = () => {
             LIMITED EARLY ACCESS
           </span>
           <h1 className="font-syne text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            Book Your HIREX Demo
+            Book Your HIREXAI Demo
           </h1>
           <p className="font-inter text-lg text-white/70 mb-8 max-w-xl mx-auto">
             Only 100 licenses. 23 demos booked in 2 days.

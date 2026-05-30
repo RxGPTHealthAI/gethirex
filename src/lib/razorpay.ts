@@ -120,7 +120,7 @@ export async function startRazorpayCheckout(opts: CheckoutOptions): Promise<void
     amount: orderData.amount,
     currency: orderData.currency,
     order_id: orderData.order_id,
-    name: "HireX",
+    name: "HIREXAI",
     description: `${resolved.name} — ${billing === "annual" ? "Annual" : "Monthly"}`,
     prefill: {
       name: opts.customer?.name ?? "",

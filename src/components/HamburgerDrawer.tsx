@@ -158,7 +158,7 @@ const HamburgerDrawer = () => {
           <div className="px-8 pb-8">
             <div className="h-px bg-gradient-to-r from-transparent via-hirex-cyan/20 to-transparent" />
             <p className="text-[11px] text-hirex-text3 mt-4 text-center">
-              © 2026 HireX by GetHired Global
+              © 2026 HIREXAI by GetHired Global
             </p>
           </div>
         </div>

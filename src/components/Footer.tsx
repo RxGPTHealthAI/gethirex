@@ -7,7 +7,7 @@ const Footer = () => (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
         <div>
           <Link to="/" className="flex items-center gap-2.5 mb-4 no-underline">
-            <img src={hirexLogo} alt="HireX" className="h-8 w-auto" />
+            <img src={hirexLogo} alt="HIREXAI" className="h-8 w-auto" />
           </Link>
           <p className="text-[13px] text-hirex-text3 leading-relaxed max-w-[260px] mb-4">
             AI Recruitment Platform — Autonomous agents that run your entire HR operation.
@@ -95,7 +95,7 @@ const Footer = () => (
       </div>
 
       <div className="flex flex-wrap justify-between items-center text-[12px] text-hirex-text3 gap-4">
-        <span>© 2026 HireX by GetHired Global. All rights reserved.</span>
+        <span>© 2026 HIREXAI by GetHired Global. All rights reserved.</span>
         <div className="flex items-center gap-4 text-hirex-text3">
           <span>SOC2 Secure</span>
           <span>•</span>

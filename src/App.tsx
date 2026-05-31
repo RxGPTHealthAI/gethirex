@@ -43,6 +43,8 @@ const Layout = () => {
 
   return (
     <>
+    <>
+      <RouteSEO />
       {!isAdmin && !isHome && <GlobalNav />}
       {!isAdmin && !isHome && <HamburgerDrawer />}
       <Routes>

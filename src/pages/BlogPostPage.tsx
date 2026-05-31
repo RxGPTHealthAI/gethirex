@@ -64,6 +64,28 @@ const BlogPostPage = () => {
 
   return (
     <div className="animate-fade-in">
+      <SEO
+        title={`${post.title} | HIREXAI Blog`}
+        description={(post.content || "").replace(/<[^>]+>/g, "").slice(0, 155) || post.title}
+        path={`/blog/${slug}`}
+        type="article"
+        image={post.cover_image || undefined}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: post.title,
+          image: post.cover_image ? [post.cover_image] : undefined,
+          datePublished: post.published_at || post.created_at,
+          dateModified: post.published_at || post.created_at,
+          author: { "@type": "Person", name: post.author || "HIREXAI" },
+          publisher: {
+            "@type": "Organization",
+            name: "HIREXAI",
+            logo: { "@type": "ImageObject", url: "https://hirexai.space/favicon.png" },
+          },
+          mainEntityOfPage: `https://hirexai.space/blog/${slug}`,
+        }}
+      />
       <section className="pt-[140px] pb-20 bg-hirex-bg2">
         <div className="container max-w-[780px]">
           <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-hirex-text3 no-underline hover:text-foreground mb-8 transition-colors">

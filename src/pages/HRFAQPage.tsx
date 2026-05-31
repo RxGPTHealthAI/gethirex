@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, Search } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const faqData = [
   { q: "What is HIREXAI?", a: "HIREXAI is an AI recruitment platform that deploys 27 autonomous agents to automate hiring, onboarding, compliance, and workforce analytics. Used by 500+ companies across India, US, UAE, and UK." },

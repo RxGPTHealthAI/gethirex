@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, Search } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const faqData = [
   { q: "What is HIREXAI?", a: "HIREXAI is an AI recruitment platform that deploys 27 autonomous agents to automate hiring, onboarding, compliance, and workforce analytics. Used by 500+ companies across India, US, UAE, and UK." },
@@ -61,6 +62,20 @@ const HRFAQPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="HR FAQ | Questions from Employers | HIREXAI"
+        description="Answers to the most common questions HR teams ask about HIREXAI: pricing, ATS integration, compliance, AI bias, and more."
+        path="/hr-faq"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqData.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }}
+      />
       <section className="py-24 lg:py-32 text-center">
         <div className="max-w-5xl mx-auto px-6">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">HR <span className="grad-text-cyan">FAQ</span></h1>

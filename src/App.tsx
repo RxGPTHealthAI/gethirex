@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import GlobalNav from "@/components/GlobalNav";
 import Footer from "@/components/Footer";
 import HamburgerDrawer from "@/components/HamburgerDrawer";
+import RouteSEO from "@/components/RouteSEO";
 import PlatformSwitcher from "@/pages/PlatformSwitcher";
 import BusinessPage from "@/pages/BusinessPage";
 import CandidatePage from "@/pages/CandidatePage";
@@ -42,6 +43,7 @@ const Layout = () => {
 
   return (
     <>
+      <RouteSEO />
       {!isAdmin && !isHome && <GlobalNav />}
       {!isAdmin && !isHome && <HamburgerDrawer />}
       <Routes>

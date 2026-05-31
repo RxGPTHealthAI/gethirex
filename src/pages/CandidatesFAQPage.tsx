@@ -52,6 +52,20 @@ const CandidatesFAQPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Candidate FAQ | Job Seekers | HIREXAI"
+        description="Common questions from candidates about applying, AI interviews, profile privacy, and getting hired through HIREXAI."
+        path="/candidates-faq"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqData.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }}
+      />
       <section className="py-24 lg:py-32 text-center">
         <div className="max-w-5xl mx-auto px-6">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Candidates <span className="grad-text">FAQ</span></h1>

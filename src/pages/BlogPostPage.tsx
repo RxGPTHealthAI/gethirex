@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { format } from "date-fns";
 import { ArrowLeft } from "lucide-react";
+import SEO from "@/components/SEO";
 
 interface BlogPost {
   id: string;

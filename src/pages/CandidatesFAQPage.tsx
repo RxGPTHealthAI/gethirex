@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, Search } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const faqData = [
   { q: "What is HIREXAI for candidates?", a: "HIREXAI for Candidates is an AI-powered job search platform with 6 specialized agents: Resume Reviver, Job Scout, Career Coach, Interview Pro, Code Coach, and Career Pilot. 50K+ users hired. 4.9/5 stars." },

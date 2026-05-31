@@ -1,0 +1,32 @@
+# HIREXAI
+
+> AI-powered hiring and talent intelligence platform with 27 autonomous AI agents that automate sourcing, screening, interview scheduling, onboarding, compliance, and workforce analytics for employers in India, US, UAE, and UK.
+
+HIREXAI replaces traditional ATS workflows with autonomous AI agents. Employers post a job; agents source from 50+ platforms, screen 10,000+ resumes in 60 seconds, deliver ranked shortlists, schedule interviews, generate offer letters, and run onboarding. Candidates use HIREXAI to discover roles and self-schedule interviews.
+
+## Pages
+
+- [Home](/): Platform overview and audience switcher (employer vs candidate).
+- [For Business](/business): How employers use HIREXAI to source, screen, and hire.
+- [For Candidates](/candidate): How candidates find roles and interview with HIREXAI.
+- [AI Agents](/agents): The 27 autonomous AI agents and what each one does.
+- [How It Works](/how-it-works): End-to-end hiring workflow with HIREXAI.
+- [Process](/process): Detailed implementation and rollout steps.
+- [Customer Stories](/customer-stories): Case studies from companies using HIREXAI.
+- [Pricing](/pricing): Plans for India and global markets, including the 14-day free trial.
+- [Integrations](/integrations): ATS, HRIS, and job board integrations (Workday, Greenhouse, BambooHR, Naukri, etc.).
+- [Demo](/demo): Book a live product demo.
+- [Team](/team): The team behind HIREXAI.
+- [Blog](/blog): Articles on AI recruitment, HR automation, and hiring strategy.
+- [HR FAQ](/hr-faq): Common questions from HR teams and employers.
+- [Candidates FAQ](/candidates-faq): Common questions from job seekers.
+- [Contact](/contact): Reach the HIREXAI team.
+
+## Optional
+
+- [Security](/security): Security posture, encryption, and compliance overview.
+- [GDPR](/gdpr): GDPR compliance details.
+- [Privacy Policy](/privacy)
+- [Cookie Policy](/cookies)
+- [Terms of Service](/terms)
+- [Refund Policy](/refund)

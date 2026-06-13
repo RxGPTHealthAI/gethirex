@@ -55,7 +55,7 @@ const techTeam: Member[] = [
   { name: "Jayanth Sai Srinivas", role: "GCP Lead", img: jayanthImg,
     bio: "Cloud DevOps Engineer with 3 years of deep experience in DevOps automation. Now at RxGPT, translates efficiency into leading the GCP ecosystem, deploying advanced Kubernetes strategies that allow the AI to scale globally without latency.",
     education: "B.Tech Mechanical Engineering, Sai Ganapathi Engineering College, Visakhapatnam" },
-  { name: "Samarth Manojkumar Naik", role: "Tech Lead Intern", img: samarthImg,
+  { name: "Samarth Manojkumar Naik", role: "Agentic AI Intern", img: samarthImg,
     bio: "Drives engineering initiatives across the HIREXAI platform, contributing to AI-powered features and product development." },
   { name: "Tanay Chordia", role: "AI & Data Science Lead", img: tanayImg,
     bio: "Strong expertise in data science, embedded systems, and AI-driven solutions. Contributed to ICARUS CubeSat initiative. 2nd place NeuraAI Hackathon." },

@@ -52,9 +52,6 @@ const leadership: Member[] = [
 ];
 
 const techTeam: Member[] = [
-  { name: "Samarth Manojkumar Naik", role: "Chief Technology Officer", img: samarthImg,
-    bio: "Technology enthusiast and architect of HIREXAI's 27-agent orchestration engine. Strong knowledge of backend development and AI-driven systems.",
-    education: "B.Tech from VIT Vellore | BS in Data Science from IIT Madras" },
   { name: "Jayanth Sai Srinivas", role: "GCP Lead", img: jayanthImg,
     bio: "Cloud DevOps Engineer with 3 years of deep experience in DevOps automation. Now at RxGPT, translates efficiency into leading the GCP ecosystem, deploying advanced Kubernetes strategies that allow the AI to scale globally without latency.",
     education: "B.Tech Mechanical Engineering, Sai Ganapathi Engineering College, Visakhapatnam" },

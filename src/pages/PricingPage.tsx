@@ -884,24 +884,24 @@ const PricingPage = () => {
           <div className="text-center bg-gradient-to-br from-hirex-cyan/10 via-hirex-surface to-hirex-surface border border-hirex-cyan/30 rounded-2xl p-10 md:p-14">
             <Briefcase className="h-10 w-10 text-hirex-cyan mx-auto mb-4" />
             <h2 className="font-display text-[clamp(28px,4.5vw,44px)] font-extrabold leading-[1.1] tracking-tight mb-4">
-              Ready to <span className="grad-text-cyan italic">make a decision?</span>
+              Ready to hire <span className="grad-text-cyan italic">better talent faster?</span>
             </h2>
             <p className="text-hirex-text2 text-base md:text-lg leading-relaxed max-w-[560px] mx-auto mb-8">
-              Buy a candidate or Scale Fast plan instantly, or book a 20-minute demo to see HIREXAI run on your roles.
+              Source. Screen. Shortlist. Hire. All from one AI-powered recruitment platform.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
                 href="#pricing"
                 className="inline-flex items-center justify-center bg-gradient-to-r from-hirex-cyan to-hirex-primary-light text-primary-foreground font-bold text-sm md:text-base px-7 py-3.5 rounded-full hover:scale-[1.03] transition-transform shadow-[0_8px_24px_hsla(202,72%,59%,0.35)]"
               >
-                Buy Now →
+                Start Hiring →
               </a>
               <button
                 onClick={openCalendly}
-                data-cta="book-demo"
+                data-cta="talk-to-sales"
                 className="inline-flex items-center justify-center bg-hirex-surface border border-hirex-border2 text-foreground font-bold text-sm md:text-base px-7 py-3.5 rounded-full hover:border-hirex-cyan/40 transition-colors"
               >
-                Book Demo
+                Talk To Sales
               </button>
             </div>
           </div>

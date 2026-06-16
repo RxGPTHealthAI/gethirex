@@ -590,8 +590,8 @@ const PricingPage = () => {
           <div className="bg-hirex-surface border border-border rounded-2xl overflow-hidden">
             <div className="grid grid-cols-3 gap-2 px-5 py-3 bg-hirex-bg2 border-b border-border text-xs font-mono uppercase tracking-wider text-hirex-text3">
               <div></div>
-              <div>Old stack</div>
-              <div className="text-hirex-primary-light">HIREXAI</div>
+              <div>Traditional Hiring Stack</div>
+              <div className="text-hirex-primary-light">HireX</div>
             </div>
             {COMPARISON_ROWS.map(([label, old, hx]) => (
               <div

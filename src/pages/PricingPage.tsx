@@ -513,7 +513,7 @@ const PricingPage = () => {
                         onClick={openCalendly}
                         className="w-full py-3.5 rounded-full font-bold text-sm transition-all bg-foreground text-hirex-bg2 hover:opacity-90"
                       >
-                        Talk to Sales →
+                        Talk To Sales →
                       </button>
                     )}
                   </div>

@@ -639,17 +639,17 @@ const PricingPage = () => {
               </thead>
               <tbody>
                 {[
-                  { name: "HIREXAI", tag: "★ Recommended", cost: "₹1,874/mo · Pro annual", desc: "27 AI agents · sourcing, screening, interviews, offers, onboarding, L&D, compliance, payroll — in one platform.", a: "✓", b: "✓", c: "✓", featured: true },
-                  { name: "LinkedIn Recruiter", tag: "Microsoft", cost: "₹9,999/seat · annual only", desc: "InMail credits + search filters. Sourcing only. No screening, scheduling, interview, or onboarding.", a: "✗", b: "✗", c: "✗" },
+                  { name: "HireX", tag: "★ Recommended", cost: "From ₹4,999/mo · Starter", desc: "AI-powered sourcing, screening, shortlisting, interview coordination, hiring analytics, and recruitment automation in one platform.", a: "✓", b: "✓", c: "✓", featured: true },
+                  { name: "LinkedIn Recruiter", tag: "Microsoft", cost: "₹9,999/seat · annual only", desc: "InMail credits + search filters. Sourcing only. No screening, scheduling, or interview coordination.", a: "✗", b: "✗", c: "✗" },
                   { name: "Indeed Sponsored", tag: "CPC auction", cost: "₹18,000+/mo · typical CPC spend", desc: "Pay per click on listings. No screening, scheduling, or pipeline tools. Quality varies by auction price.", a: "✗", b: "~", c: "✗" },
-                  { name: "HireVue", tag: "US enterprise", cost: "$35,000+/yr · ~₹2.4L/mo", desc: "Async video interviews + AI scoring. No sourcing, payroll, or L&D. Annual contract, custom-quote.", a: "~", b: "✗", c: "✗" },
+                  { name: "HireVue", tag: "US enterprise", cost: "$35,000+/yr · ~₹2.4L/mo", desc: "Async video interviews + AI scoring. No sourcing or end-to-end hiring workflow. Annual contract, custom-quote.", a: "~", b: "✗", c: "✗" },
                   { name: "Eightfold AI", tag: "Talent intel", cost: "$60,000+/yr · ~₹4.1L/mo", desc: "Talent-graph search + matching. Strong for sourcing, weak on hands-on hiring workflow. Sales-led only.", a: "~", b: "✗", c: "✗" },
-                  { name: "SeekOut", tag: "US enterprise", cost: "$8,000+/yr · ~₹55K/mo", desc: "Boolean sourcing + diversity insights. No interview, screening, or onboarding modules.", a: "~", b: "✗", c: "✗" },
+                  { name: "SeekOut", tag: "US enterprise", cost: "$8,000+/yr · ~₹55K/mo", desc: "Boolean sourcing + diversity insights. No interview, screening, or shortlisting workflow.", a: "~", b: "✗", c: "✗" },
                   { name: "Beamery", tag: "Talent CRM", cost: "$50,000+/yr · ~₹3.4L/mo", desc: "Sourcing + nurture campaigns. Bring-your-own ATS. Long onboarding, enterprise sales cycle.", a: "✗", b: "✗", c: "✗" },
-                  { name: "Cutshort", tag: "India SaaS", cost: "₹12,500/mo · Premium", desc: "Curated tech sourcing + chat. Limited automation. No interviews, payroll, or L&D modules.", a: "✗", b: "✗", c: "✗" },
+                  { name: "Cutshort", tag: "India SaaS", cost: "₹12,500/mo · Premium", desc: "Curated tech sourcing + chat. Limited automation. No interview coordination or bulk screening.", a: "✗", b: "✗", c: "✗" },
                   { name: "Zoho Recruit", tag: "ATS", cost: "₹2,800/user/mo · Enterprise", desc: "Per-user ATS workflow. Add-ons cost extra. No native AI screening or interview module.", a: "✗", b: "✗", c: "~" },
-                  { name: "Greenhouse", tag: "US enterprise", cost: "$6,500+/yr · ~₹45K/mo", desc: "Full-featured ATS. Sourcing, AI screening, payroll require integrations + extra spend.", a: "✗", b: "✗", c: "~" },
-                  { name: 'Recruiter "stack"', tag: "DIY 5-tool combo", cost: "₹45,000+/mo · typical SMB stack", desc: "LinkedIn + ATS + screener + scheduler + payroll bolted together. 5 logins, 5 invoices, 5 silos.", a: "✗", b: "✗", c: "✗" },
+                  { name: "Greenhouse", tag: "US enterprise", cost: "$6,500+/yr · ~₹45K/mo", desc: "Full-featured ATS. AI sourcing and screening require integrations + extra spend.", a: "✗", b: "✗", c: "~" },
+                  { name: 'Recruiter "stack"', tag: "DIY 4-tool combo", cost: "₹45,000+/mo · typical SMB stack", desc: "LinkedIn + ATS + screener + scheduler bolted together. Multiple logins, multiple invoices, multiple silos.", a: "✗", b: "✗", c: "✗" },
                 ].map((row) => (
                   <tr
                     key={row.name}

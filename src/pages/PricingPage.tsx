@@ -618,10 +618,10 @@ const PricingPage = () => {
         <div className="container max-w-[1180px]">
           <div className="text-center max-w-[720px] mx-auto mb-10">
             <h2 className="font-display text-[clamp(26px,4vw,40px)] font-extrabold leading-[1.1] tracking-tight mb-3">
-              The same hire. <span className="grad-text-cyan italic">One-fifth the spend.</span>
+              More qualified candidates. <span className="grad-text-cyan italic">Less recruiting effort.</span>
             </h2>
             <p className="text-hirex-text2 text-base leading-relaxed">
-              We pulled the public pricing of the tools recruiters tell us they're paying for today. Here's what you actually get for what you actually pay.
+              Stop paying for multiple sourcing, screening, scheduling, and recruitment tools. HireX combines the modern hiring workflow into one platform designed for recruiters, HR teams, and hiring managers.
             </p>
           </div>
 

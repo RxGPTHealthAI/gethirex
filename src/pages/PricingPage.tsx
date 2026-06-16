@@ -737,47 +737,49 @@ const PricingPage = () => {
         </div>
       </section>
 
-      {/* COLLAPSED CREDITS EXPLAINER */}
-      <section className="py-[72px] max-md:py-[56px]">
-        <div className="container max-w-[1080px]">
-          <details className="group bg-hirex-surface border border-border rounded-2xl p-6 md:p-8">
-            <summary className="cursor-pointer list-none flex items-center justify-between gap-4">
-              <div>
-                <div className="text-xs font-mono tracking-[0.15em] uppercase text-hirex-primary-light mb-1">
-                  Optional · How credits work
-                </div>
-                <h3 className="font-display text-xl md:text-2xl font-bold">
-                  One currency. Three weight classes. <span className="grad-text-cyan italic">Zero surprises.</span>
-                </h3>
-              </div>
-              <ChevronDown className="h-6 w-6 text-hirex-text2 transition-transform group-open:rotate-180" />
-            </summary>
-            <div className="mt-6 pt-6 border-t border-border">
-              <p className="text-hirex-text2 text-base leading-relaxed mb-6">
-                Every action in HIREXAI has a published credit cost — visible before you click. Light actions are nearly free. Heavy actions cost more because they cost us more.
-              </p>
-              <div className="grid md:grid-cols-3 gap-4">
-                {CREDIT_CATEGORIES.map((cat) => (
-                  <div key={cat.badge} className={`rounded-xl p-5 border ${cat.border} ${cat.bg}`}>
-                    <div className={`inline-block text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-hirex-surface ${cat.color} mb-3`}>
-                      {cat.badge}
-                    </div>
-                    <div className={`font-display text-3xl font-extrabold ${cat.color} mb-3`}>{cat.range}</div>
-                    <ul className="space-y-2">
-                      {cat.items.map(([n, c]) => (
-                        <li key={n} className="flex justify-between text-xs border-b border-border pb-1.5 last:border-0">
-                          <span className="text-hirex-text2">{n}</span>
-                          <span className={`font-mono font-bold ${cat.color}`}>{c}</span>
-                        </li>
-                      ))}
-                    </ul>
+      {/* COLLAPSED CREDITS EXPLAINER — candidate plans only */}
+      {audience === "candidate" && (
+        <section className="py-[72px] max-md:py-[56px]">
+          <div className="container max-w-[1080px]">
+            <details className="group bg-hirex-surface border border-border rounded-2xl p-6 md:p-8">
+              <summary className="cursor-pointer list-none flex items-center justify-between gap-4">
+                <div>
+                  <div className="text-xs font-mono tracking-[0.15em] uppercase text-hirex-primary-light mb-1">
+                    Optional · How credits work
                   </div>
-                ))}
+                  <h3 className="font-display text-xl md:text-2xl font-bold">
+                    One currency. Three weight classes. <span className="grad-text-cyan italic">Zero surprises.</span>
+                  </h3>
+                </div>
+                <ChevronDown className="h-6 w-6 text-hirex-text2 transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="mt-6 pt-6 border-t border-border">
+                <p className="text-hirex-text2 text-base leading-relaxed mb-6">
+                  Every candidate action in HireX has a published credit cost — visible before you click. Light actions are nearly free. Heavy actions cost more because they cost us more.
+                </p>
+                <div className="grid md:grid-cols-3 gap-4">
+                  {CREDIT_CATEGORIES.map((cat) => (
+                    <div key={cat.badge} className={`rounded-xl p-5 border ${cat.border} ${cat.bg}`}>
+                      <div className={`inline-block text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-hirex-surface ${cat.color} mb-3`}>
+                        {cat.badge}
+                      </div>
+                      <div className={`font-display text-3xl font-extrabold ${cat.color} mb-3`}>{cat.range}</div>
+                      <ul className="space-y-2">
+                        {cat.items.map(([n, c]) => (
+                          <li key={n} className="flex justify-between text-xs border-b border-border pb-1.5 last:border-0">
+                            <span className="text-hirex-text2">{n}</span>
+                            <span className={`font-mono font-bold ${cat.color}`}>{c}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          </details>
-        </div>
-      </section>
+            </details>
+          </div>
+        </section>
+      )}
 
       {/* REFUEL PACKS — compact, lower priority */}
       <section className="py-[56px] bg-hirex-bg3 border-y border-border">

@@ -78,15 +78,18 @@ const PlatformSwitcher = () => {
         <img src={hirexLogo} alt="HIREXAI" className="h-16 w-auto mb-10 drop-shadow-[0_0_30px_hsla(202,72%,59%,0.3)]" />
 
         <h1 className="text-[clamp(36px,6vw,64px)] font-bold mb-4 leading-[1.1]">
-          The Future of HR is
+          Hire Great Talent.
           <br />
-          <span className="grad-text-cyan">Agentic AI.</span>
+          <span className="grad-text-cyan">Faster.</span>
         </h1>
-        <p className="text-hirex-text2 text-lg max-w-[520px] mb-14">
-          27 autonomous AI agents that think, collaborate, and execute — replacing entire HR departments with machine intelligence.
+        <p className="text-hirex-text2 text-lg max-w-[620px] mb-4">
+          AI-powered hiring for companies. AI-powered career growth for candidates.
+        </p>
+        <p className="text-hirex-text3 text-base max-w-[680px] mb-14">
+          HireX helps companies find, screen, and hire the right people faster — while helping candidates discover better opportunities and get hired.
         </p>
 
-        <div className="flex flex-col md:flex-row gap-6 w-full max-w-[800px]">
+        <div className="flex flex-col md:flex-row gap-6 w-full max-w-[900px]">
           {/* Employer card */}
           <Link
             to="/business"
@@ -97,13 +100,26 @@ const PlatformSwitcher = () => {
               <span className="text-xs font-bold tracking-[0.15em] uppercase text-hirex-cyan">For Employers</span>
             </div>
             <h2 className="text-2xl md:text-[28px] font-bold mb-3 text-foreground group-hover:text-hirex-cyan transition-colors">
-              The 27-Agent<br />Synced Workforce
+              Hire Better.<br />Hire Faster.
             </h2>
-            <p className="text-hirex-text2 text-sm leading-relaxed mb-6">
-              Deploy a full AI workforce that automates hiring, onboarding, compliance, and retention — 24/7.
+            <p className="text-hirex-text2 text-sm leading-relaxed mb-5">
+              Stop spending hours screening resumes and coordinating interviews. HireX helps you:
             </p>
+            <ul className="flex flex-col gap-2 mb-5 text-sm text-hirex-text2">
+              {["Find qualified candidates","Screen applicants automatically","Shortlist the best talent","Schedule interviews faster","Hire at scale"].map((i) => (
+                <li key={i} className="flex items-start gap-2"><span className="text-hirex-cyan font-bold">✓</span>{i}</li>
+              ))}
+            </ul>
+            <div className="mb-5">
+              <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-hirex-text3 mb-2">Perfect for</p>
+              <div className="flex flex-wrap gap-1.5">
+                {["Tech Teams","AI Teams","Sales Teams","Marketing Teams","Startup Hiring","Bulk Recruitment"].map((t) => (
+                  <span key={t} className="px-2.5 py-1 rounded-full text-[11px] bg-hirex-cyan/10 text-hirex-cyan border border-hirex-cyan/20">{t}</span>
+                ))}
+              </div>
+            </div>
             <div className="flex items-center gap-2 text-hirex-cyan text-sm font-semibold group-hover:gap-3 transition-all">
-              Enter Employer Universe →
+              Enter Employer Platform →
             </div>
           </Link>
 
@@ -117,30 +133,35 @@ const PlatformSwitcher = () => {
               <span className="text-xs font-bold tracking-[0.15em] uppercase text-hirex-teal">For Candidates</span>
             </div>
             <h2 className="text-2xl md:text-[28px] font-bold mb-3 text-foreground group-hover:text-hirex-teal transition-colors">
-              Your 6-Agent<br />Career Pilot Squad
+              Get Hired<br />Smarter.
             </h2>
-            <p className="text-hirex-text2 text-sm leading-relaxed mb-6">
-              Six AI people who revamp your resume, scout jobs, coach interviews, and negotiate offers — for you.
+            <p className="text-hirex-text2 text-sm leading-relaxed mb-5">
+              Stand out to employers, improve your profile, prepare for interviews, and discover opportunities that match your skills. HireX helps you:
             </p>
+            <ul className="flex flex-col gap-2 mb-5 text-sm text-hirex-text2">
+              {["Improve your resume","Prepare for interviews","Showcase your skills","Get discovered by employers","Access better opportunities"].map((i) => (
+                <li key={i} className="flex items-start gap-2"><span className="text-hirex-teal font-bold">✓</span>{i}</li>
+              ))}
+            </ul>
             <div className="flex items-center gap-2 text-hirex-teal text-sm font-semibold group-hover:gap-3 transition-all">
-              Enter Candidate Universe →
+              Enter Candidate Platform →
             </div>
           </Link>
         </div>
 
         {/* Demo Videos */}
         <div className="w-full max-w-6xl mt-16">
-          <p className="text-center text-xs font-bold tracking-[0.15em] uppercase text-hirex-text3 mb-6">See HIREXAI in Action</p>
+          <p className="text-center text-xs font-bold tracking-[0.15em] uppercase text-hirex-text3 mb-6">See HireX in Action</p>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { id: "oTvA-86ZiM0", title: "HIREXAI Product Demo", label: "Platform Overview", accent: "cyan" as const },
-              { id: "ubFnv2H2LVE", title: "HIREXAI Agents Demo", label: "Agents in Action", accent: "teal" as const },
-              { id: "dKeWLSqNOtQ", title: "HIREXAI Workflow Demo", label: "End-to-End Workflow", accent: "cyan" as const },
+              { id: "oTvA-86ZiM0", title: "Finding Qualified Candidates", label: "Finding Qualified Candidates", accent: "cyan" as const },
+              { id: "ubFnv2H2LVE", title: "AI-Powered Candidate Screening", label: "AI-Powered Candidate Screening", accent: "teal" as const },
+              { id: "dKeWLSqNOtQ", title: "Faster Hiring Workflows", label: "Faster Hiring Workflows", accent: "cyan" as const },
             ].map((v) => (
               <div key={v.id} className="group">
                 <div className="flex items-center justify-between mb-3 px-1">
                   <span className={`text-xs font-bold tracking-[0.15em] uppercase ${v.accent === "cyan" ? "text-hirex-cyan" : "text-hirex-teal"}`}>{v.label}</span>
-                  <span className="text-[10px] text-hirex-text3 tracking-widest">▶ HD</span>
+                  <span className="text-[10px] text-hirex-text3 tracking-widest">▶ Watch Demo</span>
                 </div>
                 <div className={`rounded-xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(91,110,245,0.15)] transition-all group-hover:-translate-y-1 ${v.accent === "cyan" ? "group-hover:border-hirex-cyan/40 group-hover:shadow-[0_20px_60px_rgba(91,110,245,0.3)]" : "group-hover:border-hirex-teal/40 group-hover:shadow-[0_20px_60px_rgba(91,110,245,0.3)]"}`}>
                   <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
@@ -157,6 +178,32 @@ const PlatformSwitcher = () => {
             ))}
           </div>
         </div>
+
+        {/* Trusted By */}
+        <div className="w-full max-w-4xl mt-20 text-center">
+          <p className="text-xs font-bold tracking-[0.15em] uppercase text-hirex-text3 mb-4">Trusted By Teams Hiring For</p>
+          <p className="text-hirex-text2 text-base md:text-lg">
+            Engineering <span className="text-hirex-cyan mx-2">•</span> AI &amp; Data <span className="text-hirex-cyan mx-2">•</span> Sales <span className="text-hirex-cyan mx-2">•</span> Marketing <span className="text-hirex-cyan mx-2">•</span> Operations
+          </p>
+        </div>
+
+        {/* Outcomes */}
+        <div className="w-full max-w-5xl mt-20 mb-10">
+          <h2 className="text-center text-[clamp(28px,4vw,44px)] font-bold mb-10">
+            One Platform. <span className="grad-text-cyan">Better Hiring Outcomes.</span>
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="glass-card rounded-2xl p-8 text-left">
+              <span className="text-xs font-bold tracking-[0.15em] uppercase text-hirex-cyan">For Employers</span>
+              <p className="text-foreground text-lg font-semibold mt-3">Find and hire great talent faster.</p>
+            </div>
+            <div className="glass-card-warm rounded-2xl p-8 text-left">
+              <span className="text-xs font-bold tracking-[0.15em] uppercase text-hirex-teal">For Candidates</span>
+              <p className="text-foreground text-lg font-semibold mt-3">Discover opportunities and grow your career.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );

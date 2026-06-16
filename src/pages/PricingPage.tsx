@@ -681,10 +681,10 @@ const PricingPage = () => {
             <div className="text-4xl">⚡</div>
             <div className="flex-1 text-center md:text-left">
               <div className="font-display text-lg md:text-xl font-bold mb-1">
-                Cancel 4 tools. Keep one. <span className="grad-text-cyan italic">Save ₹42K/month on average.</span>
+                Source. Screen. Shortlist. <span className="grad-text-cyan italic">Hire.</span>
               </div>
               <p className="text-sm text-hirex-text2 leading-relaxed">
-                Customers who switched to HIREXAI cut their hiring tool spend by an average of <span className="text-foreground font-semibold">68% in the first 90 days</span> — while making <span className="text-foreground font-semibold">3.4× more interviews</span>. Free migration from any of the platforms above.
+                All from one AI-powered recruitment platform built for recruiters, talent teams, and hiring managers.
               </p>
             </div>
             <button
@@ -692,7 +692,7 @@ const PricingPage = () => {
               data-cta="talk-to-sales"
               className="shrink-0 bg-foreground text-hirex-bg2 font-bold text-sm px-6 py-3 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
             >
-              Talk to Sales →
+              Talk To Sales →
             </button>
           </div>
         </div>

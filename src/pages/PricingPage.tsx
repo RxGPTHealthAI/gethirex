@@ -493,7 +493,7 @@ const PricingPage = () => {
                             : "bg-foreground text-hirex-bg2 hover:opacity-90"
                         }`}
                       >
-                        Buy Now →
+                        Start Hiring →
                       </button>
                     )}
                     {tier.cta === "demo" && (

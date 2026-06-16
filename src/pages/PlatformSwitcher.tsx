@@ -128,19 +128,32 @@ const PlatformSwitcher = () => {
           </Link>
         </div>
 
-        {/* Demo Video */}
-        <div className="w-full max-w-3xl mt-16">
-          <p className="text-center text-xs font-bold tracking-[0.15em] uppercase text-hirex-text3 mb-4">See HIREXAI in Action</p>
-          <div className="rounded-xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(91,110,245,0.15)]">
-            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/oTvA-86ZiM0"
-                title="HIREXAI Product Demo"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
+        {/* Demo Videos */}
+        <div className="w-full max-w-6xl mt-16">
+          <p className="text-center text-xs font-bold tracking-[0.15em] uppercase text-hirex-text3 mb-6">See HIREXAI in Action</p>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              { id: "oTvA-86ZiM0", title: "HIREXAI Product Demo", label: "Platform Overview", accent: "cyan" as const },
+              { id: "ubFnv2H2LVE", title: "HIREXAI Agents Demo", label: "Agents in Action", accent: "teal" as const },
+            ].map((v) => (
+              <div key={v.id} className="group">
+                <div className="flex items-center justify-between mb-3 px-1">
+                  <span className={`text-xs font-bold tracking-[0.15em] uppercase ${v.accent === "cyan" ? "text-hirex-cyan" : "text-hirex-teal"}`}>{v.label}</span>
+                  <span className="text-[10px] text-hirex-text3 tracking-widest">▶ HD</span>
+                </div>
+                <div className={`rounded-xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(91,110,245,0.15)] transition-all group-hover:-translate-y-1 ${v.accent === "cyan" ? "group-hover:border-hirex-cyan/40 group-hover:shadow-[0_20px_60px_rgba(91,110,245,0.3)]" : "group-hover:border-hirex-teal/40 group-hover:shadow-[0_20px_60px_rgba(91,110,245,0.3)]"}`}>
+                  <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                    <iframe
+                      className="absolute inset-0 w-full h-full"
+                      src={`https://www.youtube.com/embed/${v.id}`}
+                      title={v.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

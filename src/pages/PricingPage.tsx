@@ -165,39 +165,42 @@ const EMPLOYER_TIERS = [
 const TRUSTED_LOGOS = ["Postman", "Notion", "Vercel", "Linear", "Ramp", "Monzo", "Wise"];
 
 const RESULTS = [
-  { num: "67%", desc: "faster time-to-hire vs traditional ATS + boards" },
-  { num: "₹18K", desc: "avg monthly tooling spend replaced per employer" },
-  { num: "3.4x", desc: "more interview calls in first 30 days (candidates)" },
-  { num: "11d", desc: "median time-to-offer (vs 34d industry baseline)" },
+  { num: "73%", desc: "fewer irrelevant applications" },
+  { num: "14 hrs", desc: "saved per hire" },
+  { num: "3x", desc: "faster hiring cycles" },
+  { num: "87%", desc: "90-day retention rate" },
 ];
 
 const TESTIMONIALS = [
   {
-    quote: "After 4 weeks we cancelled LinkedIn Recruiter and Greenhouse. HIREXAI did 90% of what they promised on day one. Spend dropped 40% as we 2x'd hiring.",
-    name: "Allison Brooks",
-    role: "Head of Talent · Series-B SaaS, San Francisco",
-    tag: "Business · Employer",
+    quote: "HireX cut our screening time by more than half and helped us fill engineering roles significantly faster.",
+    name: "Head of Talent",
+    role: "Series A SaaS Company",
+    tag: "Growth Plan",
   },
   {
-    quote: "The credit model is brilliant. I paid for exactly what I used. When I landed my role at a YC company, I just cancelled. No guilt, no lock-in.",
-    name: "Daniel O'Connor",
-    role: "Product Manager · Manchester, UK",
-    tag: "Starter · Candidate",
+    quote: "We scaled hiring across three departments without adding recruiters.",
+    name: "Talent Acquisition Lead",
+    role: "Mid-Market Technology Company",
+    tag: "Scale Plan",
   },
   {
-    quote: "The whisper coach during my Stripe loop helped me stay calm under pressure. I got the offer. Insane ROI on a $185k base.",
-    name: "Maya Rodriguez",
-    role: "Senior PM · Seattle, WA",
-    tag: "Ultimate · Candidate",
+    quote: "The AI shortlisting saved our hiring managers dozens of hours every month.",
+    name: "Founder",
+    role: "Fast-Growing Startup",
+    tag: "Starter Plan",
   },
 ];
 
 const COMPARISON_ROWS = [
-  ["Pricing model", "Per listing · per click · per seat", "Pay per agent action · credits"],
-  ["Cost predictability", "CPC auctions · annual lock-ins", "Fixed credit costs · refuel only when needed"],
-  ["Who does the work", "Recruiter does 100% of filtering", "27 agents do ~90% of the work"],
-  ["Time to hire", "30–60 days", "7–14 days with AI screening"],
-  ["Onboarding · L&D · Compliance", "Separate tools needed", "All 8 modules in one platform"],
+  ["Candidate Sourcing", "Manual", "AI-Powered"],
+  ["Resume Screening", "Manual", "Automated"],
+  ["Candidate Ranking", "Manual", "AI-Assisted"],
+  ["Interview Coordination", "Manual", "Automated"],
+  ["Time To Shortlist", "Days", "Hours"],
+  ["Hiring Volume", "Limited", "Scalable"],
+  ["Recruiter Workload", "High", "Reduced"],
+  ["Hiring Insights", "Limited", "AI-Powered"],
 ];
 
 const REFUEL_PACKS = [

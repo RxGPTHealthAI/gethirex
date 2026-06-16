@@ -131,10 +131,11 @@ const PlatformSwitcher = () => {
         {/* Demo Videos */}
         <div className="w-full max-w-6xl mt-16">
           <p className="text-center text-xs font-bold tracking-[0.15em] uppercase text-hirex-text3 mb-6">See HIREXAI in Action</p>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               { id: "oTvA-86ZiM0", title: "HIREXAI Product Demo", label: "Platform Overview", accent: "cyan" as const },
               { id: "ubFnv2H2LVE", title: "HIREXAI Agents Demo", label: "Agents in Action", accent: "teal" as const },
+              { id: "dKeWLSqNOtQ", title: "HIREXAI Workflow Demo", label: "End-to-End Workflow", accent: "cyan" as const },
             ].map((v) => (
               <div key={v.id} className="group">
                 <div className="flex items-center justify-between mb-3 px-1">

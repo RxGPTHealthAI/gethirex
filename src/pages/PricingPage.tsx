@@ -441,7 +441,6 @@ const PricingPage = () => {
           {audience === "employer" && (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch max-lg:max-w-[480px] max-lg:mx-auto">
               {employerCards.map((tier) => {
-                const isCustom = tier.cta === "sales";
                 const price = billing === "annual" ? tier.annual : tier.monthly;
                 return (
                   <div
@@ -460,21 +459,13 @@ const PricingPage = () => {
                     <div className="font-display text-2xl font-bold mb-1">{tier.name}</div>
                     <p className="text-xs text-hirex-text3 uppercase tracking-wider font-mono mb-4">{tier.forWho}</p>
 
-                    {isCustom ? (
-                      <div className="font-display text-[36px] font-extrabold leading-none mb-1 tracking-tight">
-                        Custom
-                      </div>
-                    ) : (
-                      <>
-                        <div className="font-display text-[44px] font-extrabold leading-none mb-1 tracking-tight">
-                          <span className="text-2xl font-semibold align-top mr-1">₹</span>
-                          {price.toLocaleString("en-IN")}
-                          <span className="text-base font-normal text-hirex-text2 ml-1">/mo</span>
-                        </div>
-                        {billing === "annual" && (
-                          <p className="text-xs text-accent font-semibold mb-3">Billed annually · 25% off</p>
-                        )}
-                      </>
+                    <div className="font-display text-[44px] font-extrabold leading-none mb-1 tracking-tight">
+                      <span className="text-2xl font-semibold align-top mr-1">₹</span>
+                      {price.toLocaleString("en-IN")}
+                      <span className="text-base font-normal text-hirex-text2 ml-1">/mo</span>
+                    </div>
+                    {billing === "annual" && (
+                      <p className="text-xs text-accent font-semibold mb-3">Billed annually · 25% off</p>
                     )}
 
                     <div className="flex items-baseline gap-2 mt-3 mb-6 pb-6 border-b border-border">

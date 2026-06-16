@@ -72,6 +72,7 @@ const Layout = () => {
         <Route path="/security" element={<SecurityPage />} />
         <Route path="/gdpr" element={<GDPRPage />} />
         <Route path="/cookies" element={<CookiePolicyPage />} />
+        <Route path="/colleges" element={<CollegesPage />} />
         <Route path="/admin/login" element={<AdminLoginPage />} />
         <Route path="/admin" element={<AdminDashboardPage />} />
         <Route path="/admin/posts/:id" element={<AdminPostEditorPage />} />

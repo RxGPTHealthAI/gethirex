@@ -10,7 +10,7 @@ const Footer = () => (
             <img src={hirexLogo} alt="HIREXAI" className="h-8 w-auto" />
           </Link>
           <p className="text-[13px] text-hirex-text3 leading-relaxed max-w-[260px] mb-4">
-            AI Recruitment Platform — Autonomous agents that run your entire HR operation.
+            AI Recruitment Platform helping employers source, screen, shortlist, and hire top talent faster.
           </p>
           <div className="flex flex-wrap gap-4 text-xs text-hirex-text2 font-medium">
             <span>47K Screened</span>

@@ -237,12 +237,12 @@ const CREDIT_CATEGORIES = [
 ];
 
 const FAQS = [
-  ["What is HIREXAI and how does it work?", "HIREXAI is an AI hiring platform with 27 specialized agents that handle sourcing, screening, scheduling, interviewing, offers, onboarding, L&D, and compliance — in one dashboard. Buy credits and spend them only when an agent actually completes work."],
-  ["What's the difference between Buy Now, Book Demo, and Talk to Sales?", "Candidate plans and the Scale Fast employer plan are self-serve — Buy Now starts Razorpay checkout instantly. Business needs a short demo to map your hiring workflow. Enterprise is custom-scoped, so you Talk to Sales."],
-  ["How does the credit system work?", "Every action has a published credit cost shown before you click. Light actions are 1–3 credits, medium 5–10, heavy 20–30. Subscription credits reset monthly; refuel credits never expire while your subscription is active."],
+  ["What is HireX?", "HireX is an AI-powered recruitment platform that helps companies source, screen, shortlist, and hire qualified candidates faster — all from one platform."],
+  ["What's the difference between Start Hiring, Book Demo, and Talk to Sales?", "The Starter plan is self-serve — start hiring instantly. Growth includes a short demo so we can map your hiring workflow. Scale is custom-scoped for high-volume and enterprise recruitment, so you Talk to Sales."],
+  ["How does HireX help me hire faster?", "HireX automates candidate sourcing, resume screening, AI shortlisting, and interview coordination — so your recruiters and hiring managers spend their time on the right candidates instead of admin work."],
   ["Can I cancel anytime?", "Yes. Monthly plans cancel from your dashboard at the next billing cycle in two clicks. Annual plans get a prorated refund within the first 30 days."],
   ["What's included in annual billing?", "Annual plans cost 25% less per month — equivalent to 3 months free — and lock in your rate for the full term. Same features as monthly."],
-  ["Is my data secure?", "HIREXAI is SOC 2 Type II certified, GDPR compliant for EU/UK, and DPDP Act 2023 compliant for India. All data encrypted in transit (TLS 1.3) and at rest (AES-256). We do not train on your data."],
+  ["Is my data secure?", "HireX is SOC 2 Type II certified, GDPR compliant for EU/UK, and DPDP Act 2023 compliant for India. All data encrypted in transit (TLS 1.3) and at rest (AES-256). We do not train on your data."],
   ["Which payment methods do you accept?", "All major credit/debit cards, UPI, net banking, and wallets via Razorpay. You can also pay via the UPI QR on this page and email care@gethirex.space with your transaction ID."],
 ];
 

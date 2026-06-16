@@ -282,19 +282,19 @@ const PricingPage = () => {
         <div className="container max-w-[1100px] text-center relative">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold tracking-wider uppercase bg-hirex-cyan/10 border border-hirex-cyan/25 text-hirex-primary-light mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-hirex-cyan shadow-[0_0_12px_hsl(var(--hirex-cyan))]" />
-            Pay for the work · not the listing
+            Hire Faster · Hire Better · No Fake Applicants
           </div>
           <h1 className="font-display text-[clamp(36px,6vw,68px)] font-extrabold mb-5 leading-[1.05] tracking-tight">
-            Pricing that scales with <span className="grad-text-cyan italic">how you hire.</span>
+            Flexible pricing for <span className="grad-text-cyan italic">how you hire.</span>
           </h1>
           <p className="text-hirex-text2 text-lg leading-relaxed max-w-[680px] mx-auto mb-8">
-            Pick a plan, buy instantly, or book a 20-minute demo. Same product, three clear paths — no trials, no surprises.
+            HireX helps companies source, screen, shortlist, and hire qualified candidates faster. Simple pricing. No hidden fees. No long-term contracts.
           </p>
           <a
             href="#pricing"
             className="inline-flex items-center justify-center bg-gradient-to-r from-hirex-cyan to-hirex-primary-light text-primary-foreground font-bold text-sm md:text-base px-7 py-3.5 rounded-full hover:scale-[1.03] transition-transform shadow-[0_8px_24px_hsla(202,72%,59%,0.35)]"
           >
-            See plans →
+            See Plans →
           </a>
         </div>
       </section>

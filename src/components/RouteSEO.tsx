@@ -70,6 +70,10 @@ const META: Record<string, Meta> = {
   "/security": { title: "Security | HIREXAI", description: "HIREXAI's security posture: AES-256 encryption, SOC 2 controls, DPDP & GDPR compliance." },
   "/gdpr": { title: "GDPR Compliance | HIREXAI", description: "How HIREXAI complies with the EU General Data Protection Regulation." },
   "/cookies": { title: "Cookie Policy | HIREXAI", description: "How HIREXAI uses cookies and similar technologies." },
+  "/colleges": {
+    title: "HireX For Colleges | AI Career Infrastructure For Universities",
+    description: "Help students become AI-ready and placement-ready from second year. Career discovery, AI upskilling, internships, remote opportunities & employer connections.",
+  },
 };
 
 const RouteSEO = () => {

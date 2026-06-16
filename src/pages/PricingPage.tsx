@@ -557,7 +557,7 @@ const PricingPage = () => {
       <section className="py-[72px] max-md:py-[56px]">
         <div className="container max-w-[1180px]">
           <h2 className="font-display text-[clamp(26px,4vw,38px)] font-extrabold text-center mb-10 tracking-tight">
-            What buyers say <span className="grad-text-cyan italic">after switching.</span>
+            What hiring teams say <span className="grad-text-cyan italic">after switching.</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {TESTIMONIALS.map((t) => (

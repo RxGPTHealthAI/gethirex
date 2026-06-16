@@ -102,51 +102,60 @@ const CANDIDATE_TIERS = [
 const EMPLOYER_TIERS = [
   {
     id: "employer-starter",
-    name: "Scale Fast",
+    name: "Starter",
     monthly: 4999,
     annual: 3749,
-    forWho: "Startups · 10–50 employees hiring monthly.",
-    credits: "1,500 credits / month",
+    forWho: "For startups making their first hires.",
+    credits: "Best for 1–20 hires per month",
     features: [
-      "5 of 27 agents · 10 active roles",
-      "500 DB searches / month",
-      "Recruitment + Onboarding modules",
-      "Zapier + email support",
-      "Monthly billing · ₹0 implementation",
+      "5 Active Jobs",
+      "AI Candidate Sourcing",
+      "Resume Screening",
+      "Candidate Ranking",
+      "Interview Scheduling",
+      "500 Candidate Searches / Month",
+      "Email Support",
     ],
     cta: "buy" as const,
     featured: false,
   },
   {
     id: "employer-growth",
-    name: "Business",
-    monthly: 12999,
-    annual: 9749,
-    forWho: "Mid-market · 50–500 employees.",
-    credits: "6,000 credits / month",
+    name: "Growth",
+    monthly: 14999,
+    annual: 11249,
+    forWho: "For growing teams hiring across multiple functions.",
+    credits: "Best for 20–100 hires per month",
     features: [
-      "15 of 27 agents · 50 active roles",
-      "5,000 DB searches · full voice interview bot",
-      "5 of 8 modules incl. L&D + Performance",
-      "20 native integrations + REST API · SSO",
-      "Pooled CSM",
+      "Everything in Starter",
+      "25 Active Jobs",
+      "Bulk Candidate Screening",
+      "AI Shortlisting",
+      "AI Interview Assessments",
+      "5,000 Candidate Searches / Month",
+      "ATS Integrations",
+      "Priority Support",
     ],
     cta: "demo" as const,
     featured: true,
   },
   {
     id: "employer-scale",
-    name: "Enterprise",
-    monthly: 0,
-    annual: 0,
-    forWho: "500+ employees · multi-geo, custom needs.",
-    credits: "Unlimited credits · custom",
+    name: "Scale",
+    monthly: 39999,
+    annual: 29999,
+    forWho: "For high-volume hiring and enterprise recruitment.",
+    credits: "Best for 100+ hires per month",
     features: [
-      "All 27 agents · unlimited roles",
-      "All 8 modules · custom agent builds",
-      "SOC2 · DPDP · GDPR full audit",
-      "Dedicated CSM · 24/7 SLA",
-      "Multi-currency · multi-country payroll",
+      "Unlimited Active Jobs",
+      "Unlimited Candidate Searches",
+      "Campus Hiring Workflows",
+      "Bulk Recruitment Automation",
+      "Custom Hiring Pipelines",
+      "API Access",
+      "SSO",
+      "Dedicated Customer Success Manager",
+      "Enterprise Security Controls",
     ],
     cta: "sales" as const,
     featured: false,
@@ -156,39 +165,42 @@ const EMPLOYER_TIERS = [
 const TRUSTED_LOGOS = ["Postman", "Notion", "Vercel", "Linear", "Ramp", "Monzo", "Wise"];
 
 const RESULTS = [
-  { num: "67%", desc: "faster time-to-hire vs traditional ATS + boards" },
-  { num: "₹18K", desc: "avg monthly tooling spend replaced per employer" },
-  { num: "3.4x", desc: "more interview calls in first 30 days (candidates)" },
-  { num: "11d", desc: "median time-to-offer (vs 34d industry baseline)" },
+  { num: "73%", desc: "fewer irrelevant applications" },
+  { num: "14 hrs", desc: "saved per hire" },
+  { num: "3x", desc: "faster hiring cycles" },
+  { num: "87%", desc: "90-day retention rate" },
 ];
 
 const TESTIMONIALS = [
   {
-    quote: "After 4 weeks we cancelled LinkedIn Recruiter and Greenhouse. HIREXAI did 90% of what they promised on day one. Spend dropped 40% as we 2x'd hiring.",
-    name: "Allison Brooks",
-    role: "Head of Talent · Series-B SaaS, San Francisco",
-    tag: "Business · Employer",
+    quote: "HireX cut our screening time by more than half and helped us fill engineering roles significantly faster.",
+    name: "Head of Talent",
+    role: "Series A SaaS Company",
+    tag: "Growth Plan",
   },
   {
-    quote: "The credit model is brilliant. I paid for exactly what I used. When I landed my role at a YC company, I just cancelled. No guilt, no lock-in.",
-    name: "Daniel O'Connor",
-    role: "Product Manager · Manchester, UK",
-    tag: "Starter · Candidate",
+    quote: "We scaled hiring across three departments without adding recruiters.",
+    name: "Talent Acquisition Lead",
+    role: "Mid-Market Technology Company",
+    tag: "Scale Plan",
   },
   {
-    quote: "The whisper coach during my Stripe loop helped me stay calm under pressure. I got the offer. Insane ROI on a $185k base.",
-    name: "Maya Rodriguez",
-    role: "Senior PM · Seattle, WA",
-    tag: "Ultimate · Candidate",
+    quote: "The AI shortlisting saved our hiring managers dozens of hours every month.",
+    name: "Founder",
+    role: "Fast-Growing Startup",
+    tag: "Starter Plan",
   },
 ];
 
 const COMPARISON_ROWS = [
-  ["Pricing model", "Per listing · per click · per seat", "Pay per agent action · credits"],
-  ["Cost predictability", "CPC auctions · annual lock-ins", "Fixed credit costs · refuel only when needed"],
-  ["Who does the work", "Recruiter does 100% of filtering", "27 agents do ~90% of the work"],
-  ["Time to hire", "30–60 days", "7–14 days with AI screening"],
-  ["Onboarding · L&D · Compliance", "Separate tools needed", "All 8 modules in one platform"],
+  ["Candidate Sourcing", "Manual", "AI-Powered"],
+  ["Resume Screening", "Manual", "Automated"],
+  ["Candidate Ranking", "Manual", "AI-Assisted"],
+  ["Interview Coordination", "Manual", "Automated"],
+  ["Time To Shortlist", "Days", "Hours"],
+  ["Hiring Volume", "Limited", "Scalable"],
+  ["Recruiter Workload", "High", "Reduced"],
+  ["Hiring Insights", "Limited", "AI-Powered"],
 ];
 
 const REFUEL_PACKS = [
@@ -225,12 +237,12 @@ const CREDIT_CATEGORIES = [
 ];
 
 const FAQS = [
-  ["What is HIREXAI and how does it work?", "HIREXAI is an AI hiring platform with 27 specialized agents that handle sourcing, screening, scheduling, interviewing, offers, onboarding, L&D, and compliance — in one dashboard. Buy credits and spend them only when an agent actually completes work."],
-  ["What's the difference between Buy Now, Book Demo, and Talk to Sales?", "Candidate plans and the Scale Fast employer plan are self-serve — Buy Now starts Razorpay checkout instantly. Business needs a short demo to map your hiring workflow. Enterprise is custom-scoped, so you Talk to Sales."],
-  ["How does the credit system work?", "Every action has a published credit cost shown before you click. Light actions are 1–3 credits, medium 5–10, heavy 20–30. Subscription credits reset monthly; refuel credits never expire while your subscription is active."],
+  ["What is HireX?", "HireX is an AI-powered recruitment platform that helps companies source, screen, shortlist, and hire qualified candidates faster — all from one platform."],
+  ["What's the difference between Start Hiring, Book Demo, and Talk to Sales?", "The Starter plan is self-serve — start hiring instantly. Growth includes a short demo so we can map your hiring workflow. Scale is custom-scoped for high-volume and enterprise recruitment, so you Talk to Sales."],
+  ["How does HireX help me hire faster?", "HireX automates candidate sourcing, resume screening, AI shortlisting, and interview coordination — so your recruiters and hiring managers spend their time on the right candidates instead of admin work."],
   ["Can I cancel anytime?", "Yes. Monthly plans cancel from your dashboard at the next billing cycle in two clicks. Annual plans get a prorated refund within the first 30 days."],
   ["What's included in annual billing?", "Annual plans cost 25% less per month — equivalent to 3 months free — and lock in your rate for the full term. Same features as monthly."],
-  ["Is my data secure?", "HIREXAI is SOC 2 Type II certified, GDPR compliant for EU/UK, and DPDP Act 2023 compliant for India. All data encrypted in transit (TLS 1.3) and at rest (AES-256). We do not train on your data."],
+  ["Is my data secure?", "HireX is SOC 2 Type II certified, GDPR compliant for EU/UK, and DPDP Act 2023 compliant for India. All data encrypted in transit (TLS 1.3) and at rest (AES-256). We do not train on your data."],
   ["Which payment methods do you accept?", "All major credit/debit cards, UPI, net banking, and wallets via Razorpay. You can also pay via the UPI QR on this page and email care@gethirex.space with your transaction ID."],
 ];
 
@@ -270,19 +282,19 @@ const PricingPage = () => {
         <div className="container max-w-[1100px] text-center relative">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold tracking-wider uppercase bg-hirex-cyan/10 border border-hirex-cyan/25 text-hirex-primary-light mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-hirex-cyan shadow-[0_0_12px_hsl(var(--hirex-cyan))]" />
-            Pay for the work · not the listing
+            Hire Faster · Hire Better · No Fake Applicants
           </div>
           <h1 className="font-display text-[clamp(36px,6vw,68px)] font-extrabold mb-5 leading-[1.05] tracking-tight">
-            Pricing that scales with <span className="grad-text-cyan italic">how you hire.</span>
+            Flexible pricing for <span className="grad-text-cyan italic">how you hire.</span>
           </h1>
           <p className="text-hirex-text2 text-lg leading-relaxed max-w-[680px] mx-auto mb-8">
-            Pick a plan, buy instantly, or book a 20-minute demo. Same product, three clear paths — no trials, no surprises.
+            HireX helps companies source, screen, shortlist, and hire qualified candidates faster. Simple pricing. No hidden fees. No long-term contracts.
           </p>
           <a
             href="#pricing"
             className="inline-flex items-center justify-center bg-gradient-to-r from-hirex-cyan to-hirex-primary-light text-primary-foreground font-bold text-sm md:text-base px-7 py-3.5 rounded-full hover:scale-[1.03] transition-transform shadow-[0_8px_24px_hsla(202,72%,59%,0.35)]"
           >
-            See plans →
+            See Plans →
           </a>
         </div>
       </section>
@@ -356,10 +368,10 @@ const PricingPage = () => {
             ) : (
               <>
                 <h2 className="font-display text-[clamp(28px,4vw,42px)] font-extrabold leading-[1.1] tracking-tight mb-3">
-                  Plans for <span className="grad-text-cyan italic">employers.</span>
+                  Plans for <span className="grad-text-cyan italic">hiring teams.</span>
                 </h2>
                 <p className="text-hirex-text2 text-base leading-relaxed">
-                  Self-serve for fast-growing startups. Book a demo for mid-market. Talk to sales for enterprise.
+                  Choose the plan that matches your hiring volume and recruitment goals.
                 </p>
               </>
             )}
@@ -429,7 +441,6 @@ const PricingPage = () => {
           {audience === "employer" && (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch max-lg:max-w-[480px] max-lg:mx-auto">
               {employerCards.map((tier) => {
-                const isCustom = tier.cta === "sales";
                 const price = billing === "annual" ? tier.annual : tier.monthly;
                 return (
                   <div
@@ -448,21 +459,13 @@ const PricingPage = () => {
                     <div className="font-display text-2xl font-bold mb-1">{tier.name}</div>
                     <p className="text-xs text-hirex-text3 uppercase tracking-wider font-mono mb-4">{tier.forWho}</p>
 
-                    {isCustom ? (
-                      <div className="font-display text-[36px] font-extrabold leading-none mb-1 tracking-tight">
-                        Custom
-                      </div>
-                    ) : (
-                      <>
-                        <div className="font-display text-[44px] font-extrabold leading-none mb-1 tracking-tight">
-                          <span className="text-2xl font-semibold align-top mr-1">₹</span>
-                          {price.toLocaleString("en-IN")}
-                          <span className="text-base font-normal text-hirex-text2 ml-1">/mo</span>
-                        </div>
-                        {billing === "annual" && (
-                          <p className="text-xs text-accent font-semibold mb-3">Billed annually · 25% off</p>
-                        )}
-                      </>
+                    <div className="font-display text-[44px] font-extrabold leading-none mb-1 tracking-tight">
+                      <span className="text-2xl font-semibold align-top mr-1">₹</span>
+                      {price.toLocaleString("en-IN")}
+                      <span className="text-base font-normal text-hirex-text2 ml-1">/mo</span>
+                    </div>
+                    {billing === "annual" && (
+                      <p className="text-xs text-accent font-semibold mb-3">Billed annually · 25% off</p>
                     )}
 
                     <div className="flex items-baseline gap-2 mt-3 mb-6 pb-6 border-b border-border">
@@ -490,7 +493,7 @@ const PricingPage = () => {
                             : "bg-foreground text-hirex-bg2 hover:opacity-90"
                         }`}
                       >
-                        Buy Now →
+                        Start Hiring →
                       </button>
                     )}
                     {tier.cta === "demo" && (
@@ -510,7 +513,7 @@ const PricingPage = () => {
                         onClick={openCalendly}
                         className="w-full py-3.5 rounded-full font-bold text-sm transition-all bg-foreground text-hirex-bg2 hover:opacity-90"
                       >
-                        Talk to Sales →
+                        Talk To Sales →
                       </button>
                     )}
                   </div>
@@ -554,7 +557,7 @@ const PricingPage = () => {
       <section className="py-[72px] max-md:py-[56px]">
         <div className="container max-w-[1180px]">
           <h2 className="font-display text-[clamp(26px,4vw,38px)] font-extrabold text-center mb-10 tracking-tight">
-            What buyers say <span className="grad-text-cyan italic">after switching.</span>
+            What hiring teams say <span className="grad-text-cyan italic">after switching.</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {TESTIMONIALS.map((t) => (
@@ -578,17 +581,17 @@ const PricingPage = () => {
         <div className="container max-w-[1080px]">
           <div className="text-center max-w-[680px] mx-auto mb-10">
             <h2 className="font-display text-[clamp(26px,4vw,38px)] font-extrabold leading-[1.1] tracking-tight mb-3">
-              HIREXAI vs the <span className="grad-text-cyan italic">old hiring stack.</span>
+              Why hiring teams switch <span className="grad-text-cyan italic">to HireX.</span>
             </h2>
             <p className="text-hirex-text2 text-base leading-relaxed">
-              Why teams cancel LinkedIn Recruiter, Cutshort, and legacy ATSs after 30 days.
+              Modern recruitment teams need outcomes, not more tools.
             </p>
           </div>
           <div className="bg-hirex-surface border border-border rounded-2xl overflow-hidden">
             <div className="grid grid-cols-3 gap-2 px-5 py-3 bg-hirex-bg2 border-b border-border text-xs font-mono uppercase tracking-wider text-hirex-text3">
               <div></div>
-              <div>Old stack</div>
-              <div className="text-hirex-primary-light">HIREXAI</div>
+              <div>Traditional Hiring Stack</div>
+              <div className="text-hirex-primary-light">HireX</div>
             </div>
             {COMPARISON_ROWS.map(([label, old, hx]) => (
               <div
@@ -615,10 +618,10 @@ const PricingPage = () => {
         <div className="container max-w-[1180px]">
           <div className="text-center max-w-[720px] mx-auto mb-10">
             <h2 className="font-display text-[clamp(26px,4vw,40px)] font-extrabold leading-[1.1] tracking-tight mb-3">
-              The same hire. <span className="grad-text-cyan italic">One-fifth the spend.</span>
+              More qualified candidates. <span className="grad-text-cyan italic">Less recruiting effort.</span>
             </h2>
             <p className="text-hirex-text2 text-base leading-relaxed">
-              We pulled the public pricing of the tools recruiters tell us they're paying for today. Here's what you actually get for what you actually pay.
+              Stop paying for multiple sourcing, screening, scheduling, and recruitment tools. HireX combines the modern hiring workflow into one platform designed for recruiters, HR teams, and hiring managers.
             </p>
           </div>
 
@@ -636,17 +639,17 @@ const PricingPage = () => {
               </thead>
               <tbody>
                 {[
-                  { name: "HIREXAI", tag: "★ Recommended", cost: "₹1,874/mo · Pro annual", desc: "27 AI agents · sourcing, screening, interviews, offers, onboarding, L&D, compliance, payroll — in one platform.", a: "✓", b: "✓", c: "✓", featured: true },
-                  { name: "LinkedIn Recruiter", tag: "Microsoft", cost: "₹9,999/seat · annual only", desc: "InMail credits + search filters. Sourcing only. No screening, scheduling, interview, or onboarding.", a: "✗", b: "✗", c: "✗" },
+                  { name: "HireX", tag: "★ Recommended", cost: "From ₹4,999/mo · Starter", desc: "AI-powered sourcing, screening, shortlisting, interview coordination, hiring analytics, and recruitment automation in one platform.", a: "✓", b: "✓", c: "✓", featured: true },
+                  { name: "LinkedIn Recruiter", tag: "Microsoft", cost: "₹9,999/seat · annual only", desc: "InMail credits + search filters. Sourcing only. No screening, scheduling, or interview coordination.", a: "✗", b: "✗", c: "✗" },
                   { name: "Indeed Sponsored", tag: "CPC auction", cost: "₹18,000+/mo · typical CPC spend", desc: "Pay per click on listings. No screening, scheduling, or pipeline tools. Quality varies by auction price.", a: "✗", b: "~", c: "✗" },
-                  { name: "HireVue", tag: "US enterprise", cost: "$35,000+/yr · ~₹2.4L/mo", desc: "Async video interviews + AI scoring. No sourcing, payroll, or L&D. Annual contract, custom-quote.", a: "~", b: "✗", c: "✗" },
+                  { name: "HireVue", tag: "US enterprise", cost: "$35,000+/yr · ~₹2.4L/mo", desc: "Async video interviews + AI scoring. No sourcing or end-to-end hiring workflow. Annual contract, custom-quote.", a: "~", b: "✗", c: "✗" },
                   { name: "Eightfold AI", tag: "Talent intel", cost: "$60,000+/yr · ~₹4.1L/mo", desc: "Talent-graph search + matching. Strong for sourcing, weak on hands-on hiring workflow. Sales-led only.", a: "~", b: "✗", c: "✗" },
-                  { name: "SeekOut", tag: "US enterprise", cost: "$8,000+/yr · ~₹55K/mo", desc: "Boolean sourcing + diversity insights. No interview, screening, or onboarding modules.", a: "~", b: "✗", c: "✗" },
+                  { name: "SeekOut", tag: "US enterprise", cost: "$8,000+/yr · ~₹55K/mo", desc: "Boolean sourcing + diversity insights. No interview, screening, or shortlisting workflow.", a: "~", b: "✗", c: "✗" },
                   { name: "Beamery", tag: "Talent CRM", cost: "$50,000+/yr · ~₹3.4L/mo", desc: "Sourcing + nurture campaigns. Bring-your-own ATS. Long onboarding, enterprise sales cycle.", a: "✗", b: "✗", c: "✗" },
-                  { name: "Cutshort", tag: "India SaaS", cost: "₹12,500/mo · Premium", desc: "Curated tech sourcing + chat. Limited automation. No interviews, payroll, or L&D modules.", a: "✗", b: "✗", c: "✗" },
+                  { name: "Cutshort", tag: "India SaaS", cost: "₹12,500/mo · Premium", desc: "Curated tech sourcing + chat. Limited automation. No interview coordination or bulk screening.", a: "✗", b: "✗", c: "✗" },
                   { name: "Zoho Recruit", tag: "ATS", cost: "₹2,800/user/mo · Enterprise", desc: "Per-user ATS workflow. Add-ons cost extra. No native AI screening or interview module.", a: "✗", b: "✗", c: "~" },
-                  { name: "Greenhouse", tag: "US enterprise", cost: "$6,500+/yr · ~₹45K/mo", desc: "Full-featured ATS. Sourcing, AI screening, payroll require integrations + extra spend.", a: "✗", b: "✗", c: "~" },
-                  { name: 'Recruiter "stack"', tag: "DIY 5-tool combo", cost: "₹45,000+/mo · typical SMB stack", desc: "LinkedIn + ATS + screener + scheduler + payroll bolted together. 5 logins, 5 invoices, 5 silos.", a: "✗", b: "✗", c: "✗" },
+                  { name: "Greenhouse", tag: "US enterprise", cost: "$6,500+/yr · ~₹45K/mo", desc: "Full-featured ATS. AI sourcing and screening require integrations + extra spend.", a: "✗", b: "✗", c: "~" },
+                  { name: 'Recruiter "stack"', tag: "DIY 4-tool combo", cost: "₹45,000+/mo · typical SMB stack", desc: "LinkedIn + ATS + screener + scheduler bolted together. Multiple logins, multiple invoices, multiple silos.", a: "✗", b: "✗", c: "✗" },
                 ].map((row) => (
                   <tr
                     key={row.name}
@@ -678,10 +681,10 @@ const PricingPage = () => {
             <div className="text-4xl">⚡</div>
             <div className="flex-1 text-center md:text-left">
               <div className="font-display text-lg md:text-xl font-bold mb-1">
-                Cancel 4 tools. Keep one. <span className="grad-text-cyan italic">Save ₹42K/month on average.</span>
+                Source. Screen. Shortlist. <span className="grad-text-cyan italic">Hire.</span>
               </div>
               <p className="text-sm text-hirex-text2 leading-relaxed">
-                Customers who switched to HIREXAI cut their hiring tool spend by an average of <span className="text-foreground font-semibold">68% in the first 90 days</span> — while making <span className="text-foreground font-semibold">3.4× more interviews</span>. Free migration from any of the platforms above.
+                All from one AI-powered recruitment platform built for recruiters, talent teams, and hiring managers.
               </p>
             </div>
             <button
@@ -689,7 +692,7 @@ const PricingPage = () => {
               data-cta="talk-to-sales"
               className="shrink-0 bg-foreground text-hirex-bg2 font-bold text-sm px-6 py-3 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
             >
-              Talk to Sales →
+              Talk To Sales →
             </button>
           </div>
         </div>
@@ -734,96 +737,100 @@ const PricingPage = () => {
         </div>
       </section>
 
-      {/* COLLAPSED CREDITS EXPLAINER */}
-      <section className="py-[72px] max-md:py-[56px]">
-        <div className="container max-w-[1080px]">
-          <details className="group bg-hirex-surface border border-border rounded-2xl p-6 md:p-8">
-            <summary className="cursor-pointer list-none flex items-center justify-between gap-4">
+      {/* COLLAPSED CREDITS EXPLAINER — candidate plans only */}
+      {audience === "candidate" && (
+        <section className="py-[72px] max-md:py-[56px]">
+          <div className="container max-w-[1080px]">
+            <details className="group bg-hirex-surface border border-border rounded-2xl p-6 md:p-8">
+              <summary className="cursor-pointer list-none flex items-center justify-between gap-4">
+                <div>
+                  <div className="text-xs font-mono tracking-[0.15em] uppercase text-hirex-primary-light mb-1">
+                    Optional · How credits work
+                  </div>
+                  <h3 className="font-display text-xl md:text-2xl font-bold">
+                    One currency. Three weight classes. <span className="grad-text-cyan italic">Zero surprises.</span>
+                  </h3>
+                </div>
+                <ChevronDown className="h-6 w-6 text-hirex-text2 transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="mt-6 pt-6 border-t border-border">
+                <p className="text-hirex-text2 text-base leading-relaxed mb-6">
+                  Every candidate action in HireX has a published credit cost — visible before you click. Light actions are nearly free. Heavy actions cost more because they cost us more.
+                </p>
+                <div className="grid md:grid-cols-3 gap-4">
+                  {CREDIT_CATEGORIES.map((cat) => (
+                    <div key={cat.badge} className={`rounded-xl p-5 border ${cat.border} ${cat.bg}`}>
+                      <div className={`inline-block text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-hirex-surface ${cat.color} mb-3`}>
+                        {cat.badge}
+                      </div>
+                      <div className={`font-display text-3xl font-extrabold ${cat.color} mb-3`}>{cat.range}</div>
+                      <ul className="space-y-2">
+                        {cat.items.map(([n, c]) => (
+                          <li key={n} className="flex justify-between text-xs border-b border-border pb-1.5 last:border-0">
+                            <span className="text-hirex-text2">{n}</span>
+                            <span className={`font-mono font-bold ${cat.color}`}>{c}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+      )}
+
+      {/* REFUEL PACKS — candidate plans only */}
+      {audience === "candidate" && (
+        <section className="py-[56px] bg-hirex-bg3 border-y border-border">
+          <div className="container max-w-[1080px]">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6">
               <div>
-                <div className="text-xs font-mono tracking-[0.15em] uppercase text-hirex-primary-light mb-1">
-                  Optional · How credits work
+                <div className="text-xs font-mono tracking-[0.15em] uppercase text-hirex-primary-light mb-2">
+                  Need more credits?
                 </div>
                 <h3 className="font-display text-xl md:text-2xl font-bold">
-                  One currency. Three weight classes. <span className="grad-text-cyan italic">Zero surprises.</span>
+                  Refuel packs — <span className="grad-text-cyan italic">add-on, never replace</span> a plan.
                 </h3>
               </div>
-              <ChevronDown className="h-6 w-6 text-hirex-text2 transition-transform group-open:rotate-180" />
-            </summary>
-            <div className="mt-6 pt-6 border-t border-border">
-              <p className="text-hirex-text2 text-base leading-relaxed mb-6">
-                Every action in HIREXAI has a published credit cost — visible before you click. Light actions are nearly free. Heavy actions cost more because they cost us more.
+              <p className="text-sm text-hirex-text2 max-w-[420px]">
+                Top up any active subscription. Refuel credits never expire while your plan is active.
               </p>
-              <div className="grid md:grid-cols-3 gap-4">
-                {CREDIT_CATEGORIES.map((cat) => (
-                  <div key={cat.badge} className={`rounded-xl p-5 border ${cat.border} ${cat.bg}`}>
-                    <div className={`inline-block text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-hirex-surface ${cat.color} mb-3`}>
-                      {cat.badge}
-                    </div>
-                    <div className={`font-display text-3xl font-extrabold ${cat.color} mb-3`}>{cat.range}</div>
-                    <ul className="space-y-2">
-                      {cat.items.map(([n, c]) => (
-                        <li key={n} className="flex justify-between text-xs border-b border-border pb-1.5 last:border-0">
-                          <span className="text-hirex-text2">{n}</span>
-                          <span className={`font-mono font-bold ${cat.color}`}>{c}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
             </div>
-          </details>
-        </div>
-      </section>
-
-      {/* REFUEL PACKS — compact, lower priority */}
-      <section className="py-[56px] bg-hirex-bg3 border-y border-border">
-        <div className="container max-w-[1080px]">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6">
-            <div>
-              <div className="text-xs font-mono tracking-[0.15em] uppercase text-hirex-primary-light mb-2">
-                Need more credits?
-              </div>
-              <h3 className="font-display text-xl md:text-2xl font-bold">
-                Refuel packs — <span className="grad-text-cyan italic">add-on, never replace</span> a plan.
-              </h3>
-            </div>
-            <p className="text-sm text-hirex-text2 max-w-[420px]">
-              Top up any active subscription. Refuel credits never expire while your plan is active.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-3 gap-4">
-            {REFUEL_PACKS.map((p) => (
-              <div
-                key={p.id}
-                className={`rounded-xl p-5 border bg-hirex-surface flex flex-col ${
-                  p.best ? "border-accent/40" : "border-border"
-                }`}
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <div className="font-display font-bold text-base">{p.name}</div>
-                  {p.best && (
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent/15 text-accent">
-                      Best value
-                    </span>
-                  )}
-                </div>
-                <div className="text-xs text-hirex-text3 mb-3">{p.credits}</div>
-                <div className="font-display text-2xl font-extrabold mb-1">{p.price}</div>
-                <div className="text-xs text-hirex-text2 mb-4">{p.note}</div>
-                <button
-                  data-plan={`refuel-${p.id}`}
-                  data-cta="buy-now"
-                  onClick={() => startRazorpayCheckout({ planId: `refuel-${p.id}` })}
-                  className="mt-auto w-full py-2.5 rounded-full font-semibold text-sm bg-foreground text-hirex-bg2 hover:opacity-90 transition-opacity"
+            <div className="grid sm:grid-cols-3 gap-4">
+              {REFUEL_PACKS.map((p) => (
+                <div
+                  key={p.id}
+                  className={`rounded-xl p-5 border bg-hirex-surface flex flex-col ${
+                    p.best ? "border-accent/40" : "border-border"
+                  }`}
                 >
-                  Buy Now
-                </button>
-              </div>
-            ))}
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="font-display font-bold text-base">{p.name}</div>
+                    {p.best && (
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent/15 text-accent">
+                        Best value
+                      </span>
+                    )}
+                  </div>
+                  <div className="text-xs text-hirex-text3 mb-3">{p.credits}</div>
+                  <div className="font-display text-2xl font-extrabold mb-1">{p.price}</div>
+                  <div className="text-xs text-hirex-text2 mb-4">{p.note}</div>
+                  <button
+                    data-plan={`refuel-${p.id}`}
+                    data-cta="buy-now"
+                    onClick={() => startRazorpayCheckout({ planId: `refuel-${p.id}` })}
+                    className="mt-auto w-full py-2.5 rounded-full font-semibold text-sm bg-foreground text-hirex-bg2 hover:opacity-90 transition-opacity"
+                  >
+                    Buy Now
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* UPI QR — alt payment */}
       <section id="upi-pay" className="py-[72px] max-md:py-[56px]">
@@ -881,24 +888,24 @@ const PricingPage = () => {
           <div className="text-center bg-gradient-to-br from-hirex-cyan/10 via-hirex-surface to-hirex-surface border border-hirex-cyan/30 rounded-2xl p-10 md:p-14">
             <Briefcase className="h-10 w-10 text-hirex-cyan mx-auto mb-4" />
             <h2 className="font-display text-[clamp(28px,4.5vw,44px)] font-extrabold leading-[1.1] tracking-tight mb-4">
-              Ready to <span className="grad-text-cyan italic">make a decision?</span>
+              Ready to hire <span className="grad-text-cyan italic">better talent faster?</span>
             </h2>
             <p className="text-hirex-text2 text-base md:text-lg leading-relaxed max-w-[560px] mx-auto mb-8">
-              Buy a candidate or Scale Fast plan instantly, or book a 20-minute demo to see HIREXAI run on your roles.
+              Source. Screen. Shortlist. Hire. All from one AI-powered recruitment platform.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
                 href="#pricing"
                 className="inline-flex items-center justify-center bg-gradient-to-r from-hirex-cyan to-hirex-primary-light text-primary-foreground font-bold text-sm md:text-base px-7 py-3.5 rounded-full hover:scale-[1.03] transition-transform shadow-[0_8px_24px_hsla(202,72%,59%,0.35)]"
               >
-                Buy Now →
+                Start Hiring →
               </a>
               <button
                 onClick={openCalendly}
-                data-cta="book-demo"
+                data-cta="talk-to-sales"
                 className="inline-flex items-center justify-center bg-hirex-surface border border-hirex-border2 text-foreground font-bold text-sm md:text-base px-7 py-3.5 rounded-full hover:border-hirex-cyan/40 transition-colors"
               >
-                Book Demo
+                Talk To Sales
               </button>
             </div>
           </div>

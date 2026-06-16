@@ -32,6 +32,7 @@ import TermsPage from "@/pages/TermsPage";
 import SecurityPage from "@/pages/SecurityPage";
 import GDPRPage from "@/pages/GDPRPage";
 import CookiePolicyPage from "@/pages/CookiePolicyPage";
+import CollegesPage from "@/pages/CollegesPage";
 import ChatWidget from "@/components/ChatWidget";
 
 const queryClient = new QueryClient();
@@ -71,6 +72,7 @@ const Layout = () => {
         <Route path="/security" element={<SecurityPage />} />
         <Route path="/gdpr" element={<GDPRPage />} />
         <Route path="/cookies" element={<CookiePolicyPage />} />
+        <Route path="/colleges" element={<CollegesPage />} />
         <Route path="/admin/login" element={<AdminLoginPage />} />
         <Route path="/admin" element={<AdminDashboardPage />} />
         <Route path="/admin/posts/:id" element={<AdminPostEditorPage />} />

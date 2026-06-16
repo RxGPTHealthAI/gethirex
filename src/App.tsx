@@ -32,6 +32,7 @@ import TermsPage from "@/pages/TermsPage";
 import SecurityPage from "@/pages/SecurityPage";
 import GDPRPage from "@/pages/GDPRPage";
 import CookiePolicyPage from "@/pages/CookiePolicyPage";
+import CollegesPage from "@/pages/CollegesPage";
 import ChatWidget from "@/components/ChatWidget";
 
 const queryClient = new QueryClient();

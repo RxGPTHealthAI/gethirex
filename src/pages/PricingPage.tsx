@@ -368,10 +368,10 @@ const PricingPage = () => {
             ) : (
               <>
                 <h2 className="font-display text-[clamp(28px,4vw,42px)] font-extrabold leading-[1.1] tracking-tight mb-3">
-                  Plans for <span className="grad-text-cyan italic">employers.</span>
+                  Plans for <span className="grad-text-cyan italic">hiring teams.</span>
                 </h2>
                 <p className="text-hirex-text2 text-base leading-relaxed">
-                  Self-serve for fast-growing startups. Book a demo for mid-market. Talk to sales for enterprise.
+                  Choose the plan that matches your hiring volume and recruitment goals.
                 </p>
               </>
             )}

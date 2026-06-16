@@ -581,10 +581,10 @@ const PricingPage = () => {
         <div className="container max-w-[1080px]">
           <div className="text-center max-w-[680px] mx-auto mb-10">
             <h2 className="font-display text-[clamp(26px,4vw,38px)] font-extrabold leading-[1.1] tracking-tight mb-3">
-              HIREXAI vs the <span className="grad-text-cyan italic">old hiring stack.</span>
+              Why hiring teams switch <span className="grad-text-cyan italic">to HireX.</span>
             </h2>
             <p className="text-hirex-text2 text-base leading-relaxed">
-              Why teams cancel LinkedIn Recruiter, Cutshort, and legacy ATSs after 30 days.
+              Modern recruitment teams need outcomes, not more tools.
             </p>
           </div>
           <div className="bg-hirex-surface border border-border rounded-2xl overflow-hidden">

@@ -781,54 +781,56 @@ const PricingPage = () => {
         </section>
       )}
 
-      {/* REFUEL PACKS — compact, lower priority */}
-      <section className="py-[56px] bg-hirex-bg3 border-y border-border">
-        <div className="container max-w-[1080px]">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6">
-            <div>
-              <div className="text-xs font-mono tracking-[0.15em] uppercase text-hirex-primary-light mb-2">
-                Need more credits?
-              </div>
-              <h3 className="font-display text-xl md:text-2xl font-bold">
-                Refuel packs — <span className="grad-text-cyan italic">add-on, never replace</span> a plan.
-              </h3>
-            </div>
-            <p className="text-sm text-hirex-text2 max-w-[420px]">
-              Top up any active subscription. Refuel credits never expire while your plan is active.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-3 gap-4">
-            {REFUEL_PACKS.map((p) => (
-              <div
-                key={p.id}
-                className={`rounded-xl p-5 border bg-hirex-surface flex flex-col ${
-                  p.best ? "border-accent/40" : "border-border"
-                }`}
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <div className="font-display font-bold text-base">{p.name}</div>
-                  {p.best && (
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent/15 text-accent">
-                      Best value
-                    </span>
-                  )}
+      {/* REFUEL PACKS — candidate plans only */}
+      {audience === "candidate" && (
+        <section className="py-[56px] bg-hirex-bg3 border-y border-border">
+          <div className="container max-w-[1080px]">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6">
+              <div>
+                <div className="text-xs font-mono tracking-[0.15em] uppercase text-hirex-primary-light mb-2">
+                  Need more credits?
                 </div>
-                <div className="text-xs text-hirex-text3 mb-3">{p.credits}</div>
-                <div className="font-display text-2xl font-extrabold mb-1">{p.price}</div>
-                <div className="text-xs text-hirex-text2 mb-4">{p.note}</div>
-                <button
-                  data-plan={`refuel-${p.id}`}
-                  data-cta="buy-now"
-                  onClick={() => startRazorpayCheckout({ planId: `refuel-${p.id}` })}
-                  className="mt-auto w-full py-2.5 rounded-full font-semibold text-sm bg-foreground text-hirex-bg2 hover:opacity-90 transition-opacity"
-                >
-                  Buy Now
-                </button>
+                <h3 className="font-display text-xl md:text-2xl font-bold">
+                  Refuel packs — <span className="grad-text-cyan italic">add-on, never replace</span> a plan.
+                </h3>
               </div>
-            ))}
+              <p className="text-sm text-hirex-text2 max-w-[420px]">
+                Top up any active subscription. Refuel credits never expire while your plan is active.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-4">
+              {REFUEL_PACKS.map((p) => (
+                <div
+                  key={p.id}
+                  className={`rounded-xl p-5 border bg-hirex-surface flex flex-col ${
+                    p.best ? "border-accent/40" : "border-border"
+                  }`}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="font-display font-bold text-base">{p.name}</div>
+                    {p.best && (
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent/15 text-accent">
+                        Best value
+                      </span>
+                    )}
+                  </div>
+                  <div className="text-xs text-hirex-text3 mb-3">{p.credits}</div>
+                  <div className="font-display text-2xl font-extrabold mb-1">{p.price}</div>
+                  <div className="text-xs text-hirex-text2 mb-4">{p.note}</div>
+                  <button
+                    data-plan={`refuel-${p.id}`}
+                    data-cta="buy-now"
+                    onClick={() => startRazorpayCheckout({ planId: `refuel-${p.id}` })}
+                    className="mt-auto w-full py-2.5 rounded-full font-semibold text-sm bg-foreground text-hirex-bg2 hover:opacity-90 transition-opacity"
+                  >
+                    Buy Now
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* UPI QR — alt payment */}
       <section id="upi-pay" className="py-[72px] max-md:py-[56px]">

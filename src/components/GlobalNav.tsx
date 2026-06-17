@@ -8,7 +8,8 @@ const GlobalNav = () => {
   const location = useLocation();
   const isBusiness = location.pathname.startsWith("/business");
   const isCandidate = location.pathname.startsWith("/candidate");
-  const universe = isBusiness ? "business" : isCandidate ? "candidate" : null;
+  const isColleges = location.pathname.startsWith("/colleges");
+  const universe = isBusiness ? "business" : isCandidate ? "candidate" : isColleges ? "colleges" : null;
 
   const businessLinks = [
     { label: "Overview", to: "/business" },
@@ -26,7 +27,15 @@ const GlobalNav = () => {
     { label: "Contact", to: "/contact" },
   ];
 
-  const links = isBusiness ? businessLinks : isCandidate ? candidateLinks : [];
+  const collegesLinks = [
+    { label: "Overview", to: "/colleges" },
+    { label: "Pricing", to: "/colleges#pricing" },
+    { label: "Blog", to: "/blog" },
+    { label: "Contact", to: "/contact" },
+  ];
+
+  const links = isBusiness ? businessLinks : isCandidate ? candidateLinks : isColleges ? collegesLinks : [];
+
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8">

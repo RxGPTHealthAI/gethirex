@@ -102,8 +102,12 @@ const GlobalNav = () => {
               <Link to="/candidate" className="px-3.5 py-2 rounded-lg text-[13px] font-medium text-hirex-text2 hover:text-foreground no-underline transition-all">
                 For Candidates
               </Link>
+              <Link to="/colleges" className="px-3.5 py-2 rounded-lg text-[13px] font-medium text-hirex-text2 hover:text-foreground no-underline transition-all">
+                For Colleges
+              </Link>
             </>
           )}
+
           <Link
             to="/contact"
             className="weave-hover ml-2 inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-sm font-bold no-underline text-foreground border border-hirex-cyan/30 hover:shadow-[0_0_20px_hsla(202,72%,59%,0.2)] transition-all"

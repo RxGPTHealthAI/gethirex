@@ -66,6 +66,16 @@ const GlobalNav = () => {
             >
               For Candidates
             </Link>
+            <Link
+              to="/colleges"
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide no-underline transition-all ${
+                isColleges
+                  ? "bg-hirex-cyan/20 text-hirex-cyan"
+                  : "text-hirex-text3 hover:text-foreground"
+              }`}
+            >
+              For Colleges
+            </Link>
           </div>
         )}
 
@@ -75,6 +85,7 @@ const GlobalNav = () => {
               key={l.to}
               to={l.to}
               className={`px-3.5 py-2 rounded-lg text-[13px] font-medium transition-all no-underline ${
+
                 location.pathname === l.to
                   ? "text-foreground bg-foreground/10"
                   : "text-hirex-text2 hover:text-foreground"

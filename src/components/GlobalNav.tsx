@@ -126,11 +126,14 @@ const GlobalNav = () => {
         <div className="md:hidden glass-card rounded-xl mx-2 mb-2 p-4 flex flex-col gap-1 animate-fade-in">
           {universe && (
             <div className="flex gap-2 mb-3 pb-3 border-b border-foreground/10">
-              <Link to="/business" onClick={() => setOpen(false)} className={`flex-1 text-center px-3 py-2 rounded-lg text-xs font-semibold no-underline ${isBusiness ? "bg-hirex-cyan/20 text-hirex-cyan" : "text-hirex-text3"}`}>
+              <Link to="/business" onClick={() => setOpen(false)} className={`flex-1 text-center px-2 py-2 rounded-lg text-xs font-semibold no-underline ${isBusiness ? "bg-hirex-cyan/20 text-hirex-cyan" : "text-hirex-text3"}`}>
                 Employers
               </Link>
-              <Link to="/candidate" onClick={() => setOpen(false)} className={`flex-1 text-center px-3 py-2 rounded-lg text-xs font-semibold no-underline ${isCandidate ? "bg-hirex-teal/20 text-hirex-teal" : "text-hirex-text3"}`}>
+              <Link to="/candidate" onClick={() => setOpen(false)} className={`flex-1 text-center px-2 py-2 rounded-lg text-xs font-semibold no-underline ${isCandidate ? "bg-hirex-teal/20 text-hirex-teal" : "text-hirex-text3"}`}>
                 Candidates
+              </Link>
+              <Link to="/colleges" onClick={() => setOpen(false)} className={`flex-1 text-center px-2 py-2 rounded-lg text-xs font-semibold no-underline ${isColleges ? "bg-hirex-cyan/20 text-hirex-cyan" : "text-hirex-text3"}`}>
+                Colleges
               </Link>
             </div>
           )}
@@ -143,8 +146,10 @@ const GlobalNav = () => {
             <>
               <Link to="/business" onClick={() => setOpen(false)} className="py-2.5 px-3 text-hirex-text2 text-[14px] no-underline hover:text-foreground">For Employers</Link>
               <Link to="/candidate" onClick={() => setOpen(false)} className="py-2.5 px-3 text-hirex-text2 text-[14px] no-underline hover:text-foreground">For Candidates</Link>
+              <Link to="/colleges" onClick={() => setOpen(false)} className="py-2.5 px-3 text-hirex-text2 text-[14px] no-underline hover:text-foreground">For Colleges</Link>
             </>
           )}
+
         </div>
       )}
     </nav>

@@ -8,7 +8,8 @@ const GlobalNav = () => {
   const location = useLocation();
   const isBusiness = location.pathname.startsWith("/business");
   const isCandidate = location.pathname.startsWith("/candidate");
-  const universe = isBusiness ? "business" : isCandidate ? "candidate" : null;
+  const isColleges = location.pathname.startsWith("/colleges");
+  const universe = isBusiness ? "business" : isCandidate ? "candidate" : isColleges ? "colleges" : null;
 
   const businessLinks = [
     { label: "Overview", to: "/business" },
@@ -26,7 +27,15 @@ const GlobalNav = () => {
     { label: "Contact", to: "/contact" },
   ];
 
-  const links = isBusiness ? businessLinks : isCandidate ? candidateLinks : [];
+  const collegesLinks = [
+    { label: "Overview", to: "/colleges" },
+    { label: "Pricing", to: "/colleges#pricing" },
+    { label: "Blog", to: "/blog" },
+    { label: "Contact", to: "/contact" },
+  ];
+
+  const links = isBusiness ? businessLinks : isCandidate ? candidateLinks : isColleges ? collegesLinks : [];
+
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8">
@@ -57,6 +66,16 @@ const GlobalNav = () => {
             >
               For Candidates
             </Link>
+            <Link
+              to="/colleges"
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide no-underline transition-all ${
+                isColleges
+                  ? "bg-hirex-cyan/20 text-hirex-cyan"
+                  : "text-hirex-text3 hover:text-foreground"
+              }`}
+            >
+              For Colleges
+            </Link>
           </div>
         )}
 
@@ -66,6 +85,7 @@ const GlobalNav = () => {
               key={l.to}
               to={l.to}
               className={`px-3.5 py-2 rounded-lg text-[13px] font-medium transition-all no-underline ${
+
                 location.pathname === l.to
                   ? "text-foreground bg-foreground/10"
                   : "text-hirex-text2 hover:text-foreground"
@@ -82,8 +102,12 @@ const GlobalNav = () => {
               <Link to="/candidate" className="px-3.5 py-2 rounded-lg text-[13px] font-medium text-hirex-text2 hover:text-foreground no-underline transition-all">
                 For Candidates
               </Link>
+              <Link to="/colleges" className="px-3.5 py-2 rounded-lg text-[13px] font-medium text-hirex-text2 hover:text-foreground no-underline transition-all">
+                For Colleges
+              </Link>
             </>
           )}
+
           <Link
             to="/contact"
             className="weave-hover ml-2 inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-sm font-bold no-underline text-foreground border border-hirex-cyan/30 hover:shadow-[0_0_20px_hsla(202,72%,59%,0.2)] transition-all"
@@ -102,11 +126,14 @@ const GlobalNav = () => {
         <div className="md:hidden glass-card rounded-xl mx-2 mb-2 p-4 flex flex-col gap-1 animate-fade-in">
           {universe && (
             <div className="flex gap-2 mb-3 pb-3 border-b border-foreground/10">
-              <Link to="/business" onClick={() => setOpen(false)} className={`flex-1 text-center px-3 py-2 rounded-lg text-xs font-semibold no-underline ${isBusiness ? "bg-hirex-cyan/20 text-hirex-cyan" : "text-hirex-text3"}`}>
+              <Link to="/business" onClick={() => setOpen(false)} className={`flex-1 text-center px-2 py-2 rounded-lg text-xs font-semibold no-underline ${isBusiness ? "bg-hirex-cyan/20 text-hirex-cyan" : "text-hirex-text3"}`}>
                 Employers
               </Link>
-              <Link to="/candidate" onClick={() => setOpen(false)} className={`flex-1 text-center px-3 py-2 rounded-lg text-xs font-semibold no-underline ${isCandidate ? "bg-hirex-teal/20 text-hirex-teal" : "text-hirex-text3"}`}>
+              <Link to="/candidate" onClick={() => setOpen(false)} className={`flex-1 text-center px-2 py-2 rounded-lg text-xs font-semibold no-underline ${isCandidate ? "bg-hirex-teal/20 text-hirex-teal" : "text-hirex-text3"}`}>
                 Candidates
+              </Link>
+              <Link to="/colleges" onClick={() => setOpen(false)} className={`flex-1 text-center px-2 py-2 rounded-lg text-xs font-semibold no-underline ${isColleges ? "bg-hirex-cyan/20 text-hirex-cyan" : "text-hirex-text3"}`}>
+                Colleges
               </Link>
             </div>
           )}
@@ -119,8 +146,10 @@ const GlobalNav = () => {
             <>
               <Link to="/business" onClick={() => setOpen(false)} className="py-2.5 px-3 text-hirex-text2 text-[14px] no-underline hover:text-foreground">For Employers</Link>
               <Link to="/candidate" onClick={() => setOpen(false)} className="py-2.5 px-3 text-hirex-text2 text-[14px] no-underline hover:text-foreground">For Candidates</Link>
+              <Link to="/colleges" onClick={() => setOpen(false)} className="py-2.5 px-3 text-hirex-text2 text-[14px] no-underline hover:text-foreground">For Colleges</Link>
             </>
           )}
+
         </div>
       )}
     </nav>

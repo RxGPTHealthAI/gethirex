@@ -243,7 +243,7 @@ const FAQS = [
   ["Can I cancel anytime?", "Yes. Monthly plans cancel from your dashboard at the next billing cycle in two clicks. Annual plans get a prorated refund within the first 30 days."],
   ["What's included in annual billing?", "Annual plans cost 25% less per month — equivalent to 3 months free — and lock in your rate for the full term. Same features as monthly."],
   ["Is my data secure?", "HireX is SOC 2 Type II certified, GDPR compliant for EU/UK, and DPDP Act 2023 compliant for India. All data encrypted in transit (TLS 1.3) and at rest (AES-256). We do not train on your data."],
-  ["Which payment methods do you accept?", "All major credit/debit cards, UPI, net banking, and wallets via Razorpay. You can also pay via the UPI QR on this page and email care@gethirex.space with your transaction ID."],
+  ["Which payment methods do you accept?", "All major credit/debit cards, UPI, net banking, and wallets via Razorpay. You can also pay via the UPI QR on this page and email contact@hirexai.space with your transaction ID."],
 ];
 
 // ---------- Small components ----------
@@ -845,8 +845,8 @@ const PricingPage = () => {
               </h3>
               <p className="text-hirex-text2 text-base leading-relaxed mb-4">
                 Scan the QR with GPay, PhonePe, Paytm, or any UPI app. After paying, email your transaction ID and chosen plan to{" "}
-                <a href="mailto:care@gethirex.space" className="text-hirex-primary-light font-semibold">
-                  care@gethirex.space
+                <a href="mailto:contact@hirexai.space" className="text-hirex-primary-light font-semibold">
+                  contact@hirexai.space
                 </a>{" "}
                 — we'll activate your plan within 1 business hour.
               </p>

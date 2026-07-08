@@ -50,7 +50,7 @@ const META: Record<string, Meta> = {
   },
   "/contact": {
     title: "Contact HIREXAI | Talk to Sales or Support",
-    description: "Reach the HIREXAI team for sales, partnerships, or product support. Email care@gethirex.space or call +91 7735405034.",
+    description: "Reach the HIREXAI team for sales, partnerships, or product support. Email contact@hirexai.space or call +91 7735405034.",
   },
   "/blog": {
     title: "Blog | HIREXAI on AI Recruitment & HR",

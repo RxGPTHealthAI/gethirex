@@ -55,7 +55,7 @@ For **billing issues, API/integration help, or enterprise customization**, captu
 - Company
 - Work email
 - Brief description of the inquiry
-Then tell them our human team will reach out within 1 business day, and point them to https://gethirex.space/contact or care@gethirex.space. If they share details in chat, confirm receipt and reassure them it has been logged.
+Then tell them our human team will reach out within 1 business day, and point them to https://gethirex.space/contact or contact@hirexai.space. If they share details in chat, confirm receipt and reassure them it has been logged.
 
 # AI models & data security (constrained answers)
 If asked about specific AI models powering HIREXAI:
@@ -105,7 +105,7 @@ serve(async (req) => {
       }
       if (response.status === 402) {
         return new Response(
-          JSON.stringify({ error: "AI service temporarily unavailable. Please email care@gethirex.space." }),
+          JSON.stringify({ error: "AI service temporarily unavailable. Please email contact@hirexai.space." }),
           { status: 402, headers: { ...corsHeaders, "Content-Type": "application/json" } },
         );
       }

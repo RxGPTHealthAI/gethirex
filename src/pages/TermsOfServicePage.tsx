@@ -14,7 +14,7 @@ const TermsOfServicePage = () => (
     <h2>5. Limitation of Liability</h2>
     <p>HIREXAI shall not be liable for any indirect, incidental, or consequential damages arising from your use of the service.</p>
     <h2>6. Contact</h2>
-    <p>Questions about these terms: care@gethirex.space</p>
+    <p>Questions about these terms: contact@hirexai.space</p>
   </LegalPage>
 );
 

@@ -80,7 +80,7 @@ export default function ChatWidget() {
         return;
       }
       if (resp.status === 402) {
-        toast.error("AI service temporarily unavailable. Email care@gethirex.space.");
+        toast.error("AI service temporarily unavailable. Email contact@hirexai.space.");
         setLoading(false);
         return;
       }
@@ -312,7 +312,7 @@ export default function ChatWidget() {
             </button>
           </div>
           <p className="text-[10px] text-hirex-text3 text-center mt-2">
-            Rex is HIREXAI's AI · For urgent issues email care@gethirex.space
+            Rex is HIREXAI's AI · For urgent issues email contact@hirexai.space
           </p>
         </div>
       </div>

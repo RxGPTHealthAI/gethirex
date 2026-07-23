@@ -89,35 +89,27 @@ const PlatformSwitcher = () => {
           HireX helps companies find, screen, and hire the right people faster — while helping candidates discover better opportunities and get hired.
         </p>
 
-        <div className="flex flex-col md:flex-row gap-6 w-full max-w-[900px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-[1200px]">
           {/* Employer card */}
           <Link
             to="/business"
-            className="weave-hover flex-1 glass-card glow-border-cyan rounded-2xl p-8 md:p-10 text-left no-underline group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_0_40px_hsla(202,72%,59%,0.2)]"
+            className="weave-hover glass-card glow-border-cyan rounded-2xl p-7 md:p-8 text-left no-underline group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_0_40px_hsla(202,72%,59%,0.2)]"
           >
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-xl bg-hirex-cyan/15 flex items-center justify-center text-hirex-cyan text-lg weave-icon">⚡</div>
               <span className="text-xs font-bold tracking-[0.15em] uppercase text-hirex-cyan">For Employers</span>
             </div>
-            <h2 className="text-2xl md:text-[28px] font-bold mb-3 text-foreground group-hover:text-hirex-cyan transition-colors">
+            <h2 className="text-2xl md:text-[26px] font-bold mb-3 text-foreground group-hover:text-hirex-cyan transition-colors">
               Hire Better.<br />Hire Faster.
             </h2>
             <p className="text-hirex-text2 text-sm leading-relaxed mb-5">
-              Stop spending hours screening resumes and coordinating interviews. HireX helps you:
+              Stop spending hours screening resumes and coordinating interviews. HIREXAI helps you:
             </p>
             <ul className="flex flex-col gap-2 mb-5 text-sm text-hirex-text2">
               {["Find qualified candidates","Screen applicants automatically","Shortlist the best talent","Schedule interviews faster","Hire at scale"].map((i) => (
                 <li key={i} className="flex items-start gap-2"><span className="text-hirex-cyan font-bold">✓</span>{i}</li>
               ))}
             </ul>
-            <div className="mb-5">
-              <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-hirex-text3 mb-2">Perfect for</p>
-              <div className="flex flex-wrap gap-1.5">
-                {["Tech Teams","AI Teams","Sales Teams","Marketing Teams","Startup Hiring","Bulk Recruitment"].map((t) => (
-                  <span key={t} className="px-2.5 py-1 rounded-full text-[11px] bg-hirex-cyan/10 text-hirex-cyan border border-hirex-cyan/20">{t}</span>
-                ))}
-              </div>
-            </div>
             <div className="flex items-center gap-2 text-hirex-cyan text-sm font-semibold group-hover:gap-3 transition-all">
               Enter Employer Platform →
             </div>
@@ -126,17 +118,17 @@ const PlatformSwitcher = () => {
           {/* Candidate card */}
           <Link
             to="/candidate"
-            className="weave-hover flex-1 glass-card-warm glow-border-teal rounded-2xl p-8 md:p-10 text-left no-underline group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_0_40px_hsla(168,55%,63%,0.2)]"
+            className="weave-hover glass-card-warm glow-border-teal rounded-2xl p-7 md:p-8 text-left no-underline group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_0_40px_hsla(168,55%,63%,0.2)]"
           >
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-xl bg-hirex-teal/15 flex items-center justify-center text-hirex-teal text-lg weave-icon">🧑‍💻</div>
               <span className="text-xs font-bold tracking-[0.15em] uppercase text-hirex-teal">For Candidates</span>
             </div>
-            <h2 className="text-2xl md:text-[28px] font-bold mb-3 text-foreground group-hover:text-hirex-teal transition-colors">
+            <h2 className="text-2xl md:text-[26px] font-bold mb-3 text-foreground group-hover:text-hirex-teal transition-colors">
               Get Hired<br />Smarter.
             </h2>
             <p className="text-hirex-text2 text-sm leading-relaxed mb-5">
-              Stand out to employers, improve your profile, prepare for interviews, and discover opportunities that match your skills. HireX helps you:
+              Stand out to employers, improve your profile, prepare for interviews, and discover opportunities that match your skills. HIREXAI helps you:
             </p>
             <ul className="flex flex-col gap-2 mb-5 text-sm text-hirex-text2">
               {["Improve your resume","Prepare for interviews","Showcase your skills","Get discovered by employers","Access better opportunities"].map((i) => (
@@ -145,6 +137,35 @@ const PlatformSwitcher = () => {
             </ul>
             <div className="flex items-center gap-2 text-hirex-teal text-sm font-semibold group-hover:gap-3 transition-all">
               Enter Candidate Platform →
+            </div>
+          </Link>
+
+          {/* Colleges card - HIGHLIGHTED */}
+          <Link
+            to="/colleges"
+            className="weave-hover relative glass-card glow-border-cyan rounded-2xl p-7 md:p-8 text-left no-underline group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_0_40px_hsla(202,72%,59%,0.3)]"
+            style={{ background: "linear-gradient(160deg, hsla(202,72%,59%,0.08), hsla(280,60%,60%,0.05))" }}
+          >
+            <div className="absolute -top-3 right-4 px-3 py-1 rounded-full text-[10px] font-bold tracking-[0.15em] uppercase text-foreground shadow-[0_0_20px_hsla(202,72%,59%,0.5)]" style={{ background: "linear-gradient(90deg,#4AB8E6,#8b5cf6)" }}>
+              ★ New
+            </div>
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-10 h-10 rounded-xl bg-hirex-cyan/15 flex items-center justify-center text-hirex-cyan text-lg weave-icon">🎓</div>
+              <span className="text-xs font-bold tracking-[0.15em] uppercase text-hirex-cyan">For Colleges</span>
+            </div>
+            <h2 className="text-2xl md:text-[26px] font-bold mb-3 text-foreground group-hover:text-hirex-cyan transition-colors">
+              From Second Year<br />To First Job.
+            </h2>
+            <p className="text-hirex-text2 text-sm leading-relaxed mb-5">
+              Prepare students for AI-first careers from year 2 onwards. HIREXAI helps colleges deliver:
+            </p>
+            <ul className="flex flex-col gap-2 mb-5 text-sm text-hirex-text2">
+              {["Placement Readiness Score™","AI Upskilling & Career GPS™","Industry Projects & Internships","Remote & Global Opportunities","Higher Placement Rates"].map((i) => (
+                <li key={i} className="flex items-start gap-2"><span className="text-hirex-cyan font-bold">✓</span>{i}</li>
+              ))}
+            </ul>
+            <div className="flex items-center gap-2 text-hirex-cyan text-sm font-semibold group-hover:gap-3 transition-all">
+              Enter Colleges Platform →
             </div>
           </Link>
         </div>

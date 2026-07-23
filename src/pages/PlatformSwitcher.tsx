@@ -16,9 +16,9 @@ const agents = [
 ];
 
 const results = [
-  { from: "42", to: "14", unit: "days" },
-  { from: "$180K", to: "$24K", unit: "cost" },
-  { from: "5", to: "0", unit: "recruiters" },
+  { from: "42", to: "14", unit: "days to hire", label: "3× faster" },
+  { from: "$180K", to: "$24K", unit: "cost per hire", label: "87% cheaper" },
+  { from: "5", to: "0", unit: "recruiters needed", label: "fully automated" },
 ];
 
 const faqs = [
@@ -209,17 +209,25 @@ const PlatformSwitcher = () => {
 
       {/* RESULTS */}
       <section className="bg-white text-[#0A1E3E] py-32 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 text-center">
-          {results.map((r) => (
-            <div key={r.unit}>
-              <div className="text-[56px] md:text-[88px] font-bold leading-none tracking-tight">
-                <span className="text-gray-300">{r.from}</span>
-                <span className="text-gray-400 mx-2 md:mx-4 text-4xl md:text-6xl align-middle">→</span>
-                <span style={{ color: TEAL }}>{r.to}</span>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-center text-sm tracking-[0.4em] text-gray-500 mb-20">THE RESULT</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-10">
+            {results.map((r) => (
+              <div key={r.unit} className="flex flex-col items-center text-center">
+                <div className="flex items-baseline justify-center gap-4 md:gap-5">
+                  <span className="text-4xl md:text-5xl font-semibold text-gray-300 line-through decoration-2">
+                    {r.from}
+                  </span>
+                  <span className="text-gray-400 text-2xl md:text-3xl">→</span>
+                  <span className="text-5xl md:text-7xl font-bold tracking-tight" style={{ color: TEAL }}>
+                    {r.to}
+                  </span>
+                </div>
+                <div className="mt-6 text-xs uppercase tracking-[0.3em] text-gray-500">{r.unit}</div>
+                <div className="mt-2 text-sm font-medium text-[#0A1E3E]">{r.label}</div>
               </div>
-              <div className="mt-6 text-sm uppercase tracking-[0.3em] text-gray-500">{r.unit}</div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 

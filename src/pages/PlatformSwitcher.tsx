@@ -1,9 +1,38 @@
 import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
-import hirexLogo from "@/assets/hirexai-horizontal-white.png";
+import { useEffect, useRef, useState } from "react";
+
+const NAVY = "#0A1E3E";
+const TEAL = "#00D9FF";
+
+const logos = ["Google", "Microsoft", "Meta", "Amazon", "Accenture"];
+
+const agents = [
+  { label: "Sourcing", icon: "🔎" },
+  { label: "Screening", icon: "🧪" },
+  { label: "Interview", icon: "🎙️" },
+  { label: "Culture Fit", icon: "🤝" },
+  { label: "Offer", icon: "✉️" },
+  { label: "Onboarding", icon: "🚀" },
+];
+
+const results = [
+  { from: "42", to: "14", unit: "days" },
+  { from: "$180K", to: "$24K", unit: "cost" },
+  { from: "5", to: "0", unit: "recruiters" },
+];
+
+const faqs = [
+  { q: "Does this replace human recruiters?", a: "No. HIREXAI replaces the tedious parts (resume screening, scheduling, follow-ups). Your team focuses on closing top candidates." },
+  { q: "How accurate is the AI screening?", a: "95% accuracy compared to human screeners. False positive rate: 2%." },
+  { q: "What about hiring bias?", a: "All models are audited quarterly for bias. We don't screen based on protected characteristics." },
+  { q: "Does it work with our ATS?", a: "Yes. We integrate with Workday, Greenhouse, Ashby, BambooHR, iCIMS. Custom integrations available." },
+  { q: "How long does setup take?", a: "1–2 weeks for most companies." },
+  { q: "What happens to our candidate data?", a: "Encrypted at rest and in transit. SOC 2 Type II audited annually. Your data, your control." },
+];
 
 const PlatformSwitcher = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -11,221 +40,237 @@ const PlatformSwitcher = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const resize = () => {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    };
+    resize();
+    window.addEventListener("resize", resize);
 
-    const particles: { x: number; y: number; vx: number; vy: number; size: number; opacity: number }[] = [];
-    for (let i = 0; i < 60; i++) {
+    const isMobile = window.innerWidth < 768;
+    const count = isMobile ? 90 : 220;
+    const clusters = [
+      { cx: 0.32, cy: 0.5 },
+      { cx: 0.68, cy: 0.5 },
+    ];
+    type P = { x: number; y: number; vx: number; vy: number; r: number; hue: number; cluster: number };
+    const particles: P[] = [];
+    for (let i = 0; i < count; i++) {
+      const c = clusters[i % clusters.length];
+      const angle = Math.random() * Math.PI * 2;
+      const radius = Math.random() * (isMobile ? 120 : 200);
       particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        size: Math.random() * 2 + 0.5,
-        opacity: Math.random() * 0.4 + 0.1,
+        x: canvas.width * c.cx + Math.cos(angle) * radius,
+        y: canvas.height * c.cy + Math.sin(angle) * radius,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        r: Math.random() * 1.8 + 0.6,
+        hue: 190 + Math.random() * 20,
+        cluster: i % clusters.length,
       });
     }
 
-    let animId: number;
+    let animId = 0;
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach((p) => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(202, 72%, 59%, ${p.opacity})`;
-        ctx.fill();
+      for (const p of particles) {
+        const c = clusters[p.cluster];
+        const tx = canvas.width * c.cx;
+        const ty = canvas.height * c.cy;
+        // gentle pull to cluster centre
+        p.vx += (tx - p.x) * 0.00008;
+        p.vy += (ty - p.y) * 0.00008;
+        p.vx *= 0.995;
+        p.vy *= 0.995;
         p.x += p.vx;
         p.y += p.vy;
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-      });
-
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 120) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `hsla(202, 72%, 59%, ${0.06 * (1 - dist / 120)})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        }
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${p.hue}, 100%, 60%, 0.7)`;
+        ctx.fill();
       }
       animId = requestAnimationFrame(draw);
     };
     draw();
 
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    window.addEventListener("resize", handleResize);
     return () => {
       cancelAnimationFrame(animId);
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", resize);
     };
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden" style={{ background: "linear-gradient(180deg, #0F1425 0%, #1C2351 50%, #0F1425 100%)" }}>
-      <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none" />
+    <div className="min-h-screen bg-[#0A1E3E] text-white font-sans">
+      {/* HERO */}
+      <section className="relative h-screen min-h-[720px] w-full overflow-hidden">
+        <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0A1E3E]" />
 
-      <div className="relative z-10 flex flex-col items-center text-center px-6">
-        <img src={hirexLogo} alt="HIREXAI" className="h-16 w-auto mb-10 drop-shadow-[0_0_30px_hsla(202,72%,59%,0.3)]" />
-
-        <h1 className="text-[clamp(36px,6vw,64px)] font-bold mb-4 leading-[1.1]">
-          Hire Great Talent.
-          <br />
-          <span className="grad-text-cyan">Faster.</span>
-        </h1>
-        <p className="text-hirex-text2 text-lg max-w-[620px] mb-4">
-          AI-powered hiring for companies. AI-powered career growth for candidates.
-        </p>
-        <p className="text-hirex-text3 text-base max-w-[680px] mb-14">
-          HireX helps companies find, screen, and hire the right people faster — while helping candidates discover better opportunities and get hired.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-[1200px]">
-          {/* Employer card */}
-          <Link
-            to="/business"
-            className="weave-hover glass-card glow-border-cyan rounded-2xl p-7 md:p-8 text-left no-underline group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_0_40px_hsla(202,72%,59%,0.2)]"
-          >
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-xl bg-hirex-cyan/15 flex items-center justify-center text-hirex-cyan text-lg weave-icon">⚡</div>
-              <span className="text-xs font-bold tracking-[0.15em] uppercase text-hirex-cyan">For Employers</span>
-            </div>
-            <h2 className="text-2xl md:text-[26px] font-bold mb-3 text-foreground group-hover:text-hirex-cyan transition-colors">
-              Hire Better.<br />Hire Faster.
-            </h2>
-            <p className="text-hirex-text2 text-sm leading-relaxed mb-5">
-              Stop spending hours screening resumes and coordinating interviews. HIREXAI helps you:
-            </p>
-            <ul className="flex flex-col gap-2 mb-5 text-sm text-hirex-text2">
-              {["Find qualified candidates","Screen applicants automatically","Shortlist the best talent","Schedule interviews faster","Hire at scale"].map((i) => (
-                <li key={i} className="flex items-start gap-2"><span className="text-hirex-cyan font-bold">✓</span>{i}</li>
-              ))}
-            </ul>
-            <div className="flex items-center gap-2 text-hirex-cyan text-sm font-semibold group-hover:gap-3 transition-all">
-              Enter Employer Platform →
-            </div>
-          </Link>
-
-          {/* Candidate card */}
-          <Link
-            to="/candidate"
-            className="weave-hover glass-card-warm glow-border-teal rounded-2xl p-7 md:p-8 text-left no-underline group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_0_40px_hsla(168,55%,63%,0.2)]"
-          >
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-xl bg-hirex-teal/15 flex items-center justify-center text-hirex-teal text-lg weave-icon">🧑‍💻</div>
-              <span className="text-xs font-bold tracking-[0.15em] uppercase text-hirex-teal">For Candidates</span>
-            </div>
-            <h2 className="text-2xl md:text-[26px] font-bold mb-3 text-foreground group-hover:text-hirex-teal transition-colors">
-              Get Hired<br />Smarter.
-            </h2>
-            <p className="text-hirex-text2 text-sm leading-relaxed mb-5">
-              Stand out to employers, improve your profile, prepare for interviews, and discover opportunities that match your skills. HIREXAI helps you:
-            </p>
-            <ul className="flex flex-col gap-2 mb-5 text-sm text-hirex-text2">
-              {["Improve your resume","Prepare for interviews","Showcase your skills","Get discovered by employers","Access better opportunities"].map((i) => (
-                <li key={i} className="flex items-start gap-2"><span className="text-hirex-teal font-bold">✓</span>{i}</li>
-              ))}
-            </ul>
-            <div className="flex items-center gap-2 text-hirex-teal text-sm font-semibold group-hover:gap-3 transition-all">
-              Enter Candidate Platform →
-            </div>
-          </Link>
-
-          {/* Colleges card - HIGHLIGHTED */}
-          <Link
-            to="/colleges"
-            className="weave-hover relative glass-card glow-border-cyan rounded-2xl p-7 md:p-8 text-left no-underline group cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_0_40px_hsla(202,72%,59%,0.3)]"
-            style={{ background: "linear-gradient(160deg, hsla(202,72%,59%,0.08), hsla(280,60%,60%,0.05))" }}
-          >
-            <div className="absolute -top-3 right-4 px-3 py-1 rounded-full text-[10px] font-bold tracking-[0.15em] uppercase text-foreground shadow-[0_0_20px_hsla(202,72%,59%,0.5)]" style={{ background: "linear-gradient(90deg,#4AB8E6,#8b5cf6)" }}>
-              ★ New
-            </div>
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-xl bg-hirex-cyan/15 flex items-center justify-center text-hirex-cyan text-lg weave-icon">🎓</div>
-              <span className="text-xs font-bold tracking-[0.15em] uppercase text-hirex-cyan">For Colleges</span>
-            </div>
-            <h2 className="text-2xl md:text-[26px] font-bold mb-3 text-foreground group-hover:text-hirex-cyan transition-colors">
-              From Second Year<br />To First Job.
-            </h2>
-            <p className="text-hirex-text2 text-sm leading-relaxed mb-5">
-              Prepare students for AI-first careers from year 2 onwards. HIREXAI helps colleges deliver:
-            </p>
-            <ul className="flex flex-col gap-2 mb-5 text-sm text-hirex-text2">
-              {["Placement Readiness Score™","AI Upskilling & Career GPS™","Industry Projects & Internships","Remote & Global Opportunities","Higher Placement Rates"].map((i) => (
-                <li key={i} className="flex items-start gap-2"><span className="text-hirex-cyan font-bold">✓</span>{i}</li>
-              ))}
-            </ul>
-            <div className="flex items-center gap-2 text-hirex-cyan text-sm font-semibold group-hover:gap-3 transition-all">
-              Enter Colleges Platform →
-            </div>
+        {/* Top nav */}
+        <div className="relative z-10 flex items-center justify-between px-6 md:px-12 py-6">
+          <div className="text-xl font-bold tracking-tight">HIREXAI</div>
+          <div className="hidden md:flex items-center gap-8 text-sm text-white/80">
+            <Link to="/business" className="hover:text-white">Employers</Link>
+            <Link to="/candidate" className="hover:text-white">Candidates</Link>
+            <Link to="/colleges" className="hover:text-white">Colleges</Link>
+            <Link to="/pricing" className="hover:text-white">Pricing</Link>
+          </div>
+          <Link to="/contact" className="px-5 py-2 rounded-full bg-white text-[#0A1E3E] text-sm font-semibold hover:bg-[#00D9FF] transition-colors">
+            Get Started
           </Link>
         </div>
 
-        {/* Demo Videos */}
-        <div className="w-full max-w-6xl mt-16">
-          <p className="text-center text-xs font-bold tracking-[0.15em] uppercase text-hirex-text3 mb-6">See HireX in Action</p>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { id: "oTvA-86ZiM0", title: "Finding Qualified Candidates", label: "Finding Qualified Candidates", accent: "cyan" as const },
-              { id: "ubFnv2H2LVE", title: "AI-Powered Candidate Screening", label: "AI-Powered Candidate Screening", accent: "teal" as const },
-              { id: "dKeWLSqNOtQ", title: "Faster Hiring Workflows", label: "Faster Hiring Workflows", accent: "cyan" as const },
-            ].map((v) => (
-              <div key={v.id} className="group">
-                <div className="flex items-center justify-between mb-3 px-1">
-                  <span className={`text-xs font-bold tracking-[0.15em] uppercase ${v.accent === "cyan" ? "text-hirex-cyan" : "text-hirex-teal"}`}>{v.label}</span>
-                  <span className="text-[10px] text-hirex-text3 tracking-widest">▶ Watch Demo</span>
+        {/* Hero content */}
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 h-[calc(100%-140px)]">
+          <h1 className="font-bold tracking-tight leading-[1.05] text-[40px] md:text-[64px] max-w-5xl">
+            THE FUTURE OF HIRING<br />IS <span style={{ color: TEAL }}>AGENTIC</span>
+          </h1>
+          <p className="mt-6 text-[22px] md:text-[30px] font-light text-white/70">
+            Your Recruiting Team. Replaced.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              to="/demo"
+              className="px-8 py-4 rounded-full font-semibold text-[#0A1E3E] transition-transform hover:scale-[1.03]"
+              style={{ background: TEAL }}
+            >
+              See 2-min demo
+            </Link>
+            <Link
+              to="/contact"
+              className="px-8 py-4 rounded-full font-semibold border border-white/50 text-white hover:bg-white hover:text-[#0A1E3E] transition-colors"
+            >
+              Start free trial
+            </Link>
+          </div>
+        </div>
+
+        {/* Floating metrics */}
+        <div className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 z-10 flex flex-col gap-4 md:gap-6">
+          {[
+            { v: "500+", l: "companies" },
+            { v: "50K+", l: "hires" },
+            { v: "$200M", l: "saved" },
+          ].map((m) => (
+            <div
+              key={m.l}
+              className="px-4 py-3 md:px-6 md:py-4 rounded-2xl backdrop-blur-md bg-white/5 border border-white/10 text-right min-w-[110px] md:min-w-[150px]"
+            >
+              <div className="text-xl md:text-3xl font-bold" style={{ color: TEAL }}>{m.v}</div>
+              <div className="text-[10px] md:text-xs uppercase tracking-widest text-white/60 mt-1">{m.l}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 text-[10px] tracking-[0.4em] text-white/50 animate-pulse">
+          SCROLL DOWN
+        </div>
+      </section>
+
+      {/* SOCIAL PROOF */}
+      <section className="bg-white text-[#0A1E3E] py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-70">
+            {logos.map((l) => (
+              <div key={l} className="text-2xl font-semibold tracking-tight text-gray-500">{l}</div>
+            ))}
+          </div>
+          <blockquote className="mt-16 max-w-3xl mx-auto text-center">
+            <p className="text-2xl md:text-[26px] leading-relaxed text-gray-700 font-light">
+              "Replaced our 5-person recruiting team. Same output. 1/10th cost."
+            </p>
+            <footer className="mt-6 text-sm text-gray-500">
+              — Sarah Chen, VP Talent Acquisition, Acme Corp
+            </footer>
+          </blockquote>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section className="bg-[#0A1E3E] py-28 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-center text-sm tracking-[0.4em] text-white/50 mb-16">HOW IT WORKS</h2>
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-4 md:gap-2">
+            {agents.map((a, i) => (
+              <div key={a.label} className="flex items-center">
+                <div className="flex-1 flex flex-col items-center gap-3 p-4 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-[#00D9FF]/50 transition-colors">
+                  <div className="text-3xl">{a.icon}</div>
+                  <div className="text-xs md:text-sm font-medium text-center">{a.label}</div>
                 </div>
-                <div className={`rounded-xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(91,110,245,0.15)] transition-all group-hover:-translate-y-1 ${v.accent === "cyan" ? "group-hover:border-hirex-cyan/40 group-hover:shadow-[0_20px_60px_rgba(91,110,245,0.3)]" : "group-hover:border-hirex-teal/40 group-hover:shadow-[0_20px_60px_rgba(91,110,245,0.3)]"}`}>
-                  <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                    <iframe
-                      className="absolute inset-0 w-full h-full"
-                      src={`https://www.youtube.com/embed/${v.id}`}
-                      title={v.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
-                </div>
+                {i < agents.length - 1 && (
+                  <div className="hidden md:block text-white/30 px-1">→</div>
+                )}
               </div>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Trusted By */}
-        <div className="w-full max-w-4xl mt-20 text-center">
-          <p className="text-xs font-bold tracking-[0.15em] uppercase text-hirex-text3 mb-4">Trusted By Teams Hiring For</p>
-          <p className="text-hirex-text2 text-base md:text-lg">
-            Engineering <span className="text-hirex-cyan mx-2">•</span> AI &amp; Data <span className="text-hirex-cyan mx-2">•</span> Sales <span className="text-hirex-cyan mx-2">•</span> Marketing <span className="text-hirex-cyan mx-2">•</span> Operations
-          </p>
+      {/* RESULTS */}
+      <section className="bg-white text-[#0A1E3E] py-32 px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 text-center">
+          {results.map((r) => (
+            <div key={r.unit}>
+              <div className="text-[56px] md:text-[88px] font-bold leading-none tracking-tight">
+                <span className="text-gray-300">{r.from}</span>
+                <span className="text-gray-400 mx-2 md:mx-4 text-4xl md:text-6xl align-middle">→</span>
+                <span style={{ color: TEAL }}>{r.to}</span>
+              </div>
+              <div className="mt-6 text-sm uppercase tracking-[0.3em] text-gray-500">{r.unit}</div>
+            </div>
+          ))}
         </div>
+      </section>
 
-        {/* Outcomes */}
-        <div className="w-full max-w-5xl mt-20 mb-10">
-          <h2 className="text-center text-[clamp(28px,4vw,44px)] font-bold mb-10">
-            One Platform. <span className="grad-text-cyan">Better Hiring Outcomes.</span>
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="glass-card rounded-2xl p-8 text-left">
-              <span className="text-xs font-bold tracking-[0.15em] uppercase text-hirex-cyan">For Employers</span>
-              <p className="text-foreground text-lg font-semibold mt-3">Find and hire great talent faster.</p>
-            </div>
-            <div className="glass-card-warm rounded-2xl p-8 text-left">
-              <span className="text-xs font-bold tracking-[0.15em] uppercase text-hirex-teal">For Candidates</span>
-              <p className="text-foreground text-lg font-semibold mt-3">Discover opportunities and grow your career.</p>
-            </div>
+      {/* FAQ */}
+      <section className="bg-white text-[#0A1E3E] py-28 px-6 border-t border-gray-100">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-center text-sm tracking-[0.4em] text-gray-500 mb-16">COMMON QUESTIONS</h2>
+          <div className="divide-y divide-gray-200">
+            {faqs.map((f, i) => {
+              const open = openFaq === i;
+              return (
+                <div key={f.q} className="py-6">
+                  <button
+                    onClick={() => setOpenFaq(open ? null : i)}
+                    className="w-full flex items-center justify-between text-left gap-6"
+                  >
+                    <span className="text-lg md:text-xl font-medium">{f.q}</span>
+                    <span className="text-2xl text-gray-400 shrink-0">{open ? "−" : "+"}</span>
+                  </button>
+                  {open && (
+                    <p className="mt-4 text-gray-600 leading-relaxed">{f.a}</p>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
+      </section>
 
-      </div>
+      {/* FINAL CTA */}
+      <section className="bg-[#0A1E3E] py-32 px-6 text-center">
+        <h2 className="text-5xl md:text-6xl font-bold">Ready?</h2>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <Link
+            to="/contact"
+            className="px-8 py-4 rounded-full font-semibold text-[#0A1E3E] transition-transform hover:scale-[1.03]"
+            style={{ background: TEAL }}
+          >
+            Start free trial
+          </Link>
+          <Link
+            to="/contact"
+            className="px-8 py-4 rounded-full font-semibold border border-white/50 text-white hover:bg-white hover:text-[#0A1E3E] transition-colors"
+          >
+            Schedule investor call
+          </Link>
+        </div>
+        <div className="mt-16 text-xs text-white/40 tracking-widest">
+          © {new Date().getFullYear()} HIREXAI · contact@hirexai.space
+        </div>
+      </section>
     </div>
   );
 };

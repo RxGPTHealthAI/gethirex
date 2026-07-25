@@ -13,6 +13,14 @@ const menuGroups = [
     ],
   },
   {
+    label: "SOLUTIONS",
+    links: [
+      { label: "For Employers", to: "/business" },
+      { label: "For Colleges", to: "/colleges" },
+      { label: "For Candidates", to: "/candidate" },
+    ],
+  },
+  {
     label: "COMPANY",
     links: [
       { label: "Customer Stories", to: "/customer-stories" },

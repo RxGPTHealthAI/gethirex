@@ -1,13 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import hirexLogo from "@/assets/hirexai-horizontal-white.png";
-
-const solutionsLinks = [
-  { label: "For Employers", to: "/business" },
-  { label: "For Colleges", to: "/colleges" },
-  { label: "For Candidates", to: "/candidate" },
-];
 
 const GlobalNav = () => {
   const [open, setOpen] = useState(false);
@@ -40,7 +34,13 @@ const GlobalNav = () => {
     { label: "Contact", to: "/contact" },
   ];
 
-  const links = isBusiness ? businessLinks : isCandidate ? candidateLinks : isColleges ? collegesLinks : [];
+  const defaultLinks = [
+    { label: "Pricing", to: "/pricing" },
+    { label: "Blog", to: "/blog" },
+    { label: "Contact", to: "/contact" },
+  ];
+
+  const links = isBusiness ? businessLinks : isCandidate ? candidateLinks : isColleges ? collegesLinks : defaultLinks;
 
 
   return (

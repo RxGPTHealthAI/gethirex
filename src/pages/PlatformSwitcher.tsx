@@ -30,9 +30,17 @@ const faqs = [
   { q: "What happens to our candidate data?", a: "Encrypted at rest and in transit. SOC 2 Type II audited annually. Your data, your control." },
 ];
 
+const navLinks = [
+  { label: "Employers", to: "/business" },
+  { label: "Candidates", to: "/candidate" },
+  { label: "Colleges", to: "/colleges" },
+  { label: "Pricing", to: "/pricing" },
+];
+
 const PlatformSwitcher = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -110,15 +118,50 @@ const PlatformSwitcher = () => {
         <div className="relative z-10 flex items-center justify-between px-6 md:px-12 py-6">
           <div className="text-xl font-bold tracking-tight">HIREXAI</div>
           <div className="hidden md:flex items-center gap-8 text-sm text-white/80">
-            <Link to="/business" className="hover:text-white">Employers</Link>
-            <Link to="/candidate" className="hover:text-white">Candidates</Link>
-            <Link to="/colleges" className="hover:text-white">Colleges</Link>
-            <Link to="/pricing" className="hover:text-white">Pricing</Link>
+            {navLinks.map((l) => (
+              <Link key={l.to} to={l.to} className="hover:text-white">{l.label}</Link>
+            ))}
           </div>
-          <Link to="/contact" className="px-5 py-2 rounded-full bg-white text-[#0A1E3E] text-sm font-semibold hover:bg-[#00D9FF] transition-colors">
-            Get Started
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link to="/contact" className="hidden sm:inline-block px-5 py-2 rounded-full bg-white text-[#0A1E3E] text-sm font-semibold hover:bg-[#00D9FF] transition-colors">
+              Get Started
+            </Link>
+            {/* Mobile hamburger */}
+            <button
+              className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px]"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+            >
+              <span className={`block h-[2px] w-6 bg-white rounded-full transition-all duration-300 ${menuOpen ? "translate-y-[7px] rotate-45" : ""}`} />
+              <span className={`block h-[2px] w-6 bg-white rounded-full transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+              <span className={`block h-[2px] w-6 bg-white rounded-full transition-all duration-300 ${menuOpen ? "-translate-y-[7px] -rotate-45" : ""}`} />
+            </button>
+          </div>
         </div>
+
+        {/* Mobile menu */}
+        {menuOpen && (
+          <div className="md:hidden relative z-20 mx-4 rounded-2xl bg-[#0A1E3E]/95 backdrop-blur-md border border-white/10 p-4 flex flex-col gap-1">
+            {navLinks.map((l) => (
+              <Link
+                key={l.to}
+                to={l.to}
+                onClick={() => setMenuOpen(false)}
+                className="py-3 px-4 rounded-xl text-[15px] font-medium text-white/80 hover:text-white hover:bg-white/5 no-underline transition-all"
+              >
+                {l.label}
+              </Link>
+            ))}
+            <Link
+              to="/contact"
+              onClick={() => setMenuOpen(false)}
+              className="mt-2 py-3 px-4 rounded-xl text-center text-[15px] font-semibold text-[#0A1E3E] no-underline"
+              style={{ background: TEAL }}
+            >
+              Get Started
+            </Link>
+          </div>
+        )}
 
         {/* Hero content */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 h-[calc(100%-140px)]">

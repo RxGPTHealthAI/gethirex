@@ -3,6 +3,14 @@ import { Link, useLocation } from "react-router-dom";
 
 const menuGroups = [
   {
+    label: "FOR",
+    links: [
+      { label: "Employers", to: "/business", highlight: true },
+      { label: "Colleges", to: "/colleges", highlight: true },
+      { label: "Candidates", to: "/candidate", highlight: true },
+    ],
+  },
+  {
     label: "PRODUCT",
     links: [
       { label: "How It Works", to: "/how-it-works" },
@@ -10,14 +18,6 @@ const menuGroups = [
       { label: "Demo", to: "/demo" },
       { label: "Process", to: "/process" },
       { label: "Integrations", to: "/integrations" },
-    ],
-  },
-  {
-    label: "SOLUTIONS",
-    links: [
-      { label: "For Employers", to: "/business" },
-      { label: "For Colleges", to: "/colleges" },
-      { label: "For Candidates", to: "/candidate" },
     ],
   },
   {
@@ -142,6 +142,8 @@ const HamburgerDrawer = () => {
                         className={`block py-2.5 px-3 rounded-lg text-[14px] font-medium no-underline transition-all duration-300 group/link ${
                           isActive
                             ? "text-hirex-cyan bg-hirex-cyan/10"
+                            : link.highlight
+                            ? "text-foreground bg-hirex-cyan/10 hover:bg-hirex-cyan/20"
                             : "text-foreground/80 hover:text-foreground hover:bg-foreground/5"
                         }`}
                         style={{
@@ -150,8 +152,13 @@ const HamburgerDrawer = () => {
                             : "none",
                         }}
                       >
-                        <span className="relative inline-block">
+                        <span className="relative inline-flex items-center gap-2">
                           {link.label}
+                          {link.highlight && (
+                            <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold bg-hirex-cyan/20 text-hirex-cyan uppercase tracking-wider">
+                              Page
+                            </span>
+                          )}
                           <span className="absolute -bottom-0.5 left-0 h-[1px] w-0 bg-hirex-cyan/60 transition-all duration-300 group-hover/link:w-full" />
                         </span>
                       </Link>

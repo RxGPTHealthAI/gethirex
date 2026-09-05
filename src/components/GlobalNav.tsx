@@ -9,7 +9,6 @@ const GlobalNav = () => {
   const isBusiness = location.pathname.startsWith("/business");
   const isCandidate = location.pathname.startsWith("/candidate");
   const isColleges = location.pathname.startsWith("/colleges");
-  const universe = isBusiness ? "business" : isCandidate ? "candidate" : isColleges ? "colleges" : null;
 
   const businessLinks = [
     { label: "Overview", to: "/business" },

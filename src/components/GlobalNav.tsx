@@ -50,7 +50,7 @@ const GlobalNav = () => {
           <img src={hirexLogo} alt="HIREXAI" className="h-8 w-auto" />
         </Link>
 
-        {universe && (
+        {(
           <div className="hidden md:flex items-center gap-1 glass-card rounded-full px-1.5 py-1.5">
             <Link
               to="/business"
@@ -137,7 +137,7 @@ const GlobalNav = () => {
 
       {open && (
         <div className="md:hidden glass-card rounded-xl mx-2 mb-2 p-4 flex flex-col gap-1 animate-fade-in">
-          {universe && (
+          {(
             <div className="flex gap-2 mb-3 pb-3 border-b border-foreground/10">
               <Link to="/business" onClick={() => setOpen(false)} className={`flex-1 text-center px-2 py-2 rounded-lg text-xs font-semibold no-underline ${isBusiness ? "bg-hirex-cyan/20 text-hirex-cyan" : "text-hirex-text3"}`}>
                 Employers

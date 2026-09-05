@@ -30,9 +30,17 @@ const faqs = [
   { q: "What happens to our candidate data?", a: "Encrypted at rest and in transit. SOC 2 Type II audited annually. Your data, your control." },
 ];
 
+const navLinks = [
+  { label: "Employers", to: "/business" },
+  { label: "Candidates", to: "/candidate" },
+  { label: "Colleges", to: "/colleges" },
+  { label: "Pricing", to: "/pricing" },
+];
+
 const PlatformSwitcher = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;

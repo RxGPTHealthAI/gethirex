@@ -98,27 +98,6 @@ const GlobalNav = () => {
               {l.label}
             </Link>
           ))}
-          {!universe && (
-            <div className="relative group">
-              <button className="px-3.5 py-2 rounded-lg text-[13px] font-medium text-hirex-text2 hover:text-foreground transition-all inline-flex items-center gap-1">
-                Solutions <ChevronDown size={14} className="transition-transform group-hover:rotate-180" />
-              </button>
-              <div className="absolute top-full right-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="glass-card rounded-xl p-2 min-w-[200px] flex flex-col gap-0.5">
-                  {solutionsLinks.map((s) => (
-                    <Link
-                      key={s.to}
-                      to={s.to}
-                      className="px-3 py-2 rounded-lg text-[13px] font-medium text-hirex-text2 hover:text-foreground hover:bg-foreground/5 no-underline transition-all"
-                    >
-                      {s.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
-
           <Link
             to="/contact"
             className="weave-hover ml-2 inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-sm font-bold no-underline text-foreground border border-hirex-cyan/30 hover:shadow-[0_0_20px_hsla(202,72%,59%,0.2)] transition-all"
@@ -151,14 +130,6 @@ const GlobalNav = () => {
               {l.label}
             </Link>
           ))}
-          {!universe && (
-            <>
-              <Link to="/business" onClick={() => setOpen(false)} className="py-2.5 px-3 text-hirex-text2 text-[14px] no-underline hover:text-foreground">For Employers</Link>
-              <Link to="/candidate" onClick={() => setOpen(false)} className="py-2.5 px-3 text-hirex-text2 text-[14px] no-underline hover:text-foreground">For Candidates</Link>
-              <Link to="/colleges" onClick={() => setOpen(false)} className="py-2.5 px-3 text-hirex-text2 text-[14px] no-underline hover:text-foreground">For Colleges</Link>
-            </>
-          )}
-
         </div>
       )}
     </nav>

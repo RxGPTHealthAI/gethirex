@@ -82,7 +82,6 @@ const GlobalNav = () => {
               For Colleges
             </Link>
           </div>
-        )}
 
         <div className="hidden md:flex items-center gap-1">
           {links.map((l) => (
@@ -147,7 +146,6 @@ const GlobalNav = () => {
                 Colleges
               </Link>
             </div>
-          )}
           {links.map((l) => (
             <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="py-2.5 px-3 text-hirex-text2 text-[14px] no-underline hover:text-foreground rounded-lg hover:bg-foreground/5">
               {l.label}

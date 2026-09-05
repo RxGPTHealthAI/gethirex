@@ -1,13 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import hirexLogo from "@/assets/hirexai-horizontal-white.png";
-
-const solutionsLinks = [
-  { label: "For Employers", to: "/business" },
-  { label: "For Colleges", to: "/colleges" },
-  { label: "For Candidates", to: "/candidate" },
-];
 
 const GlobalNav = () => {
   const [open, setOpen] = useState(false);
@@ -15,7 +9,6 @@ const GlobalNav = () => {
   const isBusiness = location.pathname.startsWith("/business");
   const isCandidate = location.pathname.startsWith("/candidate");
   const isColleges = location.pathname.startsWith("/colleges");
-  const universe = isBusiness ? "business" : isCandidate ? "candidate" : isColleges ? "colleges" : null;
 
   const businessLinks = [
     { label: "Overview", to: "/business" },
@@ -40,7 +33,13 @@ const GlobalNav = () => {
     { label: "Contact", to: "/contact" },
   ];
 
-  const links = isBusiness ? businessLinks : isCandidate ? candidateLinks : isColleges ? collegesLinks : [];
+  const defaultLinks = [
+    { label: "Pricing", to: "/pricing" },
+    { label: "Blog", to: "/blog" },
+    { label: "Contact", to: "/contact" },
+  ];
+
+  const links = isBusiness ? businessLinks : isCandidate ? candidateLinks : isColleges ? collegesLinks : defaultLinks;
 
 
   return (
@@ -50,8 +49,7 @@ const GlobalNav = () => {
           <img src={hirexLogo} alt="HIREXAI" className="h-8 w-auto" />
         </Link>
 
-        {universe && (
-          <div className="hidden md:flex items-center gap-1 glass-card rounded-full px-1.5 py-1.5">
+        <div className="hidden md:flex items-center gap-1 glass-card rounded-full px-1.5 py-1.5">
             <Link
               to="/business"
               className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide no-underline transition-all ${
@@ -83,7 +81,6 @@ const GlobalNav = () => {
               For Colleges
             </Link>
           </div>
-        )}
 
         <div className="hidden md:flex items-center gap-1">
           {links.map((l) => (
@@ -100,27 +97,6 @@ const GlobalNav = () => {
               {l.label}
             </Link>
           ))}
-          {!universe && (
-            <div className="relative group">
-              <button className="px-3.5 py-2 rounded-lg text-[13px] font-medium text-hirex-text2 hover:text-foreground transition-all inline-flex items-center gap-1">
-                Solutions <ChevronDown size={14} className="transition-transform group-hover:rotate-180" />
-              </button>
-              <div className="absolute top-full right-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="glass-card rounded-xl p-2 min-w-[200px] flex flex-col gap-0.5">
-                  {solutionsLinks.map((s) => (
-                    <Link
-                      key={s.to}
-                      to={s.to}
-                      className="px-3 py-2 rounded-lg text-[13px] font-medium text-hirex-text2 hover:text-foreground hover:bg-foreground/5 no-underline transition-all"
-                    >
-                      {s.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
-
           <Link
             to="/contact"
             className="weave-hover ml-2 inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-sm font-bold no-underline text-foreground border border-hirex-cyan/30 hover:shadow-[0_0_20px_hsla(202,72%,59%,0.2)] transition-all"
@@ -137,8 +113,7 @@ const GlobalNav = () => {
 
       {open && (
         <div className="md:hidden glass-card rounded-xl mx-2 mb-2 p-4 flex flex-col gap-1 animate-fade-in">
-          {universe && (
-            <div className="flex gap-2 mb-3 pb-3 border-b border-foreground/10">
+          <div className="flex gap-2 mb-3 pb-3 border-b border-foreground/10">
               <Link to="/business" onClick={() => setOpen(false)} className={`flex-1 text-center px-2 py-2 rounded-lg text-xs font-semibold no-underline ${isBusiness ? "bg-hirex-cyan/20 text-hirex-cyan" : "text-hirex-text3"}`}>
                 Employers
               </Link>
@@ -149,20 +124,11 @@ const GlobalNav = () => {
                 Colleges
               </Link>
             </div>
-          )}
           {links.map((l) => (
             <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="py-2.5 px-3 text-hirex-text2 text-[14px] no-underline hover:text-foreground rounded-lg hover:bg-foreground/5">
               {l.label}
             </Link>
           ))}
-          {!universe && (
-            <>
-              <Link to="/business" onClick={() => setOpen(false)} className="py-2.5 px-3 text-hirex-text2 text-[14px] no-underline hover:text-foreground">For Employers</Link>
-              <Link to="/candidate" onClick={() => setOpen(false)} className="py-2.5 px-3 text-hirex-text2 text-[14px] no-underline hover:text-foreground">For Candidates</Link>
-              <Link to="/colleges" onClick={() => setOpen(false)} className="py-2.5 px-3 text-hirex-text2 text-[14px] no-underline hover:text-foreground">For Colleges</Link>
-            </>
-          )}
-
         </div>
       )}
     </nav>

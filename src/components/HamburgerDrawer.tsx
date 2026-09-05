@@ -3,6 +3,14 @@ import { Link, useLocation } from "react-router-dom";
 
 const menuGroups = [
   {
+    label: "FOR",
+    links: [
+      { label: "Employers", to: "/business", highlight: true },
+      { label: "Colleges", to: "/colleges", highlight: true },
+      { label: "Candidates", to: "/candidate", highlight: true },
+    ],
+  },
+  {
     label: "PRODUCT",
     links: [
       { label: "How It Works", to: "/how-it-works" },
@@ -10,14 +18,6 @@ const menuGroups = [
       { label: "Demo", to: "/demo" },
       { label: "Process", to: "/process" },
       { label: "Integrations", to: "/integrations" },
-    ],
-  },
-  {
-    label: "SOLUTIONS",
-    links: [
-      { label: "For Employers", to: "/business" },
-      { label: "For Colleges", to: "/colleges" },
-      { label: "For Candidates", to: "/candidate" },
     ],
   },
   {

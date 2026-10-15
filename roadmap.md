@@ -4,4 +4,5 @@
 - [x] Inspect emergency demo readiness without altering existing pages or integrations.
 - [x] Match /videos content, supplied IDs, and page metadata to the emergency brief.
 - [x] Test videos, existing navigation, validation, and available project tests; deliver audit findings (playback and notification delivery remain unverified).
+- [x] Add compact homepage "Recognised for AI & Talent Innovation" award section below social proof, linking to /team.
 - [ ] Restore live booking availability — blocked by the existing Calendly URL returning 404; needs a valid owner-supplied booking link.

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import awardAsset from "@/assets/incredible-india-icon-award-2026.png.asset.json";
 
 const NAVY = "#0A1E3E";
 const TEAL = "#00D9FF";
@@ -228,6 +229,37 @@ const PlatformSwitcher = () => {
               — Sarah Chen, VP Talent Acquisition, Acme Corp
             </footer>
           </blockquote>
+        </div>
+      </section>
+
+      {/* RECOGNITION */}
+      <section className="bg-[#F5F8FC] text-[#0A1E3E] py-16 px-6">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[300px_1fr] gap-8 md:gap-14 items-center">
+          <img
+            src={awardAsset.url}
+            alt="Incredible India Icon Award 2026 certificate presented to Sailesh Pattnaik, Founder & CEO of HIREXAI"
+            loading="lazy"
+            className="w-full max-w-[300px] mx-auto rounded-xl border border-gray-200 shadow-[0_10px_30px_rgba(10,30,62,0.08)]"
+          />
+          <div>
+            <h2 className="text-xs tracking-[0.3em] uppercase text-gray-500">
+              Recognised for AI &amp; Talent Innovation
+            </h2>
+            <p className="mt-3 text-2xl md:text-[28px] font-semibold leading-snug">
+              Incredible India Icon Award 2026
+            </p>
+            <p className="mt-4 text-[15px] md:text-base text-gray-600 leading-relaxed max-w-[620px]">
+              HIREXAI is proud to celebrate the recognition of its Founder for contributions to
+              artificial intelligence and talent innovation. This milestone reflects our team's
+              commitment to building AI-powered hiring solutions.
+            </p>
+            <Link
+              to="/team"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#0A1E3E] no-underline border-b border-[#00D9FF] pb-1 hover:gap-3 transition-all"
+            >
+              Read Our Recognition <span aria-hidden="true">→</span>
+            </Link>
+          </div>
         </div>
       </section>
 

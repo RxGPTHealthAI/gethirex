@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import CampusDashboardPreview from "@/components/CampusDashboardPreview";
+import CollegePlanningTool from "@/components/CollegePlanningTool";
 
 const heroStats = [
   { val: "40,000+", label: "Colleges Across India" },
@@ -42,6 +43,13 @@ const journey = [
     title: "Career Acceleration",
     items: ["Full-Time Jobs", "Remote Jobs", "Consulting Opportunities", "Side Gigs", "Startup Opportunities"],
   },
+];
+
+const journeyActivities = [
+  { phase: "DISCOVER", activities: ["Career exploration", "Skills-gap identification", "Career planning", "Resume foundations"], focus: "Explore possible career paths and review preparation needs with a career adviser." },
+  { phase: "BUILD", activities: ["Skills development", "Industry projects", "Internship preparation", "Interview foundations"], focus: "Build evidence of skills through projects and prepare for internship conversations." },
+  { phase: "PREPARE", activities: ["Resume refinement", "Interview preparation", "Placement readiness", "Application support"], focus: "Refine application materials and organise a preparation plan with human feedback." },
+  { phase: "ACCELERATE", activities: ["Career development", "Relevant opportunities", "Continued skills development"], focus: "Review relevant next steps and continue developing skills after graduation." },
 ];
 
 const campusAgents = [
@@ -248,7 +256,7 @@ const CollegesPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {journey.map((j, i) => (
-              <div key={j.year} className={`glass-card glow-border-cyan rounded-2xl p-6 hover:-translate-y-1 transition-all ${activeJourney === i ? "border-hirex-cyan" : ""}`}>
+              <div key={j.year} className={`glass-card glow-border-cyan rounded-2xl p-6 hover:-translate-y-1 transition-all motion-reduce:transition-none motion-reduce:hover:translate-y-0 flex flex-col ${activeJourney === i ? "border-hirex-cyan" : ""}`}>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold tracking-[0.1em] uppercase bg-hirex-cyan/10 text-hirex-cyan mb-4">
                   Stage {i + 1}
                 </div>
@@ -261,7 +269,7 @@ const CollegesPage = () => {
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline" className="mt-5 w-full" aria-pressed={activeJourney === i} aria-controls="journey-detail" onClick={() => setActiveJourney(i)}>Explore {j.year}</Button>
+                <div className="mt-auto pt-5"><Button variant={activeJourney === i ? "default" : "outline"} className="w-full motion-reduce:transition-none" aria-pressed={activeJourney === i} aria-controls="journey-detail" onClick={() => setActiveJourney(i)}>Explore {j.year}</Button></div>
               </div>
             ))}
           </div>
@@ -270,6 +278,10 @@ const CollegesPage = () => {
             <h3 className="text-2xl tracking-normal">{journey[activeJourney].year} — {journey[activeJourney].title}</h3>
             <p className="text-hirex-text2 text-sm mt-3">{journey[activeJourney].items.join(" · ")}</p>
             <p className="text-hirex-text2 text-sm mt-3">{["Discover career options, build resume foundations and identify skills to develop.", "Build skills through projects and prepare for internship conversations.", "Prepare your resume, practise interviews and organise placement preparation with a career adviser.", "Explore next career opportunities and continue developing relevant skills."][activeJourney]}</p>
+            <div className="grid md:grid-cols-2 gap-6 mt-6 pb-5 border-b border-border">
+              <div><p className="text-hirex-warm-teal text-sm font-semibold">{journey[activeJourney].year.toUpperCase()} — {journeyActivities[activeJourney].phase}</p><ul className="grid sm:grid-cols-2 gap-3 mt-4">{journeyActivities[activeJourney].activities.map(activity => <li key={activity} className="flex gap-2 text-sm"><span className="text-hirex-cyan" aria-hidden="true">✓</span>{activity}</li>)}</ul></div>
+              <div><p className="text-sm text-hirex-text2 leading-relaxed">{journeyActivities[activeJourney].focus}</p><p className="text-xs text-hirex-text2 mt-3">Example preparation activities, not confirmation that every activity is an available HIREXAI feature.</p></div>
+            </div>
           </div>
         </div>
       </section>
@@ -466,6 +478,7 @@ const CollegesPage = () => {
       </section>
 
       {/* FINAL CTA */}
+      <CollegePlanningTool />
       <section className="py-24 text-center relative" style={{ background: "linear-gradient(180deg, #0F1425 0%, #1C2351 50%, #0F1425 100%)" }}>
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[150px] bg-hirex-cyan/[0.08]" />

@@ -155,6 +155,7 @@ const MemberCard = ({ m }: { m: Member }) => (
       )}
       {m.education && <p className="text-xs text-muted-foreground italic">🎓 {m.education}</p>}
       {m.passion && <p className="text-xs text-accent mt-2">💡 {m.passion}</p>}
+      {m.projects && <p className="text-xs text-muted-foreground mt-2">🛠️ {m.projects}</p>}
     </div>
   </div>
 );

@@ -10,4 +10,4 @@
 - [x] Phase B: add homepage workforce explorer, campus sample dashboard and journey interaction, and enhance existing candidate squad cards.
 - [x] Verify Phase B interactions, preservation, desktop/mobile layouts, and deliver results (4 tests pass; booking still returns 404).
 - Phase C/D deferred: employer simulator, agent network, demo selector, optional pricing/team/story refinements; no new campus page.
-- [ ] Enhance only /colleges: campus profile recommendations, four-stage journey, local ROI planning scenario and institutional CTA; verify preservation and desktop/mobile interactions.
+- [x] Enhance only /colleges: campus profile recommendations, four-stage journey, local ROI planning scenario and institutional CTA; verified 7 tests, desktop/tablet/mobile flows, zero planning requests, preserved routes/global CSS/content.

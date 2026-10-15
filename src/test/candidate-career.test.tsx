@@ -41,7 +41,7 @@ describe("Candidate local demonstrations", () => {
     render(<CareerDemoControls agent="CodeCoach" />);
     fireEvent.click(screen.getByRole("button", { name: "O(1)" }));
     expect(screen.getByRole("status")).toHaveTextContent("Try again");
-    fireEvent.click(screen.getByRole("button", { name: "O(n)", exact: true }));
+    fireEvent.click(screen.getByRole("button", { name: /^O\(n\)$/ }));
     expect(screen.getByRole("status")).toHaveTextContent("Correct");
   });
   it("builds a sample roadmap and reveals offer preparation", () => {
@@ -56,7 +56,7 @@ describe("Candidate local demonstrations", () => {
   it("retains all six agent panels with explicit demo boundaries and contact links", () => {
     for (const name of ["ResumeReviver", "JobScout", "CodeCoach", "InterviewPro", "CareerPilot", "OfferNinja"]) {
       const view = render(<MemoryRouter><CareerAgentPreview agent={{ name, desc: "Sample" }} onClose={() => {}} /></MemoryRouter>);
-      expect(screen.getByRole("heading", { name, exact: true })).toBeInTheDocument();
+      expect(screen.getByRole("heading", { name })).toBeInTheDocument();
       expect(screen.getByText(/NOT A LIVE AI SESSION/)).toBeInTheDocument();
       expect(screen.getByRole("link", { name: `Ask about ${name}` })).toHaveAttribute("href", "/contact");
       view.unmount();

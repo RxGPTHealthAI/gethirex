@@ -2,6 +2,6 @@
 - [x] Add navigation links and page metadata without redesigning existing pages.
 - [x] Verify the public page and demo links on desktop and mobile.
 - [x] Inspect emergency demo readiness without altering existing pages or integrations.
-- [ ] Match /videos content, supplied IDs, and page metadata to the emergency brief.
-- [ ] Test videos, existing navigation, validation, and available project tests; deliver audit findings.
+- [x] Match /videos content, supplied IDs, and page metadata to the emergency brief.
+- [x] Test videos, existing navigation, validation, and available project tests; deliver audit findings (playback and notification delivery remain unverified).
 - [ ] Restore live booking availability — blocked by the existing Calendly URL returning 404; needs a valid owner-supplied booking link.

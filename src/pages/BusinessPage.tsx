@@ -1,7 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import LiveFeed from "@/components/LiveFeed";
-import AgentNode from "@/components/AgentNode";
+import { Button } from "@/components/ui/button";
+import RecruitmentDashboard, { RecruitingWorkflowPreview } from "@/components/business/RecruitmentDashboard";
+import RecruitmentAgentPanel from "@/components/business/RecruitmentAgentPanel";
+import JobShortlistDemo from "@/components/business/JobShortlistDemo";
+import HiringWorkloadExplorer from "@/components/business/HiringWorkloadExplorer";
+import EmployerAudiencePreview from "@/components/business/EmployerAudiencePreview";
 
 const agentModules = [
   { category: "Candidate Sourcing", icon: "🎯", agents: ["TalentScout", "JobAmplify", "GlobalReach"] },
@@ -51,6 +56,7 @@ const scrollSections = [
 ];
 
 const BusinessPage = () => {
+  const [selectedAgent, setSelectedAgent] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState(0);
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -103,22 +109,18 @@ const BusinessPage = () => {
             </p>
 
             {/* Agent Grid */}
-            <div className="mb-14">
+            <div id="recruitment-agents" className="mb-14 scroll-mt-28">
               <p className="text-[11px] font-bold tracking-[0.15em] uppercase text-hirex-cyan/60 mb-6">
                 MEET YOUR AI RECRUITMENT TEAM
               </p>
               <div className="flex flex-wrap justify-center gap-3 md:gap-4 max-w-[680px] mx-auto">
-                {allAgents.map((agent, i) => (
-                  <AgentNode
-                    key={agent.name}
-                    name={agent.name}
-                    icon={agent.icon}
-                    active={i % 3 === 0}
-                    delay={i * 120}
-                    size="sm"
-                  />
+                {allAgents.map((agent) => (
+                  <Button key={agent.name} variant="ghost" aria-label={`Explore ${agent.name}`} aria-expanded={selectedAgent === agent.name} aria-controls="recruitment-agent-panel" onClick={() => setSelectedAgent(selectedAgent === agent.name ? null : agent.name)} className={`h-auto min-h-24 w-32 sm:w-36 flex-col whitespace-normal border rounded-lg p-3 text-center motion-reduce:transition-none ${selectedAgent === agent.name ? "border-hirex-cyan bg-hirex-surface" : "border-border"}`}>
+                    <span className="text-2xl">{agent.icon}</span><span className="text-xs break-words">{agent.name}</span>
+                  </Button>
                 ))}
               </div>
+              {selectedAgent && <RecruitmentAgentPanel key={selectedAgent} name={selectedAgent} />}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -133,12 +135,17 @@ const BusinessPage = () => {
                 to="/contact"
                 className="weave-hover inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-[18px] no-underline glass-card text-foreground hover:bg-foreground/10 transition-all"
               >
-                Book Demo
+                Book a Demo
               </Link>
+              <Button asChild variant="outline" size="lg" className="h-auto py-4 whitespace-normal"><a href="#job-shortlist-demo">Explore the Recruitment Workflow</a></Button>
             </div>
           </div>
         </div>
       </section>
+
+      <RecruitmentDashboard />
+      <JobShortlistDemo />
+      <HiringWorkloadExplorer />
 
       {/* Recruitment Modules */}
       <section className="py-24 relative" style={{ background: "linear-gradient(180deg, #0F1425 0%, #1C2351 100%)" }}>
@@ -173,7 +180,7 @@ const BusinessPage = () => {
       </section>
 
       {/* Agent Dialogue Workflow */}
-      <section className="relative" style={{ background: "#0F1425" }}>
+      <section id="recruiting-workflow" className="relative" style={{ background: "#0F1425" }}>
         <div className="container">
           <div className="text-center pt-24 pb-16">
             <p className="text-xs font-bold tracking-[0.15em] uppercase text-hirex-cyan mb-4">Live Recruiting Workflow</p>
@@ -182,12 +189,14 @@ const BusinessPage = () => {
             </h2>
           </div>
 
+          <RecruitingWorkflowPreview />
+          <p className="text-sm text-hirex-text2 mb-6">Existing agent messages below are scripted demonstrations, not measured performance, live sourcing or calendar actions.</p>
           <div className="space-y-8 pb-24">
             {scrollSections.map((section, i) => (
               <div
                 key={section.title}
                 ref={(el) => { sectionsRef.current[i] = el; }}
-                className={`glass-card rounded-2xl p-8 md:p-12 transition-all duration-700 ${
+                className={`glass-card rounded-2xl p-8 md:p-12 transition-all duration-700 motion-reduce:transition-none motion-reduce:transform-none ${
                   activeSection === i ? "glow-border-cyan scale-[1.01]" : "opacity-60"
                 }`}
               >
@@ -291,6 +300,7 @@ const BusinessPage = () => {
                     </li>
                   ))}
                 </ul>
+                <EmployerAudiencePreview title={icp.title} />
                 <Link
                   to={icp.to}
                   className={`weave-hover w-full flex justify-center py-3 rounded-xl font-semibold text-sm no-underline transition-all ${
@@ -332,8 +342,9 @@ const BusinessPage = () => {
               to="/contact"
               className="weave-hover inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-[18px] no-underline glass-card text-foreground hover:bg-foreground/10 transition-all"
             >
-              Book Demo
+              Book a Demo
             </Link>
+            <Button asChild variant="outline" size="lg" className="h-auto py-4 whitespace-normal"><a href="#job-shortlist-demo">Explore the Recruitment Workflow</a></Button>
           </div>
         </div>
       </section>

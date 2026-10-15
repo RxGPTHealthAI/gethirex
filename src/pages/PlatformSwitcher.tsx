@@ -35,6 +35,7 @@ const navLinks = [
   { label: "Candidates", to: "/candidate" },
   { label: "Colleges", to: "/colleges" },
   { label: "Pricing", to: "/pricing" },
+  { label: "Videos", to: "/videos" },
 ];
 
 const PlatformSwitcher = () => {

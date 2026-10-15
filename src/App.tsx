@@ -33,6 +33,7 @@ import SecurityPage from "@/pages/SecurityPage";
 import GDPRPage from "@/pages/GDPRPage";
 import CookiePolicyPage from "@/pages/CookiePolicyPage";
 import CollegesPage from "@/pages/CollegesPage";
+import VideosPage from "@/pages/VideosPage";
 import ChatWidget from "@/components/ChatWidget";
 
 const queryClient = new QueryClient();
@@ -62,6 +63,7 @@ const Layout = () => {
         <Route path="/customer-stories" element={<CustomerStoriesPage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/demo" element={<DemoPage />} />
+        <Route path="/videos" element={<VideosPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/integrations" element={<IntegrationsPage />} />
         <Route path="/hr-faq" element={<HRFAQPage />} />

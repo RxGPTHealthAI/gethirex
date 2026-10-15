@@ -4,3 +4,4 @@
 - RouteSEO owns canonical links; do not add a homepage canonical in index.html because it duplicates per-page canonicals.
 - Interactive website previews live in focused components using local state and existing design-system controls; this keeps demonstrations isolated from production data, payments, and integrations.
 - Enhance existing agent cards and journey content in place rather than duplicating catalogues; this preserves page content and a single source for advertised agent names.
+- Institutional planning scenarios use component-local state, explicit allocation assumptions and guarded arithmetic; this avoids transmitting financial inputs or presenting estimates as returns.

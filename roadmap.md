@@ -1,3 +1,3 @@
-- [ ] Add /videos product showcase with three in-site YouTube demonstrations and existing exploration/demo destinations.
-- [ ] Add navigation links and page metadata without redesigning existing pages.
-- [ ] Verify the public page and demo links on desktop and mobile.
+- [x] Add /videos product showcase with three in-site YouTube demonstrations and existing exploration/demo destinations.
+- [x] Add navigation links and page metadata without redesigning existing pages.
+- [x] Verify the public page and demo links on desktop and mobile.

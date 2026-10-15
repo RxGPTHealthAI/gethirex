@@ -5,4 +5,8 @@
 - [x] Match /videos content, supplied IDs, and page metadata to the emergency brief.
 - [x] Test videos, existing navigation, validation, and available project tests; deliver audit findings (playback and notification delivery remain unverified).
 - [x] Add compact homepage "Recognised for AI & Talent Innovation" award section below social proof, linking to /team.
-- [ ] Restore live booking availability — blocked by the existing Calendly URL returning 404; needs a valid owner-supplied booking link.- [ ] Fold Henry Tian's full supplied profile into his Team page card.
+- [ ] Restore live booking availability — blocked by the existing Calendly URL returning 404; needs a valid owner-supplied booking link.
+- [ ] Phase A: inspect and protect existing routes, content, navigation, and integrations.
+- [ ] Phase B: add homepage workforce explorer, campus sample dashboard and journey interaction, and enhance existing candidate squad cards.
+- [ ] Verify Phase B interactions, preservation, desktop/mobile layouts, and deliver results.
+- Phase C/D deferred: employer simulator, agent network, demo selector, optional pricing/team/story refinements; no new campus page.

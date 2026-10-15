@@ -1,0 +1,20 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { ArrowRight } from "lucide-react";
+
+const examples: Record<string, { input: string; output: string; example: string }> = {
+  ResumeReviver: { input: "Resume content and a target role.", output: "Suggested resume structure and role-relevant wording.", example: "For a frontend role, describe what you built, the tools used and your contribution." },
+  JobScout: { input: "Skills, target roles and job preferences.", output: "Potential opportunities to review against your preferences.", example: "A sample search could focus on junior frontend roles with React experience." },
+  CodeCoach: { input: "A technical topic and a practice solution.", output: "Practice exercises and feedback to support learning.", example: "Explain the time complexity of your solution and consider an edge case." },
+  InterviewPro: { input: "A target role and an interview response.", output: "Mock-interview practice and suggested improvements.", example: "Use a clear situation, action and result when describing a project challenge." },
+  CareerPilot: { input: "Career goals, skills and experience.", output: "A career roadmap to review and adapt.", example: "Compare your skills with a target role, then choose one practical learning goal." },
+  OfferNinja: { input: "Offer details and compensation priorities.", output: "Negotiation preparation and points to discuss.", example: "Consider the whole offer, including responsibilities, benefits and development opportunities." },
+};
+
+export default function CareerAgentPreview({ agent, onClose }: { agent: { name: string; desc: string } | null; onClose: () => void }) {
+  const [answerShown, setAnswerShown] = useState(false);
+  const details = agent ? examples[agent.name] : undefined;
+  return <Dialog open={Boolean(agent)} onOpenChange={(open) => { if (!open) { setAnswerShown(false); onClose(); } }}><DialogContent className="max-w-xl max-h-[85dvh] overflow-y-auto motion-reduce:animate-none"><DialogHeader><DialogTitle className="text-2xl tracking-normal">{agent?.name}</DialogTitle><DialogDescription>{agent?.desc}</DialogDescription></DialogHeader>{details && <><p className="text-xs text-hirex-teal">ILLUSTRATIVE AGENT EXAMPLE · NOT A LIVE AI SESSION</p><dl className="grid sm:grid-cols-2 gap-5 text-sm"><div><dt className="font-semibold">You provide</dt><dd className="text-hirex-text2 mt-2">{details.input}</dd></div><div><dt className="font-semibold">Example output</dt><dd className="text-hirex-text2 mt-2">{details.output}</dd></div></dl><div className="border-y border-border py-5"><h3 className="text-base tracking-normal">Example interaction</h3><p className="text-sm text-hirex-text2 mt-2">{details.example}</p></div>{agent?.name === "InterviewPro" && <div><p className="font-semibold text-sm">Tell me about a difficult project you worked on.</p><Button variant="outline" className="mt-3" onClick={() => setAnswerShown(!answerShown)} aria-expanded={answerShown}>{answerShown ? "Hide example answer" : "Reveal example answer"}</Button>{answerShown && <div aria-live="polite" className="mt-4 text-sm space-y-3"><p>“Our coursework app had a slow search. I measured the bottleneck, added an index and tested the change with the team. I documented the trade-offs and what I learned.”</p><p className="text-hirex-text2"><strong>Illustrative feedback:</strong> This answer explains the context, your action and how you checked the result. Add an honest outcome and reflect on what you would improve.</p></div>}</div>}<p className="text-xs text-hirex-text2">Examples are not assessments or guarantees. Confirm current feature access and availability with the HIREXAI team.</p><Button asChild variant="link" className="justify-start px-0"><Link to="/contact">Ask about {agent?.name} <ArrowRight /></Link></Button></>}</DialogContent></Dialog>;
+}

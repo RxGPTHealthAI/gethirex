@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import awardAsset from "@/assets/incredible-india-icon-award-2026.png.asset.json";
+import AIWorkforceExplorer from "@/components/AIWorkforceExplorer";
 
 const NAVY = "#0A1E3E";
 const TEAL = "#00D9FF";
@@ -262,6 +263,8 @@ const PlatformSwitcher = () => {
           </div>
         </div>
       </section>
+
+      <AIWorkforceExplorer />
 
       {/* HOW IT WORKS */}
       <section className="bg-[#0A1E3E] py-28 px-6">

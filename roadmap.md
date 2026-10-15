@@ -12,3 +12,4 @@
 - Phase C/D deferred: employer simulator, agent network, demo selector, optional pricing/team/story refinements; no new campus page.
 - [x] Enhance only /colleges: campus profile recommendations, four-stage journey, local ROI planning scenario and institutional CTA; verified 7 tests, desktop/tablet/mobile flows, zero planning requests, preserved routes/global CSS/content.
 - [x] Enhance only /candidate: interactive readiness dashboard, six agent demonstrations, skill-gap explorer, four-stage journey, simulation controls and closing CTAs; verified 14 tests, desktop/tablet/phone interactions, keyboard focus, local-only selections and protected page/content preservation. Published site unchanged; existing shared mobile drawer issue remains out of scope.
+- [ ] Enhance only /business: recruitment dashboard, eight agent panels, job-to-shortlist demo, local workload explorer, clickable workflow and audience cards; verify interactions, CTAs and preservation.

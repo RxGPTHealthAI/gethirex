@@ -34,6 +34,7 @@ const GlobalNav = () => {
   ];
 
   const defaultLinks = [
+    { label: "Videos", to: "/videos" },
     { label: "Pricing", to: "/pricing" },
     { label: "Blog", to: "/blog" },
     { label: "Contact", to: "/contact" },

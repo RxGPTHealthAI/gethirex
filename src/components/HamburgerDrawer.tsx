@@ -16,6 +16,7 @@ const menuGroups = [
       { label: "How It Works", to: "/how-it-works" },
       { label: "Pricing", to: "/pricing" },
       { label: "Demo", to: "/demo" },
+      { label: "Videos", to: "/videos" },
       { label: "Process", to: "/process" },
       { label: "Integrations", to: "/integrations" },
     ],

@@ -25,6 +25,7 @@ const Footer = () => (
             <li><Link to="/how-it-works" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">How It Works</Link></li>
             <li><Link to="/pricing" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Pricing</Link></li>
             <li><Link to="/demo" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Demo</Link></li>
+            <li><Link to="/videos" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Videos</Link></li>
             <li><Link to="/process" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Process</Link></li>
             <li><Link to="/integrations" className="text-sm text-hirex-text2 no-underline hover:text-foreground transition-colors">Integrations</Link></li>
           </ul>

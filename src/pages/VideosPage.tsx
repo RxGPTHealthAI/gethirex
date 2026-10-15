@@ -24,7 +24,7 @@ const videos = [
 ];
 
 const VideoFrame = ({ id, title }: { id: string; title: string }) => (
-  <div className="relative aspect-video overflow-hidden rounded-lg border border-border bg-card shadow-2xl">
+  <div className="relative aspect-video overflow-hidden rounded-lg border border-border bg-card">
     <iframe
       className="absolute inset-0 h-full w-full"
       src={`https://www.youtube-nocookie.com/embed/${id}?rel=0`}
@@ -58,7 +58,7 @@ const VideosPage = () => {
       </section>
 
       <section className="container pb-20" aria-labelledby="featured-demo">
-        <div className="grid items-center gap-8 lg:grid-cols-[1.7fr_1fr]">
+        <div className="space-y-6">
           <VideoFrame id={featured.id} title={featured.title} />
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary"><PlayCircle className="h-4 w-4" /> Featured demonstration</span>
@@ -73,7 +73,7 @@ const VideosPage = () => {
           <h2 className="mb-10 text-center text-3xl">More Product Demonstrations</h2>
           <div className="grid gap-8 md:grid-cols-2">
             {more.map((v) => (
-              <article key={v.id} className="glass-card rounded-lg p-4">
+              <article key={v.id}>
                 <VideoFrame id={v.id} title={v.title} />
                 <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-primary">{v.label}</p>
                 <h3 className="mt-2 text-xl">{v.title}</h3>

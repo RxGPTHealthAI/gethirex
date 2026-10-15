@@ -34,6 +34,7 @@ type Member = {
   awards?: string[];
   education?: string;
   passion?: string;
+  projects?: string;
   initials?: string;
   gradient?: string;
 };
@@ -121,7 +122,9 @@ const extendedTeam: Member[] = [
   { name: "Prerana Veerabhadrappa Kadi", role: "UI/UX Design Intern", img: preranaImg,
     bio: "Applies skills in Figma, wireframing, and dashboard design. Pursuing B.Tech in CSE at VIT Vellore. Previously designed layouts for FinSight AI and SEED." },
   { name: "Henry Tian", role: "AI/ML Engineer Intern", img: henryImg,
-    bio: "Applies AI and computer vision expertise to build innovative solutions that transform the future of recruitment." },
+    bio: "Brings strong expertise in artificial intelligence, computer vision, and machine learning. Previously a Researcher and Assistant Professor at the University of Waterloo, contributing to academic publications on Explainable AI and supporting the development of graduate coursework. Published research on Sedentary Posture Recognition using CNN and YOLOv8, and is preparing work on Shortcut Learning in Basketball Shot Classifiers.",
+    awards: ["USACO Gold", "PennApps", "RythmHacks", "National Math Competitions"],
+    projects: "ReadBuddy — pupil detection model integrated into a reading app to personalise literacy development · OverSEA — machine learning solution combining satellite and AIS data to detect illegal fishing activities" },
 ];
 
 const MemberCard = ({ m }: { m: Member }) => (

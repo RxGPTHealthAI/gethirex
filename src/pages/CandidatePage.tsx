@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import LiveFeed from "@/components/LiveFeed";
 import { Button } from "@/components/ui/button";
 import CareerAgentPreview from "@/components/CareerAgentPreview";
+import CandidateCareerExplorer from "@/components/candidate/CandidateCareerExplorer";
+import CareerDemoControls from "@/components/candidate/CareerDemoControls";
 
 const aiPeople = [
   { name: "ResumeReviver", role: "The Sleek Designer", icon: "🎨", desc: "Transforms messy resumes into ATS-optimized masterpieces in seconds." },
@@ -42,6 +44,10 @@ const simulations = [
 
 const CandidatePage = () => {
   const [selectedAgent, setSelectedAgent] = useState<(typeof aiPeople)[number] | null>(null);
+  const exploreAgent = (name: string) => {
+    const agent = aiPeople.find(person => person.name === name);
+    if (agent) setSelectedAgent(agent);
+  };
   const [activeSim, setActiveSim] = useState(0);
   const simRef = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -90,7 +96,7 @@ const CandidatePage = () => {
             <div className="glass-card-warm glow-border-teal rounded-2xl p-6 max-w-[600px] mx-auto mb-12 text-left">
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2 h-2 rounded-full bg-hirex-teal animate-pulse" />
-                <span className="text-xs font-mono text-hirex-teal">LIVE AGENT CHAT</span>
+                <span className="text-xs font-mono text-hirex-teal">ILLUSTRATIVE AGENT CHAT</span>
               </div>
               <LiveFeed
                 agent="CAREER_PILOT"
@@ -100,8 +106,10 @@ const CandidatePage = () => {
               />
             </div>
 
+            <p className="text-xs text-hirex-text2 mb-8">Fictional sample conversation — no live search or resume processing occurs.</p>
+
             {/* 6 AI People Grid — THE KEY VISUAL */}
-            <div className="mb-14">
+            <div id="career-agents" className="mb-14 scroll-mt-28">
               <h2 className="text-2xl md:text-3xl tracking-normal mb-3">Meet Your Career AI Squad</h2>
               <p className="text-hirex-text2 text-sm mb-6">Explore AI-powered tools designed to support different stages of your career journey.</p>
               <p className="text-[11px] font-bold tracking-[0.15em] uppercase text-hirex-teal/60 mb-6">
@@ -152,22 +160,25 @@ const CandidatePage = () => {
         </div>
       </section>
 
+      <CandidateCareerExplorer onExploreAgent={exploreAgent} />
+
       {/* AI People Workflow - Live Simulations */}
       <section id="squad" className="relative" style={{ background: "#0F1425" }}>
         <div className="container">
           <div className="text-center pt-24 pb-16">
-            <p className="text-xs font-bold tracking-[0.15em] uppercase text-hirex-teal mb-4">Live AI Simulations</p>
+            <p className="text-xs font-bold tracking-[0.15em] uppercase text-hirex-teal mb-4">Interactive AI Simulations</p>
             <h2 className="text-[clamp(32px,5vw,36px)] font-semibold">
               Your Squad <span className="bg-gradient-to-r from-hirex-teal to-hirex-orange bg-clip-text text-transparent">In Action.</span>
             </h2>
           </div>
 
+          <p className="text-center text-sm text-hirex-text2 mb-8 max-w-2xl mx-auto">Illustrative demonstrations using fictional, predefined data. Existing sample messages below are scripted, not measured scores, live searches or actual platform results.</p>
           <div className="space-y-8 pb-24">
             {simulations.map((sim, i) => (
               <div
                 key={sim.title}
                 ref={(el) => { simRef.current[i] = el; }}
-                className={`glass-card-warm rounded-2xl p-8 md:p-12 transition-all duration-700 ${
+                className={`glass-card-warm rounded-2xl p-6 md:p-12 transition-all duration-700 motion-reduce:transition-none motion-reduce:transform-none ${
                   activeSim === i ? "glow-border-teal scale-[1.01]" : "opacity-60"
                 }`}
               >
@@ -176,6 +187,8 @@ const CandidatePage = () => {
                     <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-hirex-teal">Simulation {i + 1}</span>
                     <h3 className="text-2xl md:text-[28px] font-medium mt-2 mb-3">{sim.title}</h3>
                     <p className="text-hirex-text2 text-sm leading-relaxed">{sim.desc}</p>
+                    <p className="text-xs text-hirex-teal mt-4 mb-5">SCRIPTED EXAMPLE · NOT LIVE AI PROCESSING</p>
+                    <CareerDemoControls agent={["ResumeReviver", "InterviewPro", "JobScout"][i]} prefix={`simulation-${i}`} />
                   </div>
                   <div className="flex-1 space-y-3">
                     {activeSim === i &&
@@ -221,25 +234,21 @@ const CandidatePage = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[150px] bg-hirex-teal/[0.08]" />
           </div>
           <h2 className="text-[clamp(32px,5vw,36px)] font-semibold mb-5 relative z-10">
-            Your Squad is <span className="bg-gradient-to-r from-hirex-teal to-hirex-orange bg-clip-text text-transparent">Ready.</span>
+            Your Next Career Move Starts Here.
           </h2>
           <p className="text-hirex-text2 text-lg max-w-[500px] mx-auto mb-10 relative z-10">
-            Stop grinding alone. Let six AI people turbocharge your career.
+            Explore your career options, identify skill gaps, strengthen your interview preparation, and discover how your personal AI career squad can support your journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
-            <Link
-              to="/contact"
-              className="weave-hover inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-[18px] no-underline text-foreground transition-all"
-              style={{ background: "#68D5C1" }}
-            >
-              Activate Your Squad →
-            </Link>
-            <Link
-              to="/candidate/pricing"
-              className="weave-hover inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-[18px] no-underline glass-card-warm text-foreground hover:bg-foreground/10 transition-all"
-            >
-              View Plans
-            </Link>
+            <Button asChild size="lg" className="bg-hirex-teal text-background hover:bg-hirex-teal/90 h-auto py-4 whitespace-normal">
+              <Link to="/contact">Activate Your Career Squad →</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="h-auto py-4 whitespace-normal">
+              <a href="#career-agents">Explore the AI Agents</a>
+            </Button>
+            <Button asChild variant="link" size="lg" className="text-hirex-teal h-auto py-4">
+              <Link to="/candidate/pricing">View Plans</Link>
+            </Button>
           </div>
         </div>
       </section>

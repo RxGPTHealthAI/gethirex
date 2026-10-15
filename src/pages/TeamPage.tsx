@@ -24,6 +24,7 @@ import aayushImg from "@/assets/team/aayush.png";
 import palakImg from "@/assets/team/palak.png";
 import ambroseImg from "@/assets/team/ambrose.png";
 import preranaImg from "@/assets/team/prerana.png";
+import henryImg from "@/assets/team/henry-tian.png";
 
 type Member = {
   name: string;
@@ -119,6 +120,8 @@ const extendedTeam: Member[] = [
     bio: "3+ years of application deployment experience. Built platforms like Uniride.ng with Mapbox, Dojah, Termii integrations. Workflow spans React, Next.js, and AI-assisted engineering with Copilot and GPT-4." },
   { name: "Prerana Veerabhadrappa Kadi", role: "UI/UX Design Intern", img: preranaImg,
     bio: "Applies skills in Figma, wireframing, and dashboard design. Pursuing B.Tech in CSE at VIT Vellore. Previously designed layouts for FinSight AI and SEED." },
+  { name: "Henry Tian", role: "AI/ML Engineer Intern", img: henryImg,
+    bio: "Applies AI and computer vision expertise to build innovative solutions that transform the future of recruitment." },
 ];
 
 const MemberCard = ({ m }: { m: Member }) => (

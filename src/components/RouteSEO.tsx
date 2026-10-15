@@ -37,8 +37,8 @@ const META: Record<string, Meta> = {
     description: "Meet the engineers, recruiters, and operators building HIREXAI's autonomous hiring platform.",
   },
   "/videos": {
-    title: "See HireX in Action | HIREXAI Product Demos",
-    description: "Watch HIREXAI product demonstrations and discover how AI helps companies find, assess, and hire talent.",
+    title: "See HIREXAI in Action | AI-Powered Hiring Demonstrations",
+    description: "Explore HIREXAI product demonstrations and see how AI-powered recruitment workflows can support your hiring process.",
   },
   "/demo": {
     title: "Book a Demo | HIREXAI",

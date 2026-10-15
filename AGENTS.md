@@ -6,3 +6,4 @@
 - Enhance existing agent cards and journey content in place rather than duplicating catalogues; this preserves page content and a single source for advertised agent names.
 - Institutional planning scenarios use component-local state, explicit allocation assumptions and guarded arithmetic; this avoids transmitting financial inputs or presenting estimates as returns.
 - Candidate previews share page-specific sample data and reusable agent demonstration controls, with component-local selections; this keeps agent panels and simulations consistent without changing shared site controls or connected services.
+- Employer previews share page-specific fictional profiles and a disclosed equal-weight requirements-coverage calculation; workload planning allocates entered hours with editable assumptions rather than forecasting savings, keeping recruitment decisions and integrations under human control.

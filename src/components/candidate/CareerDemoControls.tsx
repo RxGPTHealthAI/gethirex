@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2, FileText, MapPin } from "lucide-react";
 import { careerRoles, roleSkills, type CareerRole } from "./careerDemoData";
 
 export function DemoSelect({ label, value, options, onChange }: { label: string; value: string; options: readonly string[]; onChange: (value: string) => void }) {
-  return <div className="min-w-0 space-y-2"><span className="text-sm font-medium" id={`label-${label.replaceAll(" ", "-")}`}>{label}</span><Select value={value} onValueChange={onChange}><SelectTrigger aria-label={label} className="w-full"><SelectValue /></SelectTrigger><SelectContent>{options.map(option => <SelectItem key={option} value={option}>{option}</SelectItem>)}</SelectContent></Select></div>;
+  return <div className="min-w-0 space-y-2"><span className="text-sm font-medium">{label}</span><Select value={value} onValueChange={onChange}><SelectTrigger aria-label={label} className="w-full"><SelectValue /></SelectTrigger><SelectContent>{options.map(option => <SelectItem key={option} value={option}>{option}</SelectItem>)}</SelectContent></Select></div>;
 }
 
 export default function CareerDemoControls({ agent, prefix = "agent" }: { agent: string; prefix?: string }) {

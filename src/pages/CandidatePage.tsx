@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import LiveFeed from "@/components/LiveFeed";
+import { Button } from "@/components/ui/button";
+import CareerAgentPreview from "@/components/CareerAgentPreview";
 
 const aiPeople = [
   { name: "ResumeReviver", role: "The Sleek Designer", icon: "🎨", desc: "Transforms messy resumes into ATS-optimized masterpieces in seconds." },
@@ -39,6 +41,7 @@ const simulations = [
 ];
 
 const CandidatePage = () => {
+  const [selectedAgent, setSelectedAgent] = useState<(typeof aiPeople)[number] | null>(null);
   const [activeSim, setActiveSim] = useState(0);
   const simRef = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -99,27 +102,33 @@ const CandidatePage = () => {
 
             {/* 6 AI People Grid — THE KEY VISUAL */}
             <div className="mb-14">
+              <h2 className="text-2xl md:text-3xl tracking-normal mb-3">Meet Your Career AI Squad</h2>
+              <p className="text-hirex-text2 text-sm mb-6">Explore AI-powered tools designed to support different stages of your career journey.</p>
               <p className="text-[11px] font-bold tracking-[0.15em] uppercase text-hirex-teal/60 mb-6">
                 YOUR 6 AI PEOPLE — CAREER PILOT SQUAD
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-[700px] mx-auto">
                 {aiPeople.map((person, i) => (
-                  <div
+                  <Button
                     key={person.name}
-                    className="glass-card-warm glow-border-teal rounded-xl p-5 text-left hover:-translate-y-1 transition-all cursor-default group"
+                    variant="ghost"
+                    onClick={() => setSelectedAgent(person)}
+                    aria-label={`Explore ${person.name}`}
+                    aria-haspopup="dialog"
+                    className="glass-card-warm glow-border-teal rounded-xl p-5 text-left hover:-translate-y-1 transition-all group block h-auto whitespace-normal motion-reduce:transition-none motion-reduce:transform-none"
                     style={{ animationDelay: `${i * 100}ms` }}
                   >
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-12 h-12 rounded-xl bg-hirex-teal/15 flex items-center justify-center text-2xl" style={{ animation: `floatNode 3s ease-in-out ${i * 200}ms infinite` }}>
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-3">
+                      <div className="w-12 h-12 shrink-0 rounded-xl bg-hirex-teal/15 flex items-center justify-center text-2xl motion-safe:animate-float-node">
                         {person.icon}
                       </div>
-                      <div>
+                      <div className="min-w-0 break-words">
                         <div className="text-sm font-bold group-hover:text-hirex-teal transition-colors">{person.name}</div>
                         <div className="text-[10px] text-hirex-teal/70 font-medium">{person.role}</div>
                       </div>
                     </div>
                     <p className="text-[12px] text-hirex-text3 leading-relaxed">{person.desc}</p>
-                  </div>
+                  </Button>
                 ))}
               </div>
             </div>
@@ -234,6 +243,7 @@ const CandidatePage = () => {
           </div>
         </div>
       </section>
+      <CareerAgentPreview agent={selectedAgent} onClose={() => setSelectedAgent(null)} />
     </div>
   );
 };

@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import CampusDashboardPreview from "@/components/CampusDashboardPreview";
 
 const heroStats = [
   { val: "40,000+", label: "Colleges Across India" },
@@ -140,6 +143,7 @@ const pricingFactors = [
 ];
 
 const CollegesPage = () => {
+  const [activeJourney, setActiveJourney] = useState(0);
   return (
     <div className="animate-fade-in">
       {/* HERO */}
@@ -203,6 +207,8 @@ const CollegesPage = () => {
         </div>
       </section>
 
+      <CampusDashboardPreview />
+
       {/* PROBLEM */}
       <section className="py-24" style={{ background: "linear-gradient(180deg, #0F1425 0%, #1C2351 100%)" }}>
         <div className="container">
@@ -242,7 +248,7 @@ const CollegesPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {journey.map((j, i) => (
-              <div key={j.year} className="glass-card glow-border-cyan rounded-2xl p-6 hover:-translate-y-1 transition-all">
+              <div key={j.year} className={`glass-card glow-border-cyan rounded-2xl p-6 hover:-translate-y-1 transition-all ${activeJourney === i ? "border-hirex-cyan" : ""}`}>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold tracking-[0.1em] uppercase bg-hirex-cyan/10 text-hirex-cyan mb-4">
                   Stage {i + 1}
                 </div>
@@ -255,8 +261,15 @@ const CollegesPage = () => {
                     </li>
                   ))}
                 </ul>
+                <Button variant="outline" className="mt-5 w-full" aria-pressed={activeJourney === i} aria-controls="journey-detail" onClick={() => setActiveJourney(i)}>Explore {j.year}</Button>
               </div>
             ))}
+          </div>
+          <div id="journey-detail" role="region" aria-label="Selected career journey stage" aria-live="polite" className="mt-8 border-t border-border pt-6">
+            <p className="text-xs text-hirex-cyan mb-3">ILLUSTRATIVE JOURNEY · CONFIRM CAPABILITY AVAILABILITY WITH OUR TEAM</p>
+            <h3 className="text-2xl tracking-normal">{journey[activeJourney].year} — {journey[activeJourney].title}</h3>
+            <p className="text-hirex-text2 text-sm mt-3">{journey[activeJourney].items.join(" · ")}</p>
+            <p className="text-hirex-text2 text-sm mt-3">{["Discover career options, build resume foundations and identify skills to develop.", "Build skills through projects and prepare for internship conversations.", "Prepare your resume, practise interviews and organise placement preparation with a career adviser.", "Explore next career opportunities and continue developing relevant skills."][activeJourney]}</p>
           </div>
         </div>
       </section>
